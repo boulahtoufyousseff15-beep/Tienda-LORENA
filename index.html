@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -94,8 +95,6 @@ h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(42px,5
 footer{border-top:1px solid #292722;padding:45px 6%;display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;color:#8d887e;font-size:9px;letter-spacing:1.5px}
 footer .wordmark{font-size:29px;color:var(--blanco)}
 .foot-right{text-align:right}
-
-/* CARRITO */
 .cart-drawer{position:fixed;z-index:50;inset:0 0 0 auto;width:min(480px,100%);background:#10100f;border-left:1px solid var(--borde);padding:26px;transform:translateX(105%);visibility:hidden;transition:transform .35s,visibility .35s;overflow-y:auto;overscroll-behavior:contain}
 .cart-drawer.open{transform:translateX(0);visibility:visible}
 .drawer-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #333;padding-bottom:20px}
@@ -131,7 +130,6 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
 .empty-cart .cta{width:100%}
 .toast{position:fixed;z-index:70;bottom:24px;left:50%;transform:translateX(-50%);background:var(--dorado);color:#111;padding:14px 22px;font-size:10px;letter-spacing:1px;display:none;max-width:90%;text-align:center;line-height:1.7}
 .toast.show{display:block}
-
 @media(max-width:900px){
 .nav{grid-template-columns:1fr auto}
 .wordmark{grid-column:1;grid-row:1;text-align:left;font-size:32px}
@@ -148,7 +146,6 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
 .story-copy{padding:65px 8%}
 .section-head{align-items:flex-start;flex-direction:column}
 }
-
 @media(max-width:520px){
 .topline{font-size:8px;letter-spacing:1.5px}
 .nav{padding:15px 5%;gap:12px}
@@ -187,67 +184,31 @@ footer .foot-right{text-align:center}
 }
 </style>
 </head>
-
 <body>
-<div class="topline">
-LORENA — DISEÑADO PARA DESTACAR · COLECCIÓN EN PREPARACIÓN
-</div>
-
+<div class="topline">LORENA — DISEÑADO PARA DESTACAR · COLECCIÓN EN PREPARACIÓN</div>
 <header>
 <div class="nav">
 <nav class="navlinks" aria-label="Navegación principal">
-<a href="#inicio">Inicio</a>
-<a href="#coleccion">Colección</a>
-<a href="#historia">La marca</a>
+<a href="#inicio">Inicio</a><a href="#coleccion">Colección</a><a href="#historia">La marca</a>
 </nav>
 <a class="wordmark" href="#inicio" aria-label="LORENA, inicio">LORENA</a>
-<div class="nav-right">
-<button type="button" onclick="openCart()" aria-label="Abrir carrito">
-Carrito · <span id="count">0</span>
-</button>
-</div>
+<div class="nav-right"><button type="button" onclick="openCart()" aria-label="Abrir carrito">Carrito · <span id="count">0</span></button></div>
 </div>
 </header>
-
 <main>
 <section class="hero" id="inicio">
 <div class="hero-copy">
 <span class="kicker">La primera colección</span>
 <h1>LORENA<span>EL ESTILO HABLA POR SÍ SOLO</span></h1>
-<p>
-Siluetas urbanas. Líneas que fluyen. Detalles que hablan por sí solos.
-Una nueva identidad construida alrededor de la ropa que llevas
-y la actitud con la que la llevas.
-</p>
+<p>Siluetas urbanas. Líneas que fluyen. Detalles que hablan por sí solos. Una nueva identidad construida alrededor de la ropa que llevas y la actitud con la que la llevas.</p>
 <a class="cta" href="#coleccion">Explorar colección <span>↘️</span></a>
 </div>
-<div class="hero-visual">
-<img src="lorena11.png" alt="Conjunto negro de verano LORENA">
-<div class="hero-stamp">EDICIÓN LORENA · N.º 01</div>
-</div>
+<div class="hero-visual"><img src="lorena11.png" alt="Conjunto negro de verano LORENA"><div class="hero-stamp">EDICIÓN LORENA · N.º 01</div></div>
 <div class="hero-index">DESDE 2025 / MARCA INDEPENDIENTE</div>
 </section>
-
-<div class="marquee">
-<span>LORENA</span> ✳
-<span>ESTILO CON PERSONALIDAD</span> ✳
-<span>EL VALOR ESTÁ EN LOS DETALLES</span> ✳
-<span>LORENA</span> ✳
-<span>ESTILO CON PERSONALIDAD</span>
-</div>
-
+<div class="marquee"><span>LORENA</span> ✳ <span>ESTILO CON PERSONALIDAD</span> ✳ <span>EL VALOR ESTÁ EN LOS DETALLES</span> ✳ <span>LORENA</span> ✳ <span>ESTILO CON PERSONALIDAD</span></div>
 <section class="section" id="coleccion">
-<div class="section-head">
-<div>
-<div class="kicker">01 / Selección de temporada</div>
-<h2>Las piezas<br>de LORENA.</h2>
-</div>
-<p>
-Conjuntos, zapatillas y prendas coordinadas.
-Elige tus productos y consulta el resumen de tu carrito.
-</p>
-</div>
-
+<div class="section-head"><div><div class="kicker">01 / Selección de temporada</div><h2>Las piezas<br>de LORENA.</h2></div><p>Conjuntos, zapatillas y prendas coordinadas. Elige tus productos y consulta el resumen de tu carrito.</p></div>
 <div class="filters">
 <button class="filter active" type="button" data-filter="all">Todo</button>
 <button class="filter" type="button" data-filter="sets">Conjuntos de verano</button>
@@ -256,117 +217,56 @@ Elige tus productos y consulta el resumen de tu carrito.
 </div>
 <div class="grid" id="product-grid"></div>
 </section>
-
 <section class="story-band" id="historia">
-<div class="story-image">
-<img src="lorena12.png" alt="Colección de invierno LORENA" loading="lazy">
-</div>
-<div class="story-copy">
-<div class="kicker">02 / Nuestra identidad</div>
-<h2>La diferencia<br>está en el detalle.</h2>
-<p>
-Costuras curvas, contrastes limpios, logotipos discretos
-y una paleta que combina negro, blanco, gris y tonos neutros.
-LORENA nace para construir un estilo reconocible sin necesidad
-de exagerar.
-</p>
-<a class="cta dark" href="#coleccion">Ver las piezas <span>↗️</span></a>
-</div>
+<div class="story-image"><img src="lorena12.png" alt="Colección de invierno LORENA" loading="lazy"></div>
+<div class="story-copy"><div class="kicker">02 / Nuestra identidad</div><h2>La diferencia<br>está en el detalle.</h2><p>Costuras curvas, contrastes limpios, logotipos discretos y una paleta que combina negro, blanco, gris y tonos neutros. LORENA nace para construir un estilo reconocible sin necesidad de exagerar.</p><a class="cta dark" href="#coleccion">Ver las piezas <span>↗️</span></a></div>
 </section>
-
 <div class="values">
-<div class="value"><b>01</b><span>Líneas distintivas</span></div>
-<div class="value"><b>02</b><span>Detalles cuidados</span></div>
-<div class="value"><b>03</b><span>Identidad propia</span></div>
+<div class="value"><b>01</b><span>Líneas distintivas</span></div><div class="value"><b>02</b><span>Detalles cuidados</span></div><div class="value"><b>03</b><span>Identidad propia</span></div>
 </div>
-
-<section class="news">
-<div class="kicker">LORENA</div>
-<h2>El comienzo de LORENA.</h2>
-<p>Descubre nuestra selección y elige las prendas que más te gusten.</p>
-<a class="cta" href="#coleccion">Descubrir diseños <span>↗️</span></a>
-</section>
+<section class="news"><div class="kicker">LORENA</div><h2>El comienzo de LORENA.</h2><p>Descubre nuestra selección y elige las prendas que más te gusten.</p><a class="cta" href="#coleccion">Descubrir diseños <span>↗️</span></a></section>
 </main>
-
 <footer>
-<div class="foot-left">
-MARCA DE ROPA INDEPENDIENTE<br>
-NEGRO · BLANCO · DORADO
-</div>
+<div class="foot-left">MARCA DE ROPA INDEPENDIENTE<br>NEGRO · BLANCO · DORADO</div>
 <a class="wordmark" href="#inicio">LORENA</a>
-<div class="foot-right">
-©️ <span id="year"></span> LORENA<br>
-DISEÑADO CON INTENCIÓN
-</div>
+<div class="foot-right">©️ <span id="year"></span> LORENA<br>DISEÑADO CON INTENCIÓN</div>
 </footer>
-
 <div class="overlay" id="overlay" onclick="closeCart()" aria-hidden="true"></div>
-
 <aside class="cart-drawer" id="cart" aria-label="Carrito de compra" aria-hidden="true">
-<div class="drawer-top">
-<h2>Tu carrito</h2>
-<button class="icon-btn" type="button" onclick="closeCart()" aria-label="Cerrar carrito">×</button>
-</div>
+<div class="drawer-top"><h2>Tu carrito</h2><button class="icon-btn" type="button" onclick="closeCart()" aria-label="Cerrar carrito">×</button></div>
 <div id="cart-items" aria-live="polite"></div>
-<div class="cart-total">
-<span>Total del pedido</span>
-<strong id="total">0,00 €</strong>
-</div>
-<p class="drawer-note">
-Revisa las fotografías, las tallas, las cantidades y los precios.
-Al continuar, se abrirá Gmail con tu solicitud preparada.
-Deberás revisar el mensaje y pulsar «Enviar».
-</p>
-
+<div class="cart-total"><span>Total del pedido</span><strong id="total">0,00 €</strong></div>
+<p class="drawer-note">Revisa las fotografías, las tallas, las cantidades y los precios. Al continuar, se abrirá Gmail con tu solicitud preparada. Deberás revisar el mensaje y pulsar «Enviar».</p>
 <form id="order-form" class="order-form">
-<label for="customer-name">Nombre completo</label>
-<input id="customer-name" name="name" autocomplete="name" required maxlength="100" placeholder="Tu nombre">
-
-<label for="customer-phone">Teléfono</label>
-<input id="customer-phone" name="phone" autocomplete="tel" required type="tel" maxlength="30" placeholder="Tu teléfono">
-
+<label for="customer-name">Nombre completo</label><input id="customer-name" name="name" autocomplete="name" required maxlength="100" placeholder="Tu nombre">
+<label for="customer-phone">Teléfono</label><input id="customer-phone" name="phone" autocomplete="tel" required type="tel" maxlength="30" placeholder="Tu teléfono">
 <label for="delivery-method">Forma de entrega</label>
-<select id="delivery-method" name="delivery-method" required>
-<option value="Entrega en persona">Entrega en persona</option>
-<option value="Por acordar">Por acordar con la tienda</option>
-</select>
-
-<label for="delivery-place">Lugar de entrega</label>
-<input id="delivery-place" name="place" required maxlength="200" placeholder="Ciudad o lugar de entrega">
-
-<label for="customer-notes">Observaciones</label>
-<input id="customer-notes" name="notes" maxlength="500" placeholder="Detalles adicionales (opcional)">
-
+<select id="delivery-method" name="delivery-method" required><option value="Entrega en persona">Entrega en persona</option><option value="Por acordar">Por acordar con la tienda</option></select>
+<label for="delivery-place">Lugar de entrega</label><input id="delivery-place" name="place" required maxlength="200" placeholder="Ciudad o lugar de entrega">
+<label for="customer-notes">Observaciones</label><input id="customer-notes" name="notes" maxlength="500" placeholder="Detalles adicionales (opcional)">
 <button class="cta order-submit" type="submit">Preparar pedido en Gmail ↗️</button>
 </form>
 </aside>
-
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 "use strict";
 
-/* CONFIGURACIÓN */
 const ORDER_EMAIL = "boulahtoufyoussef15@gmail.com";
 
-/* CONFIGURACIÓN DE SUPABASE
-   Completaremos estos dos valores en el siguiente paso. */
-const SUPABASE_URL = "PEGA_AQUI_TU_PROJECT_URL";
-const SUPABASE_ANON_KEY = "PEGA_AQUI_TU_ANON_PUBLIC_KEY";
+/* SUPABASE: URL DEL PROYECTO Y CLAVE PÚBLICA */
+const SUPABASE_URL = "https://jmcjqlqkzsahlogtdmyk.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_W3B3n9v20W_y7VXb2JPOYQ_nwsr3gUa";
 
-/* ESTADO DEL INVENTARIO */
 let stockLoaded = false;
 let stockError = false;
 let currentFilter = "all";
 
 function isSupabaseConfigured() {
   return SUPABASE_URL.startsWith("https://") &&
-    !SUPABASE_URL.includes("PEGA_AQUI") &&
-    SUPABASE_ANON_KEY.length > 20 &&
-    !SUPABASE_ANON_KEY.includes("PEGA_AQUI");
+    SUPABASE_ANON_KEY.length > 20;
 }
 
-/* CATÁLOGO */
 const products = [
   {id:1,name:"Conjunto de invierno — Gris",sub:"Chaqueta y pantalón · Gris",category:"winter",image:"lorena1.png",color:"grey",price:45,size:"S",stock:null},
   {id:2,name:"Conjunto de invierno — Blanco",sub:"Chaqueta y pantalón · Blanco",category:"winter",image:"lorena2.png",color:"white",price:45,size:"S",stock:null},
@@ -379,14 +279,15 @@ const products = [
   {id:9,name:"Zapatillas LR — Blancas",sub:"Zapatillas · Blanco",category:"shoes",image:"lorena9.png",color:"white",price:50,size:"40",stock:null}
 ];
 
-/* ESTADO DEL CARRITO */
 let cart = [];
 
 function euro(number) {
   return number.toLocaleString("es-ES",{style:"currency",currency:"EUR"});
 }
 
-/* CONSULTAR STOCK REAL EN SUPABASE */
+/* CONSULTA DE STOCK
+   Esta función consulta lorena_inventory. Esa tabla debe existir en
+   Supabase y tener las columnas id y stock para que funcione. */
 async function loadStock() {
   if (!isSupabaseConfigured()) {
     stockLoaded = false;
@@ -397,25 +298,23 @@ async function loadStock() {
 
   try {
     const response = await fetch(
-      `${SUPABASE_URL.replace(/\/$/, "")}/rest/v1/lorena_inventory?select=id,stock`,
+      `${SUPABASE_URL}/rest/v1/lorena_inventory?select=id,stock`,
       {
-        method: "GET",
-        headers: {
-          apikey: SUPABASE_ANON_KEY,
-          Authorization: `Bearer ${SUPABASE_ANON_KEY}`
+        method:"GET",
+        headers:{
+          apikey:SUPABASE_ANON_KEY,
+          Authorization:`Bearer ${SUPABASE_ANON_KEY}`
         }
       }
     );
 
-    if (!response.ok) {
-      throw new Error("No se pudo consultar el inventario.");
-    }
+    if (!response.ok) throw new Error("No se pudo consultar el inventario.");
 
     const inventory = await response.json();
 
     products.forEach(product => {
       const row = inventory.find(item => Number(item.id) === product.id);
-      product.stock = row ? Math.max(0, Number(row.stock) || 0) : 0;
+      product.stock = row ? Math.max(0,Number(row.stock)||0) : 0;
     });
 
     stockLoaded = true;
@@ -424,7 +323,6 @@ async function loadStock() {
     cart = cart.filter(item => {
       const product = products.find(p => p.id === item.id);
       if (!product || product.stock < 1) return false;
-
       item.stock = product.stock;
       if (item.qty > product.stock) item.qty = product.stock;
       return true;
@@ -440,52 +338,31 @@ async function loadStock() {
   }
 }
 
-/* MOSTRAR PRODUCTOS */
 function renderProducts(filter=currentFilter) {
   currentFilter = filter;
-
-  const list = products.filter(
-    product => filter === "all" || product.category === filter
-  );
+  const list = products.filter(product => filter === "all" || product.category === filter);
 
   document.getElementById("product-grid").innerHTML = list.map(product => `
     <article class="card">
       <div class="card-photo">
         <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.style.opacity='0.15'">
         <span class="badge">LORENA</span>
-        <button class="quick" type="button"
-          onclick="addToCart(${product.id})"
+        <button class="quick" type="button" onclick="addToCart(${product.id})"
           ${stockLoaded && product.stock < 1 ? "disabled" : ""}>
           ${stockLoaded && product.stock < 1 ? "Agotado" : "Añadir al carrito ↗️"}
         </button>
       </div>
-
-      <div class="card-meta">
-        <h3>${product.name}</h3>
-        <span class="price">${euro(product.price)}</span>
-      </div>
-
+      <div class="card-meta"><h3>${product.name}</h3><span class="price">${euro(product.price)}</span></div>
       <p class="card-desc">${product.sub}</p>
-
       <p class="card-desc stock-status ${stockError ? "stock-error" : ""}">
-        ${
-          stockLoaded
-            ? `Unidades disponibles: ${product.stock}`
-            : stockError
-              ? "Stock no disponible"
-              : "Stock pendiente de conectar"
-        }
+        ${stockLoaded ? `Unidades disponibles: ${product.stock}` : stockError ? "Stock no disponible" : "Stock pendiente de conectar"}
       </p>
-
       <div class="product-size">Talla disponible: ${product.size}</div>
-      <div class="swatches" aria-label="Color del producto">
-        <i class="swatch ${product.color}"></i>
-      </div>
+      <div class="swatches" aria-label="Color del producto"><i class="swatch ${product.color}"></i></div>
     </article>
   `).join("");
 }
 
-/* FILTROS */
 document.querySelectorAll(".filter").forEach(button => {
   button.addEventListener("click",() => {
     document.querySelectorAll(".filter").forEach(item => item.classList.remove("active"));
@@ -494,77 +371,55 @@ document.querySelectorAll(".filter").forEach(button => {
   });
 });
 
-/* AÑADIR AL CARRITO */
 function addToCart(id) {
   const product = products.find(item => item.id === id);
   if (!product) return;
-
   if (stockLoaded && product.stock < 1) {
     showToast("Este producto está agotado.");
     return;
   }
-
   const existing = cart.find(item => item.id === id);
-
   if (stockLoaded && existing && existing.qty >= product.stock) {
     showToast("No quedan más unidades disponibles de este producto.");
     return;
   }
-
-  if (existing) {
-    existing.qty++;
-  } else {
-    cart.push({...product,qty:1});
-  }
-
+  if (existing) existing.qty++;
+  else cart.push({...product,qty:1});
   renderCart();
   openCart();
   showToast(product.name + " añadido al carrito.");
 }
 
-/* ELIMINAR PRODUCTO COMPLETO */
 function removeFromCart(id) {
   const product = cart.find(item => item.id === id);
   if (!product) return;
-
   cart = cart.filter(item => item.id !== id);
   renderCart();
   showToast(product.name + " eliminado del carrito.");
 }
 
-/* CAMBIAR CANTIDAD */
 function changeQuantity(id,change) {
   const product = cart.find(item => item.id === id);
   if (!product) return;
-
   if (change > 0 && stockLoaded && product.qty >= product.stock) {
     showToast("Has alcanzado las unidades disponibles.");
     return;
   }
-
   product.qty += change;
-
   if (product.qty <= 0) {
     removeFromCart(id);
     return;
   }
-
   renderCart();
 }
 
-/* ACTUALIZAR CARRITO */
 function renderCart() {
   const box = document.getElementById("cart-items");
   const count = cart.reduce((total,item) => total + item.qty,0);
   document.getElementById("count").textContent = count;
 
   if (cart.length === 0) {
-    box.innerHTML = `
-      <div class="empty-cart">
-        <p>Tu carrito está vacío. Explora la colección y añade las prendas que te gusten.</p>
-        <a class="cta" href="#coleccion" onclick="closeCart()">Explorar colección ↗️</a>
-      </div>`;
-
+    box.innerHTML = `<div class="empty-cart"><p>Tu carrito está vacío. Explora la colección y añade las prendas que te gusten.</p><a class="cta" href="#coleccion" onclick="closeCart()">Explorar colección ↗️</a></div>`;
     document.getElementById("total").textContent = euro(0);
     return;
   }
@@ -572,28 +427,16 @@ function renderCart() {
   box.innerHTML = cart.map(item => `
     <div class="cart-row">
       <img class="cart-product-image" src="${item.image}" alt="${item.name}" onerror="this.style.opacity='0.2'">
-
       <div class="cart-row-info">
-        <strong>${item.name}</strong>
-        <small>${item.sub}</small>
-        <small>Talla: ${item.size}</small>
-        ${
-          stockLoaded
-            ? `<small>Unidades disponibles: ${item.stock}</small>`
-            : ""
-        }
+        <strong>${item.name}</strong><small>${item.sub}</small><small>Talla: ${item.size}</small>
+        ${stockLoaded ? `<small>Unidades disponibles: ${item.stock}</small>` : ""}
         <div class="cart-item-price">${euro(item.price)} / unidad</div>
         <div class="cart-subtotal">Subtotal: ${euro(item.price * item.qty)}</div>
-
         <div class="quantity-controls">
           <button type="button" onclick="changeQuantity(${item.id},-1)" aria-label="Reducir cantidad de ${item.name}">−</button>
           <span class="quantity-number">${item.qty}</span>
-          <button type="button"
-            onclick="changeQuantity(${item.id},1)"
-            aria-label="Aumentar cantidad de ${item.name}"
-            ${stockLoaded && item.qty >= item.stock ? "disabled" : ""}>+</button>
+          <button type="button" onclick="changeQuantity(${item.id},1)" aria-label="Aumentar cantidad de ${item.name}" ${stockLoaded && item.qty >= item.stock ? "disabled" : ""}>+</button>
         </div>
-
         <button class="remove" type="button" onclick="removeFromCart(${item.id})">Eliminar producto</button>
       </div>
     </div>
@@ -603,7 +446,6 @@ function renderCart() {
   document.getElementById("total").textContent = euro(total);
 }
 
-/* PREPARAR PEDIDO EN GMAIL */
 document.getElementById("order-form").addEventListener("submit",async function(event) {
   event.preventDefault();
 
@@ -611,18 +453,15 @@ document.getElementById("order-form").addEventListener("submit",async function(e
     showToast("Tu carrito está vacío.");
     return;
   }
-
   if (stockError) {
     showToast("No podemos verificar el stock ahora. Inténtalo más tarde.");
     return;
   }
-
   if (stockLoaded) {
     const invalidItem = cart.find(item => {
       const product = products.find(p => p.id === item.id);
       return !product || product.stock < item.qty || product.stock < 1;
     });
-
     if (invalidItem) {
       showToast("Hay cantidades que ya no están disponibles. Revisa el carrito.");
       await loadStock();
@@ -651,38 +490,24 @@ document.getElementById("order-form").addEventListener("submit",async function(e
 
   const total = cart.reduce((sum,item) => sum + item.price * item.qty,0);
   const subject = "Pedido LORENA — " + name;
-
   const body =
     "SOLICITUD DE PEDIDO LORENA\n\n" +
-    "DATOS DEL CLIENTE\n" +
-    "Nombre: " + name + "\n" +
-    "Teléfono: " + phone + "\n" +
-    "Forma de entrega: " + deliveryMethod + "\n" +
-    "Lugar de entrega: " + place + "\n" +
-    "Observaciones: " + notes + "\n\n" +
-    "PRODUCTOS SELECCIONADOS\n\n" +
-    items + "\n\n" +
-    "TOTAL DEL PEDIDO: " + euro(total) + "\n\n" +
-    "Este correo contiene una solicitud de pedido. " +
-    "La compra no se considera confirmada hasta que " +
-    "la tienda revise la solicitud y confirme los detalles.\n";
+    "DATOS DEL CLIENTE\nNombre: " + name + "\nTeléfono: " + phone +
+    "\nForma de entrega: " + deliveryMethod + "\nLugar de entrega: " + place +
+    "\nObservaciones: " + notes + "\n\nPRODUCTOS SELECCIONADOS\n\n" +
+    items + "\n\nTOTAL DEL PEDIDO: " + euro(total) +
+    "\n\nEste correo contiene una solicitud de pedido. La compra no se considera confirmada hasta que la tienda revise la solicitud y confirme los detalles.\n";
 
-  const gmailUrl =
-    "https://mail.google.com/mail/?view=cm&fs=1" +
+  const gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1" +
     "&to=" + encodeURIComponent(ORDER_EMAIL) +
     "&su=" + encodeURIComponent(subject) +
     "&body=" + encodeURIComponent(body);
 
   const openedWindow = window.open(gmailUrl,"_blank");
-
-  if (!openedWindow) {
-    window.location.href = gmailUrl;
-  }
-
+  if (!openedWindow) window.location.href = gmailUrl;
   showToast("Solicitud preparada. Revisa Gmail y pulsa Enviar.");
 });
 
-/* ABRIR Y CERRAR CARRITO */
 function openCart() {
   document.getElementById("cart").classList.add("open");
   document.getElementById("cart").setAttribute("aria-hidden","false");
@@ -703,19 +528,14 @@ document.addEventListener("keydown",function(event) {
   if (event.key === "Escape") closeCart();
 });
 
-/* MENSAJES */
 function showToast(message) {
   const element = document.getElementById("toast");
   element.textContent = message;
   element.classList.add("show");
-
   clearTimeout(window.toastTimer);
-  window.toastTimer = setTimeout(() => {
-    element.classList.remove("show");
-  },3500);
+  window.toastTimer = setTimeout(() => element.classList.remove("show"),3500);
 }
 
-/* INICIAR PÁGINA */
 document.getElementById("year").textContent = new Date().getFullYear();
 renderProducts();
 renderCart();
