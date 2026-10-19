@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -285,7 +284,7 @@ footer .foot-right{text-align:center}
 <script>
 "use strict";
 
-const ORDER_EMAIL = "boulahtoufyoussef15@gmail.com";
+const ORDER_EMAIL = "boulahtoufyousseff15@gmail.com";
 const SUPABASE_URL = "https://jmcjqlqkzsahlogtdmyk.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_W3B3n9v20W_y7VXb2JPOYQ_nwsr3gUa";
 
@@ -293,6 +292,7 @@ let stockLoaded = false;
 let stockError = false;
 let currentFilter = "all";
 let checkoutOpen = false;
+let orderSubmitting = false;
 
 function isSupabaseConfigured() {
   return SUPABASE_URL.startsWith("https://") &&
@@ -304,7 +304,7 @@ const products = [
   {id:2,name:"Conjunto de invierno — Blanco",sub:"Chaqueta y pantalón · Blanco",category:"winter",image:"lorena2.png",color:"white",price:45,size:"S",stock:null},
   {id:3,name:"Conjunto de invierno — Negro",sub:"Chaqueta y pantalón · Negro",category:"winter",image:"lorena3.png",color:"black",price:45,size:"S",stock:null},
   {id:4,name:"Conjunto de verano — Beige",sub:"Camiseta y pantalón corto · Beige",category:"sets",image:"lorena4.png",color:"beige",price:35,size:"S",stock:null},
-  {id:5,name:"Conjunto de verano — Blanco",sub:"Camiseta y pantalón corto · Blanco",category:"sets",image:"lorena5.png",color:"white",price:35,size: "S",stock:null},
+  {id:5,name:"Conjunto de verano — Blanco",sub:"Camiseta y pantalón corto · Blanco",category:"sets",image:"lorena5.png",color:"white",price:35,size:"S",stock:null},
   {id:6,name:"Conjunto de verano — Negro",sub:"Camiseta y pantalón corto · Negro",category:"sets",image:"lorena6.jpeg",color:"black",price:35,size:"S",stock:null},
   {id:7,name:"Zapatillas LR — Negras",sub:"Zapatillas · Negro",category:"shoes",image:"lorena7.png",color:"black",price:50,size:"40",stock:null},
   {id:8,name:"Zapatillas LR — Grises",sub:"Zapatillas · Gris",category:"shoes",image:"lorena8.png",color:"grey",price:50,size:"40",stock:null},
@@ -314,15 +314,15 @@ const products = [
 let cart = [];
 
 function euro(number) {
-  return number.toLocaleString("es-ES",{style:"currency",currency:"EUR"});
+  return Number(number).toLocaleString("es-ES",{style:"currency",currency:"EUR"});
 }
 
 async function loadStock() {
   if (!isSupabaseConfigured()) {
     stockLoaded = false;
-    stockError = false;
+    stockError = true;
     renderProducts(currentFilter);
-    return;
+    return false;
   }
 
   try {
@@ -337,7 +337,9 @@ async function loadStock() {
       }
     );
 
-    if (!response.ok) throw new Error("No se pudo consultar el inventario.");
+    if (!response.ok) {
+      throw new Error("No se pudo consultar el inventario.");
+    }
 
     const inventory = await response.json();
 
@@ -359,11 +361,14 @@ async function loadStock() {
 
     renderProducts(currentFilter);
     renderCart();
+    return true;
   } catch (error) {
+    console.error("Error al consultar el stock:",error);
     stockLoaded = false;
     stockError = true;
     renderProducts(currentFilter);
     showToast("No se pudo consultar el stock. Comprueba la conexión.");
+    return false;
   }
 }
 
@@ -404,7 +409,7 @@ function addToCart(id) {
   const product = products.find(item => item.id === id);
   if (!product) return;
 
-  if (!stockLoaded) {
+  if (!stockLoaded || stockError) {
     showToast("Espera a que se compruebe el stock antes de añadir productos.");
     return;
   }
@@ -519,17 +524,19 @@ function renderCart() {
   document.getElementById("checkout-form-area").hidden = !checkoutOpen;
 }
 
+/* CAMBIO PRINCIPAL: registrar el pedido en Supabase antes de abrir Gmail. */
 document.getElementById("order-form").addEventListener("submit",async function(event) {
   event.preventDefault();
+
+  if (orderSubmitting) return;
 
   if (cart.length === 0) {
     showToast("Tu carrito está vacío.");
     return;
   }
 
-  if (!stockLoaded || stockError) {
-    showToast("No podemos verificar el stock ahora. Inténtalo más tarde.");
-    await loadStock();
+  if (!isSupabaseConfigured()) {
+    showToast("La conexión con Supabase no está configurada.");
     return;
   }
 
@@ -544,52 +551,129 @@ document.getElementById("order-form").addEventListener("submit",async function(e
     return;
   }
 
-  await loadStock();
+  const form = event.currentTarget;
+  const button = form.querySelector('button[type="submit"]');
+  const previousText = button.textContent;
 
-  const invalidItem = cart.find(item => {
-    const product = products.find(p => p.id === item.id);
-    return !product || product.stock < item.qty || product.stock < 1;
-  });
+  orderSubmitting = true;
+  button.disabled = true;
+  button.textContent = "Registrando pedido…";
 
-  if (invalidItem || !stockLoaded) {
-    showToast("Ha cambiado el stock. Revisa tu carrito e inténtalo de nuevo.");
+  try {
+    /*
+      La función de Supabase comprueba el stock, lo descuenta
+      y registra el pedido en una única operación.
+    */
+    const itemsToBuy = cart.map(item => ({
+      id: item.id,
+      qty: item.qty
+    }));
+
+    const response = await fetch(
+      `${SUPABASE_URL}/rest/v1/rpc/confirm_lorena_order`,
+      {
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json",
+          apikey:SUPABASE_ANON_KEY,
+          Authorization:`Bearer ${SUPABASE_ANON_KEY}`
+        },
+        body:JSON.stringify({
+          p_customer_name:name,
+          p_customer_phone:phone,
+          p_delivery_method:deliveryMethod,
+          p_delivery_place:place,
+          p_customer_notes:notes,
+          p_items:itemsToBuy
+        })
+      }
+    );
+
+    const result = await response.json().catch(() => null);
+
+    if (!response.ok || !result || result.success !== true) {
+      const errorMessage =
+        result?.message ||
+        result?.details ||
+        result?.hint ||
+        result?.error ||
+        "Supabase no ha podido registrar el pedido.";
+
+      throw new Error(errorMessage);
+    }
+
+    /*
+      Solo se llega aquí si Supabase confirma que el pedido
+      se ha registrado y que el stock se ha actualizado.
+    */
+    const confirmedItems = result.items;
+
+    if (!Array.isArray(confirmedItems) || confirmedItems.length === 0) {
+      throw new Error("Supabase no ha devuelto los productos del pedido.");
+    }
+
+    const total = Number(result.total);
+
+    const itemsText = confirmedItems.map(item =>
+      "- " + item.name +
+      "\nCantidad: " + item.qty +
+      "\nPrecio unitario: " + euro(Number(item.price)) +
+      "\nSubtotal: " + euro(Number(item.subtotal))
+    ).join("\n\n");
+
+    const subject = "Pedido LORENA #" + result.order_id + " — " + name;
+
+    const body =
+      "SOLICITUD DE PEDIDO LORENA\n" +
+      "Número de pedido: " + result.order_id + "\n\n" +
+      "DATOS DEL CLIENTE\n" +
+      "Nombre: " + name + "\n" +
+      "Teléfono: " + phone + "\n" +
+      "Forma de entrega: " + deliveryMethod + "\n" +
+      "Lugar de entrega: " + place + "\n" +
+      "Observaciones: " + notes + "\n\n" +
+      "PRODUCTOS\n\n" + itemsText +
+      "\n\nTOTAL: " + euro(total) +
+      "\n\nPedido registrado en el sistema de LORENA." +
+      "\nEl pedido está pendiente de revisión y confirmación por parte de la tienda.";
+
+    const gmailUrl =
+      "https://mail.google.com/mail/?view=cm&fs=1" +
+      "&to=" + encodeURIComponent(ORDER_EMAIL) +
+      "&su=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body);
+
+    /*
+      Limpiamos el carrito porque el pedido ya se ha registrado
+      y el stock ya se ha descontado en Supabase.
+    */
+    cart = [];
+    checkoutOpen = false;
     renderCart();
-    return;
+
+    await loadStock();
+
+    showToast("Pedido registrado. Abriendo Gmail…");
+
+    const gmailWindow = window.open(gmailUrl,"_blank");
+
+    if (!gmailWindow) {
+      window.location.href = gmailUrl;
+    }
+
+  } catch (error) {
+    console.error("Error al registrar el pedido:",error);
+
+    showToast(
+      "No se ha podido registrar el pedido. " +
+      (error.message || "Comprueba Supabase e inténtalo de nuevo.")
+    );
+
+  } finally {
+    orderSubmitting = false;
+    button.disabled = false;
+    button.textContent = previousText;
   }
-
-  const items = cart.map(item =>
-    "- " + item.name +
-    "\n  Talla: " + item.size +
-    "\n  Precio unitario: " + euro(item.price) +
-    "\n  Cantidad: " + item.qty +
-    "\n  Subtotal: " + euro(item.price * item.qty)
-  ).join("\n\n");
-
-  const total = cart.reduce((sum,item) => sum + item.price * item.qty,0);
-  const subject = "Pedido LORENA — " + name;
-
-  const body =
-    "SOLICITUD DE PEDIDO LORENA\n\n" +
-    "DATOS DEL CLIENTE\nNombre: " + name +
-    "\nTeléfono: " + phone +
-    "\nForma de entrega: " + deliveryMethod +
-    "\nLugar de entrega: " + place +
-    "\nObservaciones: " + notes +
-    "\n\nPRODUCTOS SELECCIONADOS\n\n" +
-    items +
-    "\n\nTOTAL DEL PEDIDO: " + euro(total) +
-    "\n\nEste correo contiene una solicitud de pedido. La compra no se considera confirmada hasta que la tienda revise la solicitud y confirme los detalles.\n";
-
-  const gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1" +
-    "&to=" + encodeURIComponent(ORDER_EMAIL) +
-    "&su=" + encodeURIComponent(subject) +
-    "&body=" + encodeURIComponent(body);
-
-  const openedWindow = window.open(gmailUrl,"_blank");
-
-  if (!openedWindow) window.location.href = gmailUrl;
-
-  showToast("Solicitud preparada. Revisa Gmail y pulsa Enviar.");
 });
 
 function openCart() {
@@ -617,15 +701,15 @@ function showToast(message) {
   element.textContent = message;
   element.classList.add("show");
   clearTimeout(window.toastTimer);
-  window.toastTimer = setTimeout(() => element.classList.remove("show"),3500);
+  window.toastTimer = setTimeout(() => element.classList.remove("show"),5000);
 }
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
 renderProducts();
 renderCart();
 loadStock();
 </script>
 </body>
 </html>
-
 
