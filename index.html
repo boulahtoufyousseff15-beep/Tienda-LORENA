@@ -254,7 +254,7 @@ footer .foot-right{text-align:center}
 </div>
 
 <div id="checkout-form-area" hidden>
-<p class="drawer-note">Revisa tu pedido y completa tus datos para preparar la solicitud. Después se abrirá Gmail para que puedas enviarla.</p>
+<p class="drawer-note">Revisa tu pedido, completa tus datos y confirma la compra. El pedido se registrará en el sistema y se solicitará el envío automático del correo.</p>
 <form id="order-form" class="order-form">
 <label for="customer-name">Nombre completo</label>
 <input id="customer-name" name="name" autocomplete="name" required maxlength="100" placeholder="Tu nombre">
@@ -265,7 +265,6 @@ footer .foot-right{text-align:center}
 <label for="delivery-method">Forma de entrega</label>
 <select id="delivery-method" name="delivery-method" required>
 <option value="Entrega en persona">Entrega en persona</option>
-<option value="Por acordar">Por acordar con la tienda</option>
 </select>
 
 <label for="delivery-place">Lugar de entrega</label>
@@ -274,7 +273,7 @@ footer .foot-right{text-align:center}
 <label for="customer-notes">Observaciones</label>
 <input id="customer-notes" name="notes" maxlength="500" placeholder="Detalles adicionales (opcional)">
 
-<button class="cta order-submit" type="submit">Preparar pedido en Gmail ↗️</button>
+<button class="cta order-submit" type="submit">CONFIRMAR PEDIDO ↗</button>
 </form>
 </div>
 </aside>
@@ -524,7 +523,15 @@ function renderCart() {
   document.getElementById("checkout-form-area").hidden = !checkoutOpen;
 }
 
-/* CAMBIO PRINCIPAL: registrar el pedido en Supabase antes de abrir Gmail. */
+/*
+  PROCESO DE PEDIDO:
+  1. Supabase registra el pedido y descuenta el stock.
+  2. Se solicita a la función de servidor que envíe el correo.
+  3. No se abre Gmail.
+  
+  La función send-lorena-order debe estar desplegada y configurada
+  con un proveedor de correo para que el envío automático funcione.
+*/
 document.getElementById("order-form").addEventListener("submit",async function(event) {
   event.preventDefault();
 
@@ -540,9 +547,14 @@ document.getElementById("order-form").addEventListener("submit",async function(e
     return;
   }
 
+  if (!stockLoaded || stockError) {
+    showToast("No se ha podido comprobar el stock. Inténtalo de nuevo.");
+    return;
+  }
+
   const name = document.getElementById("customer-name").value.trim();
   const phone = document.getElementById("customer-phone").value.trim();
-  const deliveryMethod = document.getElementById("delivery-method").value;
+  const deliveryMethod = "Entrega en persona";
   const place = document.getElementById("delivery-place").value.trim();
   const notes = document.getElementById("customer-notes").value.trim() || "Sin observaciones";
 
@@ -557,18 +569,17 @@ document.getElementById("order-form").addEventListener("submit",async function(e
 
   orderSubmitting = true;
   button.disabled = true;
-  button.textContent = "Registrando pedido…";
+  button.textContent = "PROCESANDO PEDIDO…";
+
+  let orderRegistered = false;
 
   try {
-    /*
-      La función de Supabase comprueba el stock, lo descuenta
-      y registra el pedido en una única operación.
-    */
     const itemsToBuy = cart.map(item => ({
       id: item.id,
       qty: item.qty
     }));
 
+    // Primero registra el pedido y actualiza el inventario.
     const response = await fetch(
       `${SUPABASE_URL}/rest/v1/rpc/confirm_lorena_order`,
       {
@@ -592,82 +603,84 @@ document.getElementById("order-form").addEventListener("submit",async function(e
     const result = await response.json().catch(() => null);
 
     if (!response.ok || !result || result.success !== true) {
-      const errorMessage =
+      throw new Error(
         result?.message ||
         result?.details ||
         result?.hint ||
         result?.error ||
-        "Supabase no ha podido registrar el pedido.";
-
-      throw new Error(errorMessage);
+        "Supabase no ha podido registrar el pedido."
+      );
     }
 
-    /*
-      Solo se llega aquí si Supabase confirma que el pedido
-      se ha registrado y que el stock se ha actualizado.
-    */
-    const confirmedItems = result.items;
-
-    if (!Array.isArray(confirmedItems) || confirmedItems.length === 0) {
-      throw new Error("Supabase no ha devuelto los productos del pedido.");
+    if (!Array.isArray(result.items) || result.items.length === 0) {
+      throw new Error("No se han recibido los productos confirmados.");
     }
 
-    const total = Number(result.total);
+    orderRegistered = true;
 
-    const itemsText = confirmedItems.map(item =>
-      "- " + item.name +
-      "\nCantidad: " + item.qty +
-      "\nPrecio unitario: " + euro(Number(item.price)) +
-      "\nSubtotal: " + euro(Number(item.subtotal))
-    ).join("\n\n");
+    const orderData = {
+      order_id:result.order_id,
+      customer_name:name,
+      customer_phone:phone,
+      delivery_method:deliveryMethod,
+      delivery_place:place,
+      customer_notes:notes,
+      items:result.items,
+      total:Number(result.total),
+      recipient:ORDER_EMAIL
+    };
 
-    const subject = "Pedido LORENA #" + result.order_id + " — " + name;
-
-    const body =
-      "SOLICITUD DE PEDIDO LORENA\n" +
-      "Número de pedido: " + result.order_id + "\n\n" +
-      "DATOS DEL CLIENTE\n" +
-      "Nombre: " + name + "\n" +
-      "Teléfono: " + phone + "\n" +
-      "Forma de entrega: " + deliveryMethod + "\n" +
-      "Lugar de entrega: " + place + "\n" +
-      "Observaciones: " + notes + "\n\n" +
-      "PRODUCTOS\n\n" + itemsText +
-      "\n\nTOTAL: " + euro(total) +
-      "\n\nPedido registrado en el sistema de LORENA." +
-      "\nEl pedido está pendiente de revisión y confirmación por parte de la tienda.";
-
-    const gmailUrl =
-      "https://mail.google.com/mail/?view=cm&fs=1" +
-      "&to=" + encodeURIComponent(ORDER_EMAIL) +
-      "&su=" + encodeURIComponent(subject) +
-      "&body=" + encodeURIComponent(body);
-
-    /*
-      Limpiamos el carrito porque el pedido ya se ha registrado
-      y el stock ya se ha descontado en Supabase.
-    */
+    // El pedido ya está guardado. No se abre Gmail.
     cart = [];
     checkoutOpen = false;
     renderCart();
+    form.reset();
+
+    button.textContent = "ENVIANDO CONFIRMACIÓN…";
+
+    let emailSent = false;
+
+    try {
+      const emailResponse = await fetch(
+        `${SUPABASE_URL}/functions/v1/send-lorena-order`,
+        {
+          method:"POST",
+          headers:{
+            "Content-Type":"application/json",
+            apikey:SUPABASE_ANON_KEY,
+            Authorization:`Bearer ${SUPABASE_ANON_KEY}`
+          },
+          body:JSON.stringify(orderData)
+        }
+      );
+
+      const emailResult = await emailResponse.json().catch(() => null);
+
+      emailSent = emailResponse.ok && emailResult?.success === true;
+
+      if (!emailSent) {
+        console.error("Respuesta del servicio de correo:",emailResult);
+      }
+    } catch (emailError) {
+      console.error("Error de conexión con el servicio de correo:",emailError);
+    }
 
     await loadStock();
 
-    showToast("Pedido registrado. Abriendo Gmail…");
-
-    const gmailWindow = window.open(gmailUrl,"_blank");
-
-    if (!gmailWindow) {
-      window.location.href = gmailUrl;
+    if (emailSent) {
+      showToast("¡PEDIDO REALIZADO CORRECTAMENTE! Número de pedido: #" + result.order_id);
+    } else {
+      showToast("Pedido registrado: #" + result.order_id + ". El envío automático del correo aún no está confirmado.");
     }
 
   } catch (error) {
-    console.error("Error al registrar el pedido:",error);
+    console.error("Error al procesar el pedido:",error);
 
-    showToast(
-      "No se ha podido registrar el pedido. " +
-      (error.message || "Comprueba Supabase e inténtalo de nuevo.")
-    );
+    if (orderRegistered) {
+      showToast("El pedido ya está registrado. No lo repitas. Comprueba el envío del correo.");
+    } else {
+      showToast(error.message || "No se ha podido registrar el pedido. Inténtalo de nuevo.");
+    }
 
   } finally {
     orderSubmitting = false;
@@ -701,7 +714,7 @@ function showToast(message) {
   element.textContent = message;
   element.classList.add("show");
   clearTimeout(window.toastTimer);
-  window.toastTimer = setTimeout(() => element.classList.remove("show"),5000);
+  window.toastTimer = setTimeout(() => element.classList.remove("show"),6000);
 }
 
 document.getElementById("year").textContent = new Date().getFullYear();
@@ -712,4 +725,3 @@ loadStock();
 </script>
 </body>
 </html>
-
