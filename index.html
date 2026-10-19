@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,7 +10,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
 :root{--negro:#090909;--panel:#121212;--blanco:#f4f1e9;--dorado:#c5a46d;--gris:#a7a39b;--borde:rgba(197,164,109,.25)}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -73,10 +73,7 @@ h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(42px,5
 .product-size{display:inline-block;margin-top:12px;padding:7px 10px;border:1px solid #39352d;color:var(--gris);font-size:10px}
 .swatches{display:flex;gap:8px;margin-top:13px}
 .swatch{width:14px;height:14px;border-radius:50%;border:1px solid #888}
-.black{background:#111}
-.white{background:#eee}
-.grey{background:#777}
-.beige{background:#c8bba7}
+.black{background:#111}.white{background:#eee}.grey{background:#777}.beige{background:#c8bba7}
 .story-band{display:grid;grid-template-columns:1fr 1fr;min-height:480px;background:#11100e;border-top:1px solid #27251f;border-bottom:1px solid #27251f}
 .story-image{min-height:420px;position:relative;overflow:hidden;background:#171614}
 .story-image img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:brightness(.8)}
@@ -122,6 +119,7 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
 .order-form input:focus,.order-form select:focus{border-color:var(--dorado)}
 .order-form select option{background:#090909;color:var(--blanco)}
 .order-submit{width:100%;margin-top:12px;font-weight:600}
+.order-submit:disabled{opacity:.55;cursor:wait}
 .checkout-start{margin-top:20px}
 .checkout-start .cta{width:100%}
 #checkout-start[hidden],#checkout-form-area[hidden]{display:none!important}
@@ -134,55 +132,30 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
 .toast{position:fixed;z-index:70;bottom:24px;left:50%;transform:translateX(-50%);background:var(--dorado);color:#111;padding:14px 22px;font-size:10px;letter-spacing:1px;display:none;max-width:90%;text-align:center;line-height:1.7}
 .toast.show{display:block}
 @media(max-width:900px){
-.nav{grid-template-columns:1fr auto}
-.wordmark{grid-column:1;grid-row:1;text-align:left;font-size:32px}
-.navlinks{grid-column:1/-1;grid-row:2;justify-content:center}
-.nav-right{grid-column:2;grid-row:1}
-.hero{grid-template-columns:1fr}
-.hero-copy{padding:75px 8% 35px;align-items:center;text-align:center}
-.hero-visual{min-height:390px;padding:0 12% 45px}
-.hero-visual img{max-height:440px}
-.hero-index{display:none}
-.grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-.story-band{grid-template-columns:1fr}
-.story-image{min-height:360px}
-.story-copy{padding:65px 8%}
+.nav{grid-template-columns:1fr auto}.wordmark{grid-column:1;grid-row:1;text-align:left;font-size:32px}
+.navlinks{grid-column:1/-1;grid-row:2;justify-content:center}.nav-right{grid-column:2;grid-row:1}
+.hero{grid-template-columns:1fr}.hero-copy{padding:75px 8% 35px;align-items:center;text-align:center}
+.hero-visual{min-height:390px;padding:0 12% 45px}.hero-visual img{max-height:440px}
+.hero-index{display:none}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.story-band{grid-template-columns:1fr}.story-image{min-height:360px}.story-copy{padding:65px 8%}
 .section-head{align-items:flex-start;flex-direction:column}
 }
 @media(max-width:520px){
-.topline{font-size:8px;letter-spacing:1.5px}
-.nav{padding:15px 5%;gap:12px}
-.wordmark{font-size:27px;letter-spacing:6px}
-.nav-right button{padding:10px;font-size:8px}
-.navlinks{gap:18px}
-.navlinks a{font-size:8px;letter-spacing:1px}
-.hero{min-height:auto}
-.hero-copy{padding:70px 7% 35px}
-.hero h1{font-size:75px}
-.hero h1 span{font-size:10px;letter-spacing:2px}
-.hero-visual{min-height:300px}
-.hero-stamp{font-size:13px;padding:11px}
-.section{padding:70px 5%}
-.grid{gap:25px 11px}
-.card-meta{display:block}
-.card-meta h3{font-size:21px}
-.price{display:block;padding-top:7px}
-.badge{font-size:7px;top:8px;left:8px;padding:6px}
-.quick{font-size:8px;padding:10px}
-.card-desc{font-size:9px}
-.story-image{min-height:260px}
-.story-copy{padding:55px 7%}
-.values{grid-template-columns:1fr}
-.value{border-right:0;border-bottom:1px solid #292722}
-.value:last-child{border-bottom:0}
-footer{grid-template-columns:1fr;text-align:center}
-footer .foot-right{text-align:center}
-.foot-left{order:2}
-.foot-right{order:3}
-.cart-drawer{padding:20px}
-.cart-row{grid-template-columns:78px minmax(0,1fr);gap:12px}
-.cart-product-image{width:78px;height:100px}
-.cart-row-info strong{font-size:18px}
+.topline{font-size:8px;letter-spacing:1.5px}.nav{padding:15px 5%;gap:12px}
+.wordmark{font-size:27px;letter-spacing:6px}.nav-right button{padding:10px;font-size:8px}
+.navlinks{gap:18px}.navlinks a{font-size:8px;letter-spacing:1px}
+.hero{min-height:auto}.hero-copy{padding:70px 7% 35px}.hero h1{font-size:75px}
+.hero h1 span{font-size:10px;letter-spacing:2px}.hero-visual{min-height:300px}
+.hero-stamp{font-size:13px;padding:11px}.section{padding:70px 5%}
+.grid{gap:25px 11px}.card-meta{display:block}.card-meta h3{font-size:21px}
+.price{display:block;padding-top:7px}.badge{font-size:7px;top:8px;left:8px;padding:6px}
+.quick{font-size:8px;padding:10px}.card-desc{font-size:9px}
+.story-image{min-height:260px}.story-copy{padding:55px 7%}
+.values{grid-template-columns:1fr}.value{border-right:0;border-bottom:1px solid #292722}
+.value:last-child{border-bottom:0}footer{grid-template-columns:1fr;text-align:center}
+footer .foot-right{text-align:center}.foot-left{order:2}.foot-right{order:3}
+.cart-drawer{padding:20px}.cart-row{grid-template-columns:78px minmax(0,1fr);gap:12px}
+.cart-product-image{width:78px;height:100px}.cart-row-info strong{font-size:18px}
 .cart-total strong{font-size:20px}
 }
 </style>
@@ -244,58 +217,49 @@ footer .foot-right{text-align:center}
 <div class="overlay" id="overlay" onclick="closeCart()" aria-hidden="true"></div>
 <aside class="cart-drawer" id="cart" aria-label="Carrito de compra" aria-hidden="true">
 <div class="drawer-top"><h2>Tu carrito</h2><button class="icon-btn" type="button" onclick="closeCart()" aria-label="Cerrar carrito">×</button></div>
-
 <div id="cart-items" aria-live="polite"></div>
-
 <div class="cart-total"><span>Total del pedido</span><strong id="total">0,00 €</strong></div>
-
 <div id="checkout-start" class="checkout-start" hidden>
 <button class="cta" type="button" onclick="showCheckout()">Comprar ↗️</button>
 </div>
-
 <div id="checkout-form-area" hidden>
-<p class="drawer-note">Revisa tu pedido, completa tus datos y confirma la compra. El pedido se registrará en el sistema y se solicitará el envío automático del correo.</p>
+<p class="drawer-note">Completa tus datos para enviar el pedido directamente a la tienda.</p>
 <form id="order-form" class="order-form">
 <label for="customer-name">Nombre completo</label>
 <input id="customer-name" name="name" autocomplete="name" required maxlength="100" placeholder="Tu nombre">
-
 <label for="customer-phone">Teléfono</label>
 <input id="customer-phone" name="phone" autocomplete="tel" required type="tel" maxlength="30" placeholder="Tu teléfono">
-
 <label for="delivery-method">Forma de entrega</label>
 <select id="delivery-method" name="delivery-method" required>
 <option value="Entrega en persona">Entrega en persona</option>
+<option value="Por acordar">Por acordar con la tienda</option>
 </select>
-
 <label for="delivery-place">Lugar de entrega</label>
 <input id="delivery-place" name="place" required maxlength="200" placeholder="Ciudad o lugar de entrega">
-
 <label for="customer-notes">Observaciones</label>
 <input id="customer-notes" name="notes" maxlength="500" placeholder="Detalles adicionales (opcional)">
-
-<button class="cta order-submit" type="submit">CONFIRMAR PEDIDO ↗</button>
+<button class="cta order-submit" id="order-submit" type="submit">Finalizar pedido ↗️</button>
 </form>
 </div>
 </aside>
-
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 "use strict";
 
-const ORDER_EMAIL = "boulahtoufyousseff15@gmail.com";
+const ORDER_EMAIL = "boulahtoussef15@gmail.com";
 const SUPABASE_URL = "https://jmcjqlqkzsahlogtdmyk.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_W3B3n9v20W_y7VXb2JPOYQ_nwsr3gUa";
+const FORM_SUBMIT_URL = "https://formsubmit.co/ajax/" + encodeURIComponent(ORDER_EMAIL);
 
 let stockLoaded = false;
 let stockError = false;
 let currentFilter = "all";
 let checkoutOpen = false;
-let orderSubmitting = false;
+let orderInProgress = false;
 
 function isSupabaseConfigured() {
-  return SUPABASE_URL.startsWith("https://") &&
-    SUPABASE_ANON_KEY.length > 20;
+  return SUPABASE_URL.startsWith("https://") && SUPABASE_ANON_KEY.length > 20;
 }
 
 const products = [
@@ -313,7 +277,7 @@ const products = [
 let cart = [];
 
 function euro(number) {
-  return Number(number).toLocaleString("es-ES",{style:"currency",currency:"EUR"});
+  return number.toLocaleString("es-ES",{style:"currency",currency:"EUR"});
 }
 
 async function loadStock() {
@@ -327,21 +291,11 @@ async function loadStock() {
   try {
     const response = await fetch(
       `${SUPABASE_URL}/rest/v1/lorena_inventory?select=id,stock`,
-      {
-        method:"GET",
-        headers:{
-          apikey:SUPABASE_ANON_KEY,
-          Authorization:`Bearer ${SUPABASE_ANON_KEY}`
-        }
-      }
+      {method:"GET",headers:{apikey:SUPABASE_ANON_KEY,Authorization:`Bearer ${SUPABASE_ANON_KEY}`}}
     );
-
-    if (!response.ok) {
-      throw new Error("No se pudo consultar el inventario.");
-    }
+    if (!response.ok) throw new Error("No se pudo consultar el inventario.");
 
     const inventory = await response.json();
-
     products.forEach(product => {
       const row = inventory.find(item => Number(item.id) === product.id);
       product.stock = row ? Math.max(0,Number(row.stock)||0) : 0;
@@ -355,14 +309,13 @@ async function loadStock() {
       if (!product || product.stock < 1) return false;
       item.stock = product.stock;
       if (item.qty > product.stock) item.qty = product.stock;
-      return true;
+      return item.qty > 0;
     });
 
     renderProducts(currentFilter);
     renderCart();
     return true;
   } catch (error) {
-    console.error("Error al consultar el stock:",error);
     stockLoaded = false;
     stockError = true;
     renderProducts(currentFilter);
@@ -407,19 +360,16 @@ document.querySelectorAll(".filter").forEach(button => {
 function addToCart(id) {
   const product = products.find(item => item.id === id);
   if (!product) return;
-
-  if (!stockLoaded || stockError) {
+  if (!stockLoaded) {
     showToast("Espera a que se compruebe el stock antes de añadir productos.");
     return;
   }
-
   if (product.stock < 1) {
     showToast("Este producto está agotado.");
     return;
   }
 
   const existing = cart.find(item => item.id === id);
-
   if (existing && existing.qty >= product.stock) {
     showToast("No quedan más unidades disponibles de este producto.");
     return;
@@ -436,11 +386,8 @@ function addToCart(id) {
 function removeFromCart(id) {
   const product = cart.find(item => item.id === id);
   if (!product) return;
-
   cart = cart.filter(item => item.id !== id);
-
   if (cart.length === 0) checkoutOpen = false;
-
   renderCart();
   showToast(product.name + " eliminado del carrito.");
 }
@@ -448,48 +395,41 @@ function removeFromCart(id) {
 function changeQuantity(id,change) {
   const product = cart.find(item => item.id === id);
   if (!product) return;
-
   if (change > 0 && stockLoaded && product.qty >= product.stock) {
     showToast("Has alcanzado las unidades disponibles.");
     return;
   }
-
   product.qty += change;
-
   if (product.qty <= 0) {
     removeFromCart(id);
     return;
   }
-
   renderCart();
 }
 
 function showCheckout() {
-  if (cart.length === 0) {
+  if (!cart.length) {
     showToast("Añade algún producto antes de comprar.");
     return;
   }
-
+  if (!stockLoaded || stockError) {
+    showToast("No se puede verificar el stock. Inténtalo de nuevo.");
+    loadStock();
+    return;
+  }
   checkoutOpen = true;
   renderCart();
-
-  document.getElementById("checkout-form-area").scrollIntoView({
-    behavior:"smooth",
-    block:"start"
-  });
+  document.getElementById("checkout-form-area").scrollIntoView({behavior:"smooth",block:"start"});
 }
 
 function renderCart() {
   const box = document.getElementById("cart-items");
   const count = cart.reduce((total,item) => total + item.qty,0);
-
   document.getElementById("count").textContent = count;
 
   if (cart.length === 0) {
     checkoutOpen = false;
-
     box.innerHTML = `<div class="empty-cart"><p>Tu carrito está vacío. Explora la colección y añade las prendas que te gusten.</p><a class="cta" href="#coleccion" onclick="closeCart()">Explorar colección ↗️</a></div>`;
-
     document.getElementById("total").textContent = euro(0);
     document.getElementById("checkout-start").hidden = true;
     document.getElementById("checkout-form-area").hidden = true;
@@ -518,43 +458,47 @@ function renderCart() {
 
   const total = cart.reduce((sum,item) => sum + item.price * item.qty,0);
   document.getElementById("total").textContent = euro(total);
-
   document.getElementById("checkout-start").hidden = checkoutOpen;
   document.getElementById("checkout-form-area").hidden = !checkoutOpen;
 }
 
-/*
-  PROCESO DE PEDIDO:
-  1. Supabase registra el pedido y descuenta el stock.
-  2. Se solicita a la función de servidor que envíe el correo.
-  3. No se abre Gmail.
-  
-  La función send-lorena-order debe estar desplegada y configurada
-  con un proveedor de correo para que el envío automático funcione.
-*/
+async function deductStock(items) {
+  const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/descontar_stock_lorena`, {
+    method:"POST",
+    headers:{
+      "Content-Type":"application/json",
+      apikey:SUPABASE_ANON_KEY,
+      Authorization:`Bearer ${SUPABASE_ANON_KEY}`
+    },
+    body:JSON.stringify({
+      p_items:items.map(item => ({id:item.id,cantidad:item.qty}))
+    })
+  });
+
+  if (!response.ok) {
+    throw new Error("No se ha podido descontar el stock. Comprueba la configuración de Supabase.");
+  }
+
+  const result = await response.json().catch(() => null);
+  if (result && result.success === false) {
+    throw new Error(result.message || "No hay stock suficiente para completar el pedido.");
+  }
+}
+
 document.getElementById("order-form").addEventListener("submit",async function(event) {
   event.preventDefault();
+  if (orderInProgress) return;
 
-  if (orderSubmitting) return;
-
-  if (cart.length === 0) {
+  if (!cart.length) {
     showToast("Tu carrito está vacío.");
     return;
   }
 
-  if (!isSupabaseConfigured()) {
-    showToast("La conexión con Supabase no está configurada.");
-    return;
-  }
-
-  if (!stockLoaded || stockError) {
-    showToast("No se ha podido comprobar el stock. Inténtalo de nuevo.");
-    return;
-  }
-
+  const form = this;
+  const submitButton = document.getElementById("order-submit");
   const name = document.getElementById("customer-name").value.trim();
   const phone = document.getElementById("customer-phone").value.trim();
-  const deliveryMethod = "Entrega en persona";
+  const deliveryMethod = document.getElementById("delivery-method").value;
   const place = document.getElementById("delivery-place").value.trim();
   const notes = document.getElementById("customer-notes").value.trim() || "Sin observaciones";
 
@@ -563,129 +507,85 @@ document.getElementById("order-form").addEventListener("submit",async function(e
     return;
   }
 
-  const form = event.currentTarget;
-  const button = form.querySelector('button[type="submit"]');
-  const previousText = button.textContent;
-
-  orderSubmitting = true;
-  button.disabled = true;
-  button.textContent = "PROCESANDO PEDIDO…";
-
-  let orderRegistered = false;
+  orderInProgress = true;
+  submitButton.disabled = true;
+  submitButton.textContent = "Procesando pedido…";
 
   try {
-    const itemsToBuy = cart.map(item => ({
-      id: item.id,
-      qty: item.qty
-    }));
+    const stockOk = await loadStock();
+    if (!stockOk) throw new Error("No se ha podido comprobar el stock. Inténtalo de nuevo.");
 
-    // Primero registra el pedido y actualiza el inventario.
-    const response = await fetch(
-      `${SUPABASE_URL}/rest/v1/rpc/confirm_lorena_order`,
-      {
-        method:"POST",
-        headers:{
-          "Content-Type":"application/json",
-          apikey:SUPABASE_ANON_KEY,
-          Authorization:`Bearer ${SUPABASE_ANON_KEY}`
-        },
-        body:JSON.stringify({
-          p_customer_name:name,
-          p_customer_phone:phone,
-          p_delivery_method:deliveryMethod,
-          p_delivery_place:place,
-          p_customer_notes:notes,
-          p_items:itemsToBuy
-        })
-      }
-    );
+    const invalidItem = cart.find(item => {
+      const product = products.find(p => p.id === item.id);
+      return !product || product.stock < item.qty || product.stock < 1;
+    });
 
-    const result = await response.json().catch(() => null);
-
-    if (!response.ok || !result || result.success !== true) {
-      throw new Error(
-        result?.message ||
-        result?.details ||
-        result?.hint ||
-        result?.error ||
-        "Supabase no ha podido registrar el pedido."
-      );
+    if (invalidItem) {
+      renderCart();
+      throw new Error("Ha cambiado el stock. Revisa tu carrito antes de continuar.");
     }
 
-    if (!Array.isArray(result.items) || result.items.length === 0) {
-      throw new Error("No se han recibido los productos confirmados.");
-    }
+    const orderItems = cart.map(item => ({...item}));
+    const total = orderItems.reduce((sum,item) => sum + item.price * item.qty,0);
+    const orderId = "LOR-" + Date.now();
 
-    orderRegistered = true;
+    const details = orderItems.map(item =>
+      `${item.name}\nTalla: ${item.size}\nPrecio unitario: ${euro(item.price)}\nCantidad: ${item.qty}\nSubtotal: ${euro(item.price * item.qty)}`
+    ).join("\n\n");
 
-    const orderData = {
-      order_id:result.order_id,
-      customer_name:name,
-      customer_phone:phone,
-      delivery_method:deliveryMethod,
-      delivery_place:place,
-      customer_notes:notes,
-      items:result.items,
-      total:Number(result.total),
-      recipient:ORDER_EMAIL
+    /*
+      El RPC debe existir en Supabase y descontar todas las unidades
+      de forma atómica. Si no existe, el pedido se detiene aquí.
+    */
+    await deductStock(orderItems);
+
+    const emailData = {
+      _subject:`Nuevo pedido LORENA — ${orderId}`,
+      _template:"table",
+      _captcha:"false",
+      Pedido:orderId,
+      Cliente:name,
+      Telefono:phone,
+      Forma_de_entrega:deliveryMethod,
+      Lugar_de_entrega:place,
+      Observaciones:notes,
+      Productos:details,
+      Total:euro(total)
     };
 
-    // El pedido ya está guardado. No se abre Gmail.
+    let emailResponse;
+    try {
+      emailResponse = await fetch(FORM_SUBMIT_URL,{
+        method:"POST",
+        headers:{"Content-Type":"application/json","Accept":"application/json"},
+        body:JSON.stringify(emailData)
+      });
+    } catch {
+      throw new Error("El stock se ha descontado, pero no se pudo conectar con el servicio de correo. Contacta con la tienda antes de repetir el pedido.");
+    }
+
+    if (!emailResponse.ok) {
+      throw new Error("El stock se ha descontado, pero el servicio de correo no aceptó el pedido. Contacta con la tienda antes de repetirlo.");
+    }
+
+    const emailResult = await emailResponse.json();
+    if (emailResult.success !== true && emailResult.success !== "true") {
+      throw new Error("El stock se ha descontado, pero el correo no ha confirmado el envío. Comprueba FormSubmit antes de repetir el pedido.");
+    }
+
     cart = [];
     checkoutOpen = false;
-    renderCart();
     form.reset();
-
-    button.textContent = "ENVIANDO CONFIRMACIÓN…";
-
-    let emailSent = false;
-
-    try {
-      const emailResponse = await fetch(
-        `${SUPABASE_URL}/functions/v1/send-lorena-order`,
-        {
-          method:"POST",
-          headers:{
-            "Content-Type":"application/json",
-            apikey:SUPABASE_ANON_KEY,
-            Authorization:`Bearer ${SUPABASE_ANON_KEY}`
-          },
-          body:JSON.stringify(orderData)
-        }
-      );
-
-      const emailResult = await emailResponse.json().catch(() => null);
-
-      emailSent = emailResponse.ok && emailResult?.success === true;
-
-      if (!emailSent) {
-        console.error("Respuesta del servicio de correo:",emailResult);
-      }
-    } catch (emailError) {
-      console.error("Error de conexión con el servicio de correo:",emailError);
-    }
-
     await loadStock();
-
-    if (emailSent) {
-      showToast("¡PEDIDO REALIZADO CORRECTAMENTE! Número de pedido: #" + result.order_id);
-    } else {
-      showToast("Pedido registrado: #" + result.order_id + ". El envío automático del correo aún no está confirmado.");
-    }
-
+    renderCart();
+    showToast("¡Pedido enviado correctamente! Referencia: " + orderId);
   } catch (error) {
-    console.error("Error al procesar el pedido:",error);
-
-    if (orderRegistered) {
-      showToast("El pedido ya está registrado. No lo repitas. Comprueba el envío del correo.");
-    } else {
-      showToast(error.message || "No se ha podido registrar el pedido. Inténtalo de nuevo.");
-    }
-
+    showToast(error.message || "No se pudo completar el pedido.");
+    await loadStock();
   } finally {
-    orderSubmitting = false;
-    button.disabled = false;
-    button.textContent = previousText;
+    orderInProgress = false;
+    submitButton.disabled = false;
+    submitButton.textContent = "Finalizar pedido ↗️";
   }
 });
 
@@ -714,11 +614,10 @@ function showToast(message) {
   element.textContent = message;
   element.classList.add("show");
   clearTimeout(window.toastTimer);
-  window.toastTimer = setTimeout(() => element.classList.remove("show"),6000);
+  window.toastTimer = setTimeout(() => element.classList.remove("show"),5000);
 }
 
 document.getElementById("year").textContent = new Date().getFullYear();
-
 renderProducts();
 renderCart();
 loadStock();
