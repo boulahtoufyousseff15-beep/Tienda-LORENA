@@ -123,6 +123,10 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
 .order-form input:focus,.order-form select:focus{border-color:var(--dorado)}
 .order-form select option{background:#090909;color:var(--blanco)}
 .order-submit{width:100%;margin-top:12px;font-weight:600}
+.checkout-start{margin-top:20px}
+.checkout-start .cta{width:100%}
+#checkout-start[hidden],#checkout-form-area[hidden]{display:none!important}
+#checkout-form-area{margin-top:24px;padding-top:20px;border-top:1px solid #302e28}
 .overlay{visibility:hidden;opacity:0;pointer-events:none;position:fixed;z-index:40;inset:0;background:#000a;transition:opacity .35s,visibility .35s}
 .overlay.show{visibility:visible;opacity:1;pointer-events:auto}
 .empty-cart{padding:25px 0}
@@ -195,6 +199,7 @@ footer .foot-right{text-align:center}
 <div class="nav-right"><button type="button" onclick="openCart()" aria-label="Abrir carrito">Carrito · <span id="count">0</span></button></div>
 </div>
 </header>
+
 <main>
 <section class="hero" id="inicio">
 <div class="hero-copy">
@@ -206,7 +211,9 @@ footer .foot-right{text-align:center}
 <div class="hero-visual"><img src="lorena11.png" alt="Conjunto negro de verano LORENA"><div class="hero-stamp">EDICIÓN LORENA · N.º 01</div></div>
 <div class="hero-index">DESDE 2025 / MARCA INDEPENDIENTE</div>
 </section>
+
 <div class="marquee"><span>LORENA</span> ✳ <span>ESTILO CON PERSONALIDAD</span> ✳ <span>EL VALOR ESTÁ EN LOS DETALLES</span> ✳ <span>LORENA</span> ✳ <span>ESTILO CON PERSONALIDAD</span></div>
+
 <section class="section" id="coleccion">
 <div class="section-head"><div><div class="kicker">01 / Selección de temporada</div><h2>Las piezas<br>de LORENA.</h2></div><p>Conjuntos, zapatillas y prendas coordinadas. Elige tus productos y consulta el resumen de tu carrito.</p></div>
 <div class="filters">
@@ -217,50 +224,75 @@ footer .foot-right{text-align:center}
 </div>
 <div class="grid" id="product-grid"></div>
 </section>
+
 <section class="story-band" id="historia">
 <div class="story-image"><img src="lorena12.png" alt="Colección de invierno LORENA" loading="lazy"></div>
 <div class="story-copy"><div class="kicker">02 / Nuestra identidad</div><h2>La diferencia<br>está en el detalle.</h2><p>Costuras curvas, contrastes limpios, logotipos discretos y una paleta que combina negro, blanco, gris y tonos neutros. LORENA nace para construir un estilo reconocible sin necesidad de exagerar.</p><a class="cta dark" href="#coleccion">Ver las piezas <span>↗️</span></a></div>
 </section>
+
 <div class="values">
 <div class="value"><b>01</b><span>Líneas distintivas</span></div><div class="value"><b>02</b><span>Detalles cuidados</span></div><div class="value"><b>03</b><span>Identidad propia</span></div>
 </div>
 <section class="news"><div class="kicker">LORENA</div><h2>El comienzo de LORENA.</h2><p>Descubre nuestra selección y elige las prendas que más te gusten.</p><a class="cta" href="#coleccion">Descubrir diseños <span>↗️</span></a></section>
 </main>
+
 <footer>
 <div class="foot-left">MARCA DE ROPA INDEPENDIENTE<br>NEGRO · BLANCO · DORADO</div>
 <a class="wordmark" href="#inicio">LORENA</a>
 <div class="foot-right">©️ <span id="year"></span> LORENA<br>DISEÑADO CON INTENCIÓN</div>
 </footer>
+
 <div class="overlay" id="overlay" onclick="closeCart()" aria-hidden="true"></div>
 <aside class="cart-drawer" id="cart" aria-label="Carrito de compra" aria-hidden="true">
 <div class="drawer-top"><h2>Tu carrito</h2><button class="icon-btn" type="button" onclick="closeCart()" aria-label="Cerrar carrito">×</button></div>
+
 <div id="cart-items" aria-live="polite"></div>
+
 <div class="cart-total"><span>Total del pedido</span><strong id="total">0,00 €</strong></div>
-<p class="drawer-note">Revisa las fotografías, las tallas, las cantidades y los precios. Al continuar, se abrirá Gmail con tu solicitud preparada. Deberás revisar el mensaje y pulsar «Enviar».</p>
+
+<div id="checkout-start" class="checkout-start" hidden>
+<button class="cta" type="button" onclick="showCheckout()">Comprar ↗️</button>
+</div>
+
+<div id="checkout-form-area" hidden>
+<p class="drawer-note">Revisa tu pedido y completa tus datos para preparar la solicitud. Después se abrirá Gmail para que puedas enviarla.</p>
 <form id="order-form" class="order-form">
-<label for="customer-name">Nombre completo</label><input id="customer-name" name="name" autocomplete="name" required maxlength="100" placeholder="Tu nombre">
-<label for="customer-phone">Teléfono</label><input id="customer-phone" name="phone" autocomplete="tel" required type="tel" maxlength="30" placeholder="Tu teléfono">
+<label for="customer-name">Nombre completo</label>
+<input id="customer-name" name="name" autocomplete="name" required maxlength="100" placeholder="Tu nombre">
+
+<label for="customer-phone">Teléfono</label>
+<input id="customer-phone" name="phone" autocomplete="tel" required type="tel" maxlength="30" placeholder="Tu teléfono">
+
 <label for="delivery-method">Forma de entrega</label>
-<select id="delivery-method" name="delivery-method" required><option value="Entrega en persona">Entrega en persona</option><option value="Por acordar">Por acordar con la tienda</option></select>
-<label for="delivery-place">Lugar de entrega</label><input id="delivery-place" name="place" required maxlength="200" placeholder="Ciudad o lugar de entrega">
-<label for="customer-notes">Observaciones</label><input id="customer-notes" name="notes" maxlength="500" placeholder="Detalles adicionales (opcional)">
+<select id="delivery-method" name="delivery-method" required>
+<option value="Entrega en persona">Entrega en persona</option>
+<option value="Por acordar">Por acordar con la tienda</option>
+</select>
+
+<label for="delivery-place">Lugar de entrega</label>
+<input id="delivery-place" name="place" required maxlength="200" placeholder="Ciudad o lugar de entrega">
+
+<label for="customer-notes">Observaciones</label>
+<input id="customer-notes" name="notes" maxlength="500" placeholder="Detalles adicionales (opcional)">
+
 <button class="cta order-submit" type="submit">Preparar pedido en Gmail ↗️</button>
 </form>
+</div>
 </aside>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 "use strict";
 
 const ORDER_EMAIL = "boulahtoufyoussef15@gmail.com";
-
-/* SUPABASE: URL DEL PROYECTO Y CLAVE PÚBLICA */
 const SUPABASE_URL = "https://jmcjqlqkzsahlogtdmyk.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_W3B3n9v20W_y7VXb2JPOYQ_nwsr3gUa";
 
 let stockLoaded = false;
 let stockError = false;
 let currentFilter = "all";
+let checkoutOpen = false;
 
 function isSupabaseConfigured() {
   return SUPABASE_URL.startsWith("https://") &&
@@ -272,7 +304,7 @@ const products = [
   {id:2,name:"Conjunto de invierno — Blanco",sub:"Chaqueta y pantalón · Blanco",category:"winter",image:"lorena2.png",color:"white",price:45,size:"S",stock:null},
   {id:3,name:"Conjunto de invierno — Negro",sub:"Chaqueta y pantalón · Negro",category:"winter",image:"lorena3.png",color:"black",price:45,size:"S",stock:null},
   {id:4,name:"Conjunto de verano — Beige",sub:"Camiseta y pantalón corto · Beige",category:"sets",image:"lorena4.png",color:"beige",price:35,size:"S",stock:null},
-  {id:5,name:"Conjunto de verano — Blanco",sub:"Camiseta y pantalón corto · Blanco",category:"sets",image:"lorena5.png",color:"white",price:35,size:"S",stock:null},
+  {id:5,name:"Conjunto de verano — Blanco",sub:"Camiseta y pantalón corto · Blanco",category:"sets",image:"lorena5.png",color:"white",price:35,size: "S",stock:null},
   {id:6,name:"Conjunto de verano — Negro",sub:"Camiseta y pantalón corto · Negro",category:"sets",image:"lorena6.jpeg",color:"black",price:35,size:"S",stock:null},
   {id:7,name:"Zapatillas LR — Negras",sub:"Zapatillas · Negro",category:"shoes",image:"lorena7.png",color:"black",price:50,size:"40",stock:null},
   {id:8,name:"Zapatillas LR — Grises",sub:"Zapatillas · Gris",category:"shoes",image:"lorena8.png",color:"grey",price:50,size:"40",stock:null},
@@ -285,9 +317,6 @@ function euro(number) {
   return number.toLocaleString("es-ES",{style:"currency",currency:"EUR"});
 }
 
-/* CONSULTA DE STOCK
-   Esta función consulta lorena_inventory. Esa tabla debe existir en
-   Supabase y tener las columnas id y stock para que funcione. */
 async function loadStock() {
   if (!isSupabaseConfigured()) {
     stockLoaded = false;
@@ -374,17 +403,27 @@ document.querySelectorAll(".filter").forEach(button => {
 function addToCart(id) {
   const product = products.find(item => item.id === id);
   if (!product) return;
-  if (stockLoaded && product.stock < 1) {
+
+  if (!stockLoaded) {
+    showToast("Espera a que se compruebe el stock antes de añadir productos.");
+    return;
+  }
+
+  if (product.stock < 1) {
     showToast("Este producto está agotado.");
     return;
   }
+
   const existing = cart.find(item => item.id === id);
-  if (stockLoaded && existing && existing.qty >= product.stock) {
+
+  if (existing && existing.qty >= product.stock) {
     showToast("No quedan más unidades disponibles de este producto.");
     return;
   }
+
   if (existing) existing.qty++;
   else cart.push({...product,qty:1});
+
   renderCart();
   openCart();
   showToast(product.name + " añadido al carrito.");
@@ -393,7 +432,11 @@ function addToCart(id) {
 function removeFromCart(id) {
   const product = cart.find(item => item.id === id);
   if (!product) return;
+
   cart = cart.filter(item => item.id !== id);
+
+  if (cart.length === 0) checkoutOpen = false;
+
   renderCart();
   showToast(product.name + " eliminado del carrito.");
 }
@@ -401,26 +444,51 @@ function removeFromCart(id) {
 function changeQuantity(id,change) {
   const product = cart.find(item => item.id === id);
   if (!product) return;
+
   if (change > 0 && stockLoaded && product.qty >= product.stock) {
     showToast("Has alcanzado las unidades disponibles.");
     return;
   }
+
   product.qty += change;
+
   if (product.qty <= 0) {
     removeFromCart(id);
     return;
   }
+
   renderCart();
+}
+
+function showCheckout() {
+  if (cart.length === 0) {
+    showToast("Añade algún producto antes de comprar.");
+    return;
+  }
+
+  checkoutOpen = true;
+  renderCart();
+
+  document.getElementById("checkout-form-area").scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
 }
 
 function renderCart() {
   const box = document.getElementById("cart-items");
   const count = cart.reduce((total,item) => total + item.qty,0);
+
   document.getElementById("count").textContent = count;
 
   if (cart.length === 0) {
+    checkoutOpen = false;
+
     box.innerHTML = `<div class="empty-cart"><p>Tu carrito está vacío. Explora la colección y añade las prendas que te gusten.</p><a class="cta" href="#coleccion" onclick="closeCart()">Explorar colección ↗️</a></div>`;
+
     document.getElementById("total").textContent = euro(0);
+    document.getElementById("checkout-start").hidden = true;
+    document.getElementById("checkout-form-area").hidden = true;
     return;
   }
 
@@ -428,7 +496,9 @@ function renderCart() {
     <div class="cart-row">
       <img class="cart-product-image" src="${item.image}" alt="${item.name}" onerror="this.style.opacity='0.2'">
       <div class="cart-row-info">
-        <strong>${item.name}</strong><small>${item.sub}</small><small>Talla: ${item.size}</small>
+        <strong>${item.name}</strong>
+        <small>${item.sub}</small>
+        <small>Talla: ${item.size}</small>
         ${stockLoaded ? `<small>Unidades disponibles: ${item.stock}</small>` : ""}
         <div class="cart-item-price">${euro(item.price)} / unidad</div>
         <div class="cart-subtotal">Subtotal: ${euro(item.price * item.qty)}</div>
@@ -444,6 +514,9 @@ function renderCart() {
 
   const total = cart.reduce((sum,item) => sum + item.price * item.qty,0);
   document.getElementById("total").textContent = euro(total);
+
+  document.getElementById("checkout-start").hidden = checkoutOpen;
+  document.getElementById("checkout-form-area").hidden = !checkoutOpen;
 }
 
 document.getElementById("order-form").addEventListener("submit",async function(event) {
@@ -453,20 +526,11 @@ document.getElementById("order-form").addEventListener("submit",async function(e
     showToast("Tu carrito está vacío.");
     return;
   }
-  if (stockError) {
+
+  if (!stockLoaded || stockError) {
     showToast("No podemos verificar el stock ahora. Inténtalo más tarde.");
+    await loadStock();
     return;
-  }
-  if (stockLoaded) {
-    const invalidItem = cart.find(item => {
-      const product = products.find(p => p.id === item.id);
-      return !product || product.stock < item.qty || product.stock < 1;
-    });
-    if (invalidItem) {
-      showToast("Hay cantidades que ya no están disponibles. Revisa el carrito.");
-      await loadStock();
-      return;
-    }
   }
 
   const name = document.getElementById("customer-name").value.trim();
@@ -480,6 +544,19 @@ document.getElementById("order-form").addEventListener("submit",async function(e
     return;
   }
 
+  await loadStock();
+
+  const invalidItem = cart.find(item => {
+    const product = products.find(p => p.id === item.id);
+    return !product || product.stock < item.qty || product.stock < 1;
+  });
+
+  if (invalidItem || !stockLoaded) {
+    showToast("Ha cambiado el stock. Revisa tu carrito e inténtalo de nuevo.");
+    renderCart();
+    return;
+  }
+
   const items = cart.map(item =>
     "- " + item.name +
     "\n  Talla: " + item.size +
@@ -490,12 +567,17 @@ document.getElementById("order-form").addEventListener("submit",async function(e
 
   const total = cart.reduce((sum,item) => sum + item.price * item.qty,0);
   const subject = "Pedido LORENA — " + name;
+
   const body =
     "SOLICITUD DE PEDIDO LORENA\n\n" +
-    "DATOS DEL CLIENTE\nNombre: " + name + "\nTeléfono: " + phone +
-    "\nForma de entrega: " + deliveryMethod + "\nLugar de entrega: " + place +
-    "\nObservaciones: " + notes + "\n\nPRODUCTOS SELECCIONADOS\n\n" +
-    items + "\n\nTOTAL DEL PEDIDO: " + euro(total) +
+    "DATOS DEL CLIENTE\nNombre: " + name +
+    "\nTeléfono: " + phone +
+    "\nForma de entrega: " + deliveryMethod +
+    "\nLugar de entrega: " + place +
+    "\nObservaciones: " + notes +
+    "\n\nPRODUCTOS SELECCIONADOS\n\n" +
+    items +
+    "\n\nTOTAL DEL PEDIDO: " + euro(total) +
     "\n\nEste correo contiene una solicitud de pedido. La compra no se considera confirmada hasta que la tienda revise la solicitud y confirme los detalles.\n";
 
   const gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1" +
@@ -504,7 +586,9 @@ document.getElementById("order-form").addEventListener("submit",async function(e
     "&body=" + encodeURIComponent(body);
 
   const openedWindow = window.open(gmailUrl,"_blank");
+
   if (!openedWindow) window.location.href = gmailUrl;
+
   showToast("Solicitud preparada. Revisa Gmail y pulsa Enviar.");
 });
 
@@ -543,3 +627,5 @@ loadStock();
 </script>
 </body>
 </html>
+
+
