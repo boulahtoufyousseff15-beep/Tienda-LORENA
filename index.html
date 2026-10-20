@@ -23,10 +23,7 @@
 
 *{box-sizing:border-box;margin:0;padding:0}
 
-html{
-  scroll-behavior:smooth;
-  scroll-padding-top:100px;
-}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
 
 body{
   background:var(--negro);
@@ -71,14 +68,9 @@ header{
   gap:24px;
 }
 
-.navlinks{
-  display:flex;
-  gap:25px;
-  align-items:center;
-}
+.navlinks{display:flex;gap:25px;align-items:center}
 
-.navlinks a,
-.nav-right button{
+.navlinks a,.nav-right button{
   font-size:9px;
   letter-spacing:2px;
   text-transform:uppercase;
@@ -98,11 +90,7 @@ header{
   white-space:nowrap;
 }
 
-.nav-right{
-  display:flex;
-  justify-content:flex-end;
-  align-items:center;
-}
+.nav-right{display:flex;justify-content:flex-end;align-items:center}
 
 .nav-right button{
   border:1px solid var(--borde);
@@ -110,10 +98,7 @@ header{
   padding:12px 15px;
 }
 
-.nav-right button:hover{
-  color:var(--dorado);
-  border-color:var(--dorado);
-}
+.nav-right button:hover{color:var(--dorado);border-color:var(--dorado)}
 
 .hero{
   min-height:650px;
@@ -181,21 +166,10 @@ header{
   transition:.3s;
 }
 
-.cta:hover{
-  background:transparent;
-  color:var(--dorado);
-}
+.cta:hover{background:transparent;color:var(--dorado)}
 
-.cta.dark{
-  background:transparent;
-  color:var(--blanco);
-  border-color:#514a3d;
-}
-
-.cta.dark:hover{
-  color:var(--dorado);
-  border-color:var(--dorado);
-}
+.cta.dark{background:transparent;color:var(--blanco);border-color:#514a3d}
+.cta.dark:hover{color:var(--dorado);border-color:var(--dorado)}
 
 .hero-visual{
   position:relative;
@@ -261,11 +235,7 @@ header{
 
 .marquee span{margin:0 25px}
 
-.section{
-  max-width:1440px;
-  margin:auto;
-  padding:100px 6%;
-}
+.section{max-width:1440px;margin:auto;padding:100px 6%}
 
 .section-head{
   display:flex;
@@ -291,12 +261,7 @@ h2{
   line-height:1.9;
 }
 
-.filters{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:32px;
-}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px}
 
 .filter{
   background:transparent;
@@ -308,11 +273,7 @@ h2{
   text-transform:uppercase;
 }
 
-.filter.active,
-.filter:hover{
-  border-color:var(--dorado);
-  color:var(--dorado);
-}
+.filter.active,.filter:hover{border-color:var(--dorado);color:var(--dorado)}
 
 .grid{
   display:grid;
@@ -367,23 +328,11 @@ h2{
   transition:.25s;
 }
 
-.quick:hover{
-  color:var(--dorado);
-  border-color:var(--dorado);
-}
+.quick:hover{color:var(--dorado);border-color:var(--dorado)}
 
-.quick:disabled,
-.quantity-controls button:disabled{
-  opacity:.4;
-  cursor:not-allowed;
-}
+.quick:disabled,.quantity-controls button:disabled{opacity:.4;cursor:not-allowed}
 
-.card-meta{
-  padding:17px 2px 0;
-  display:flex;
-  justify-content:space-between;
-  gap:12px;
-}
+.card-meta{padding:17px 2px 0;display:flex;justify-content:space-between;gap:12px}
 
 .card-meta h3{
   font-family:'Cormorant Garamond',serif;
@@ -391,25 +340,11 @@ h2{
   font-weight:400;
 }
 
-.price{
-  color:var(--dorado);
-  font-size:12px;
-  white-space:nowrap;
-  padding-top:7px;
-}
+.price{color:var(--dorado);font-size:12px;white-space:nowrap;padding-top:7px}
 
-.card-desc{
-  font-size:10px;
-  color:var(--gris);
-  margin-top:7px;
-  line-height:1.8;
-}
+.card-desc{font-size:10px;color:var(--gris);margin-top:7px;line-height:1.8}
 
-.stock-status{
-  color:var(--dorado);
-  min-height:18px;
-}
-
+.stock-status{color:var(--dorado);min-height:18px}
 .stock-status.stock-error{color:#d9b8a8}
 
 .product-size{
@@ -421,19 +356,8 @@ h2{
   font-size:10px;
 }
 
-.swatches{
-  display:flex;
-  gap:8px;
-  margin-top:13px;
-}
-
-.swatch{
-  width:14px;
-  height:14px;
-  border-radius:50%;
-  border:1px solid #888;
-}
-
+.swatches{display:flex;gap:8px;margin-top:13px}
+.swatch{width:14px;height:14px;border-radius:50%;border:1px solid #888}
 .black{background:#111}
 .white{background:#eee}
 .grey{background:#777}
@@ -448,12 +372,7 @@ h2{
   border-bottom:1px solid #27251f;
 }
 
-.story-image{
-  min-height:420px;
-  position:relative;
-  overflow:hidden;
-  background:#171614;
-}
+.story-image{min-height:420px;position:relative;overflow:hidden;background:#171614}
 
 .story-image img{
   width:100%;
@@ -482,18 +401,9 @@ h2{
   margin-bottom:28px;
 }
 
-.values{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  border-bottom:1px solid #292722;
-}
+.values{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #292722}
 
-.value{
-  padding:35px 20px;
-  text-align:center;
-  border-right:1px solid #292722;
-}
-
+.value{padding:35px 20px;text-align:center;border-right:1px solid #292722}
 .value:last-child{border-right:0}
 
 .value b{
@@ -519,12 +429,7 @@ h2{
 
 .news h2{margin:20px 0}
 
-.news p{
-  font-size:11px;
-  line-height:2;
-  color:var(--gris);
-  margin-bottom:25px;
-}
+.news p{font-size:11px;line-height:2;color:var(--gris);margin-bottom:25px}
 
 footer{
   border-top:1px solid #292722;
@@ -538,14 +443,11 @@ footer{
   letter-spacing:1.5px;
 }
 
-footer .wordmark{
-  font-size:29px;
-  color:var(--blanco);
-}
-
+footer .wordmark{font-size:29px;color:var(--blanco)}
 .foot-right{text-align:right}
 
 /* CARRITO */
+
 .cart-drawer{
   position:fixed;
   z-index:50;
@@ -561,10 +463,7 @@ footer .wordmark{
   overscroll-behavior:contain;
 }
 
-.cart-drawer.open{
-  transform:translateX(0);
-  visibility:visible;
-}
+.cart-drawer.open{transform:translateX(0);visibility:visible}
 
 .drawer-top{
   display:flex;
@@ -576,12 +475,7 @@ footer .wordmark{
 
 .drawer-top h2{font-size:35px}
 
-.icon-btn{
-  background:none;
-  border:0;
-  color:var(--dorado);
-  font-size:28px;
-}
+.icon-btn{background:none;border:0;color:var(--dorado);font-size:28px}
 
 .cart-row{
   padding:18px 0;
@@ -612,33 +506,13 @@ footer .wordmark{
   overflow-wrap:anywhere;
 }
 
-.cart-row small{
-  display:block;
-  color:var(--gris);
-  margin-top:6px;
-  font-size:10px;
-  line-height:1.7;
-}
+.cart-row small{display:block;color:var(--gris);margin-top:6px;font-size:10px;line-height:1.7}
 
-.cart-item-price{
-  color:var(--dorado);
-  font-size:14px;
-  font-weight:600;
-  margin-top:10px;
-}
+.cart-item-price{color:var(--dorado);font-size:14px;font-weight:600;margin-top:10px}
 
-.cart-subtotal{
-  font-size:10px;
-  color:var(--gris);
-  margin-top:5px;
-}
+.cart-subtotal{font-size:10px;color:var(--gris);margin-top:5px}
 
-.quantity-controls{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-top:12px;
-}
+.quantity-controls{display:flex;align-items:center;gap:12px;margin-top:12px}
 
 .quantity-controls button{
   width:29px;
@@ -649,16 +523,9 @@ footer .wordmark{
   font-size:17px;
 }
 
-.quantity-controls button:hover{
-  background:var(--dorado);
-  color:#111;
-}
+.quantity-controls button:hover{background:var(--dorado);color:#111}
 
-.quantity-number{
-  font-size:12px;
-  min-width:12px;
-  text-align:center;
-}
+.quantity-number{font-size:12px;min-width:12px;text-align:center}
 
 .remove{
   display:inline-block;
@@ -671,10 +538,7 @@ footer .wordmark{
   transition:.2s;
 }
 
-.remove:hover{
-  background:#60443b;
-  color:white;
-}
+.remove:hover{background:#60443b;color:white}
 
 .cart-total{
   padding:25px 0;
@@ -686,25 +550,12 @@ footer .wordmark{
   border-bottom:1px solid #302e28;
 }
 
-.cart-total span{
-  color:var(--blanco);
-  font-size:13px;
-}
-
+.cart-total span{color:var(--blanco);font-size:13px}
 .cart-total strong{font-size:23px}
 
-.drawer-note{
-  font-size:10px;
-  color:var(--gris);
-  line-height:1.8;
-  margin:20px 0;
-}
+.drawer-note{font-size:10px;color:var(--gris);line-height:1.8;margin:20px 0}
 
-.order-form{
-  display:grid;
-  gap:9px;
-  margin-top:18px;
-}
+.order-form{display:grid;gap:9px;margin-top:18px}
 
 .order-form label{
   font-size:9px;
@@ -714,8 +565,7 @@ footer .wordmark{
   margin-top:6px;
 }
 
-.order-form input,
-.order-form select{
+.order-form input,.order-form select{
   width:100%;
   background:#090909;
   color:var(--blanco);
@@ -726,39 +576,20 @@ footer .wordmark{
   border-radius:0;
 }
 
-.order-form input:focus,
-.order-form select:focus{border-color:var(--dorado)}
+.order-form input:focus,.order-form select:focus{border-color:var(--dorado)}
 
-.order-form select option{
-  background:#090909;
-  color:var(--blanco);
-}
+.order-form select option{background:#090909;color:var(--blanco)}
 
-.order-submit{
-  width:100%;
-  margin-top:12px;
-  font-weight:600;
-}
+.order-submit{width:100%;margin-top:12px;font-weight:600}
 
-.order-submit:disabled{
-  opacity:.55;
-  cursor:wait;
-}
+.order-submit:disabled{opacity:.55;cursor:wait}
 
 .checkout-start{margin-top:20px}
-
 .checkout-start .cta{width:100%}
 
-#checkout-start[hidden],
-#checkout-form-area[hidden]{
-  display:none!important;
-}
+#checkout-start[hidden],#checkout-form-area[hidden]{display:none!important}
 
-#checkout-form-area{
-  margin-top:24px;
-  padding-top:20px;
-  border-top:1px solid #302e28;
-}
+#checkout-form-area{margin-top:24px;padding-top:20px;border-top:1px solid #302e28}
 
 .overlay{
   visibility:hidden;
@@ -771,21 +602,10 @@ footer .wordmark{
   transition:opacity .35s,visibility .35s;
 }
 
-.overlay.show{
-  visibility:visible;
-  opacity:1;
-  pointer-events:auto;
-}
+.overlay.show{visibility:visible;opacity:1;pointer-events:auto}
 
 .empty-cart{padding:25px 0}
-
-.empty-cart p{
-  font-size:12px;
-  color:var(--gris);
-  line-height:1.8;
-  margin-bottom:20px;
-}
-
+.empty-cart p{font-size:12px;color:var(--gris);line-height:1.8;margin-bottom:20px}
 .empty-cart .cta{width:100%}
 
 .toast{
@@ -807,9 +627,7 @@ footer .wordmark{
 
 .toast.show{display:block}
 
-/* ==========================================
-   VENTANA PREMIUM DE PEDIDO CONFIRMADO
-   ========================================== */
+/* VENTANA PREMIUM DE CONFIRMACIÓN */
 
 .success-modal-wrap{
   position:fixed;
@@ -843,15 +661,11 @@ footer .wordmark{
     radial-gradient(ellipse at 50% 0%,rgba(197,164,109,.13),transparent 48%),
     linear-gradient(145deg,#151411 0%,#0b0b0a 52%,#12110e 100%);
   border:1px solid rgba(197,164,109,.75);
-  box-shadow:
-    0 30px 100px rgba(0,0,0,.85),
-    0 0 45px rgba(197,164,109,.08),
-    inset 0 0 35px rgba(197,164,109,.025);
-  animation:successCardIn .65s cubic-bezier(.2,.8,.2,1) both;
+  box-shadow:0 30px 100px rgba(0,0,0,.85),0 0 45px rgba(197,164,109,.08),inset 0 0 35px rgba(197,164,109,.025);
+  animation:successCardIn .45s cubic-bezier(.2,.8,.2,1) both;
 }
 
-.success-modal:before,
-.success-modal:after{
+.success-modal:before,.success-modal:after{
   content:"";
   position:absolute;
   z-index:-1;
@@ -863,22 +677,10 @@ footer .wordmark{
   pointer-events:none;
 }
 
-.success-modal:before{
-  top:12px;
-  left:12px;
-  border-width:1px 0 0 1px;
-}
+.success-modal:before{top:12px;left:12px;border-width:1px 0 0 1px}
+.success-modal:after{right:12px;bottom:12px;border-width:0 1px 1px 0}
 
-.success-modal:after{
-  right:12px;
-  bottom:12px;
-  border-width:0 1px 1px 0;
-}
-
-.success-inner{
-  position:relative;
-  padding:42px 38px 36px;
-}
+.success-inner{position:relative;padding:42px 38px 36px}
 
 .success-topline{
   display:flex;
@@ -892,17 +694,14 @@ footer .wordmark{
   margin-bottom:30px;
 }
 
-.success-topline:before,
-.success-topline:after{
+.success-topline:before,.success-topline:after{
   content:"";
   width:30px;
   height:1px;
   background:linear-gradient(90deg,transparent,var(--dorado));
 }
 
-.success-topline:after{
-  background:linear-gradient(90deg,var(--dorado),transparent);
-}
+.success-topline:after{background:linear-gradient(90deg,var(--dorado),transparent)}
 
 .success-brand{
   font-family:'Cormorant Garamond',serif;
@@ -915,20 +714,9 @@ footer .wordmark{
   margin-bottom:10px;
 }
 
-.success-brand-caption{
-  color:#8d887e;
-  font-size:7px;
-  letter-spacing:3px;
-  text-transform:uppercase;
-}
+.success-brand-caption{color:#8d887e;font-size:7px;letter-spacing:3px;text-transform:uppercase}
 
-.success-divider{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  margin:27px auto;
-}
+.success-divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:27px auto}
 
 .success-divider span{
   display:block;
@@ -937,15 +725,9 @@ footer .wordmark{
   background:linear-gradient(90deg,transparent,rgba(197,164,109,.75));
 }
 
-.success-divider span:last-child{
-  background:linear-gradient(90deg,rgba(197,164,109,.75),transparent);
-}
+.success-divider span:last-child{background:linear-gradient(90deg,rgba(197,164,109,.75),transparent)}
 
-.success-diamond{
-  color:var(--dorado);
-  font-size:13px;
-  line-height:1;
-}
+.success-diamond{color:var(--dorado);font-size:13px;line-height:1}
 
 .success-symbol{
   width:72px;
@@ -960,10 +742,8 @@ footer .wordmark{
   font-weight:300;
   margin:0 auto 24px;
   position:relative;
-  box-shadow:
-    0 0 0 7px rgba(197,164,109,.035),
-    0 0 35px rgba(197,164,109,.09);
-  animation:successSymbolIn .7s .2s ease both;
+  box-shadow:0 0 0 7px rgba(197,164,109,.035),0 0 35px rgba(197,164,109,.09);
+  animation:successSymbolIn .5s .1s ease both;
 }
 
 .success-symbol:before{
@@ -974,13 +754,7 @@ footer .wordmark{
   border-radius:50%;
 }
 
-.success-eyebrow{
-  color:var(--dorado);
-  font-size:8px;
-  letter-spacing:4px;
-  text-transform:uppercase;
-  margin-bottom:13px;
-}
+.success-eyebrow{color:var(--dorado);font-size:8px;letter-spacing:4px;text-transform:uppercase;margin-bottom:13px}
 
 .success-modal h2{
   font-family:'Cormorant Garamond',serif;
@@ -992,18 +766,9 @@ footer .wordmark{
   color:var(--blanco);
 }
 
-.success-modal h2 em{
-  font-style:normal;
-  color:var(--dorado);
-}
+.success-modal h2 em{font-style:normal;color:var(--dorado)}
 
-.success-description{
-  max-width:365px;
-  margin:0 auto;
-  color:#c0bbb1;
-  font-size:11px;
-  line-height:2;
-}
+.success-description{max-width:365px;margin:0 auto;color:#c0bbb1;font-size:11px;line-height:2}
 
 .success-order-panel{
   margin:27px 0 24px;
@@ -1013,39 +778,13 @@ footer .wordmark{
   border-bottom:1px solid rgba(197,164,109,.32);
 }
 
-.success-order-label{
-  display:block;
-  color:#928a7b;
-  font-size:7px;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  margin-bottom:8px;
-}
+.success-order-label{display:block;color:#928a7b;font-size:7px;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px}
 
-.success-reference{
-  display:block;
-  color:var(--dorado);
-  font-size:15px;
-  font-weight:600;
-  letter-spacing:2px;
-  overflow-wrap:anywhere;
-}
+.success-reference{display:block;color:var(--dorado);font-size:15px;font-weight:600;letter-spacing:2px;overflow-wrap:anywhere}
 
-.success-order-note{
-  color:#8e897f;
-  font-size:9px;
-  line-height:1.8;
-  margin-top:8px;
-}
+.success-order-note{color:#8e897f;font-size:9px;line-height:1.8;margin-top:8px}
 
-.success-thanks{
-  font-family:'Cormorant Garamond',serif;
-  font-size:19px;
-  color:var(--blanco);
-  letter-spacing:.5px;
-  margin-bottom:25px;
-}
-
+.success-thanks{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--blanco);letter-spacing:.5px;margin-bottom:25px}
 .success-thanks span{color:var(--dorado)}
 
 .success-continue{
@@ -1101,42 +840,22 @@ footer .wordmark{
   transition:.25s;
 }
 
-.success-close:hover{
-  border-color:var(--dorado);
-  color:var(--dorado);
-}
+.success-close:hover{border-color:var(--dorado);color:var(--dorado)}
 
-@keyframes successBackdrop{
-  from{opacity:0}
-  to{opacity:1}
-}
+@keyframes successBackdrop{from{opacity:0}to{opacity:1}}
 
 @keyframes successCardIn{
-  from{
-    opacity:0;
-    transform:translateY(22px) scale(.97);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0) scale(1);
-  }
+  from{opacity:0;transform:translateY(18px) scale(.98)}
+  to{opacity:1;transform:translateY(0) scale(1)}
 }
 
 @keyframes successSymbolIn{
-  from{
-    opacity:0;
-    transform:scale(.65) rotate(-15deg);
-  }
-  to{
-    opacity:1;
-    transform:scale(1) rotate(0);
-  }
+  from{opacity:0;transform:scale(.7) rotate(-10deg)}
+  to{opacity:1;transform:scale(1) rotate(0)}
 }
 
 @media(prefers-reduced-motion:reduce){
-  *,
-  *:before,
-  *:after{
+  *,*:before,*:after{
     scroll-behavior:auto!important;
     animation-duration:.01ms!important;
     animation-iteration-count:1!important;
@@ -1146,24 +865,11 @@ footer .wordmark{
 
 @media(max-width:900px){
   .nav{grid-template-columns:1fr auto}
-  .wordmark{
-    grid-column:1;
-    grid-row:1;
-    text-align:left;
-    font-size:32px;
-  }
-  .navlinks{
-    grid-column:1/-1;
-    grid-row:2;
-    justify-content:center;
-  }
+  .wordmark{grid-column:1;grid-row:1;text-align:left;font-size:32px}
+  .navlinks{grid-column:1/-1;grid-row:2;justify-content:center}
   .nav-right{grid-column:2;grid-row:1}
   .hero{grid-template-columns:1fr}
-  .hero-copy{
-    padding:75px 8% 35px;
-    align-items:center;
-    text-align:center;
-  }
+  .hero-copy{padding:75px 8% 35px;align-items:center;text-align:center}
   .hero-visual{min-height:390px;padding:0 12% 45px}
   .hero-visual img{max-height:440px}
   .hero-index{display:none}
@@ -1171,10 +877,7 @@ footer .wordmark{
   .story-band{grid-template-columns:1fr}
   .story-image{min-height:360px}
   .story-copy{padding:65px 8%}
-  .section-head{
-    align-items:flex-start;
-    flex-direction:column;
-  }
+  .section-head{align-items:flex-start;flex-direction:column}
 }
 
 @media(max-width:520px){
@@ -1212,16 +915,12 @@ footer .wordmark{
   .cart-product-image{width:78px;height:100px}
   .cart-row-info strong{font-size:18px}
   .cart-total strong{font-size:20px}
-
   .success-modal-wrap{padding:12px}
-  .success-modal{
-    max-height:calc(100dvh - 24px);
-  }
+  .success-modal{max-height:calc(100dvh - 24px)}
   .success-inner{padding:37px 22px 25px}
   .success-brand{font-size:34px;letter-spacing:8px;padding-left:8px}
   .success-topline{font-size:7px;letter-spacing:2px;margin-bottom:25px}
-  .success-topline:before,
-  .success-topline:after{width:20px}
+  .success-topline:before,.success-topline:after{width:20px}
   .success-divider{margin:22px auto}
   .success-symbol{width:64px;height:64px;font-size:28px;margin-bottom:21px}
   .success-modal h2{font-size:42px}
@@ -1358,7 +1057,6 @@ footer .wordmark{
     <p class="drawer-note">Completa tus datos para enviar el pedido directamente a la tienda.</p>
 
     <form id="order-form" class="order-form">
-
       <label for="customer-name">Nombre completo</label>
       <input id="customer-name" name="name" autocomplete="name" required maxlength="100" placeholder="Tu nombre">
 
@@ -1377,7 +1075,6 @@ footer .wordmark{
       <input id="customer-notes" name="notes" maxlength="500" placeholder="Detalles adicionales (opcional)">
 
       <button class="cta order-submit" id="order-submit" type="submit">Finalizar pedido ↗</button>
-
     </form>
   </div>
 
@@ -1385,7 +1082,6 @@ footer .wordmark{
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<!-- VENTANA PREMIUM DE CONFIRMACIÓN -->
 <div
   class="success-modal-wrap"
   id="success-modal"
@@ -1398,17 +1094,10 @@ footer .wordmark{
 >
   <section class="success-modal">
 
-    <button
-      class="success-close"
-      type="button"
-      onclick="closeSuccessModal()"
-      aria-label="Cerrar ventana de confirmación"
-    >×</button>
+    <button class="success-close" type="button" onclick="closeSuccessModal()" aria-label="Cerrar ventana de confirmación">×</button>
 
     <div class="success-inner">
-
       <div class="success-topline">Una experiencia LORENA</div>
-
       <div class="success-brand">LORENA</div>
       <div class="success-brand-caption">Diseñado para destacar</div>
 
@@ -1419,7 +1108,6 @@ footer .wordmark{
       </div>
 
       <div class="success-symbol" aria-hidden="true">✓</div>
-
       <div class="success-eyebrow">Pedido confirmado</div>
 
       <h2 id="success-title">¡Gracias por<br><em>elegirnos!</em></h2>
@@ -1432,21 +1120,12 @@ footer .wordmark{
       <div class="success-order-panel">
         <span class="success-order-label">Referencia de tu pedido</span>
         <strong class="success-reference" id="success-order-id"></strong>
-        <p class="success-order-note">
-          Guarda esta referencia para cualquier consulta relacionada con tu pedido.
-        </p>
+        <p class="success-order-note">Guarda esta referencia para cualquier consulta relacionada con tu pedido.</p>
       </div>
 
-      <div class="success-thanks">
-        Tu estilo. Tu identidad. <span>LORENA.</span>
-      </div>
+      <div class="success-thanks">Tu estilo. Tu identidad. <span>LORENA.</span></div>
 
-      <button
-        class="cta success-continue"
-        id="success-continue"
-        type="button"
-        onclick="closeSuccessModal()"
-      >
+      <button class="cta success-continue" id="success-continue" type="button" onclick="closeSuccessModal()">
         Continuar explorando <span>↗</span>
       </button>
 
@@ -1454,7 +1133,6 @@ footer .wordmark{
         LORENA · Diseñado con intención<br>
         Gracias por confiar en nuestra marca
       </div>
-
     </div>
   </section>
 </div>
@@ -1462,7 +1140,7 @@ footer .wordmark{
 <script>
 "use strict";
 
-/* CORREO DE DESTINO DE LOS PEDIDOS */
+/* CONFIGURACIÓN */
 const ORDER_EMAIL = "boulahtoufyousseff15@gmail.com";
 
 const SUPABASE_URL = "https://jmcjqlqkzsahlogtdmyk.supabase.co";
@@ -1476,7 +1154,6 @@ let stockError = false;
 let currentFilter = "all";
 let checkoutOpen = false;
 let orderInProgress = false;
-
 let previousFocusedElement = null;
 
 function isSupabaseConfigured() {
@@ -1485,118 +1162,30 @@ function isSupabaseConfigured() {
 }
 
 const products = [
-  {
-    id:1,
-    name:"Conjunto de invierno — Gris",
-    sub:"Chaqueta y pantalón · Gris",
-    category:"winter",
-    image:"lorena1.png",
-    color:"grey",
-    price:45,
-    size:"S",
-    stock:null
-  },
-  {
-    id:2,
-    name:"Conjunto de invierno — Blanco",
-    sub:"Chaqueta y pantalón · Blanco",
-    category:"winter",
-    image:"lorena2.png",
-    color:"white",
-    price:45,
-    size:"S",
-    stock:null
-  },
-  {
-    id:3,
-    name:"Conjunto de invierno — Negro",
-    sub:"Chaqueta y pantalón · Negro",
-    category:"winter",
-    image:"lorena3.png",
-    color:"black",
-    price:45,
-    size:"S",
-    stock:null
-  },
-  {
-    id:4,
-    name:"Conjunto de verano — Beige",
-    sub:"Camiseta y pantalón corto · Beige",
-    category:"sets",
-    image:"lorena4.png",
-    color:"beige",
-    price:35,
-    size:"S",
-    stock:null
-  },
-  {
-    id:5,
-    name:"Conjunto de verano — Blanco",
-    sub:"Camiseta y pantalón corto · Blanco",
-    category:"sets",
-    image:"lorena5.png",
-    color:"white",
-    price:35,
-    size:"S",
-    stock:null
-  },
-  {
-    id:6,
-    name:"Conjunto de verano — Negro",
-    sub:"Camiseta y pantalón corto · Negro",
-    category:"sets",
-    image:"lorena6.jpeg",
-    color:"black",
-    price:35,
-    size:"S",
-    stock:null
-  },
-  {
-    id:7,
-    name:"Zapatillas LR — Negras",
-    sub:"Zapatillas · Negro",
-    category:"shoes",
-    image:"lorena7.png",
-    color:"black",
-    price:50,
-    size:"40",
-    stock:null
-  },
-  {
-    id:8,
-    name:"Zapatillas LR — Grises",
-    sub:"Zapatillas · Gris",
-    category:"shoes",
-    image:"lorena8.png",
-    color:"grey",
-    price:50,
-    size:"40",
-    stock:null
-  },
-  {
-    id:9,
-    name:"Zapatillas LR — Blancas",
-    sub:"Zapatillas · Blanco",
-    category:"shoes",
-    image:"lorena9.png",
-    color:"white",
-    price:50,
-    size:"40",
-    stock:null
-  }
+  {id:1,name:"Conjunto de invierno — Gris",sub:"Chaqueta y pantalón · Gris",category:"winter",image:"lorena1.png",color:"grey",price:45,size:"S",stock:null},
+  {id:2,name:"Conjunto de invierno — Blanco",sub:"Chaqueta y pantalón · Blanco",category:"winter",image:"lorena2.png",color:"white",price:45,size:"S",stock:null},
+  {id:3,name:"Conjunto de invierno — Negro",sub:"Chaqueta y pantalón · Negro",category:"winter",image:"lorena3.png",color:"black",price:45,size:"S",stock:null},
+  {id:4,name:"Conjunto de verano — Beige",sub:"Camiseta y pantalón corto · Beige",category:"sets",image:"lorena4.png",color:"beige",price:35,size:"S",stock:null},
+  {id:5,name:"Conjunto de verano — Blanco",sub:"Camiseta y pantalón corto · Blanco",category:"sets",image:"lorena5.png",color:"white",price:35,size:"S",stock:null},
+  {id:6,name:"Conjunto de verano — Negro",sub:"Camiseta y pantalón corto · Negro",category:"sets",image:"lorena6.jpeg",color:"black",price:35,size:"S",stock:null},
+  {id:7,name:"Zapatillas LR — Negras",sub:"Zapatillas · Negro",category:"shoes",image:"lorena7.png",color:"black",price:50,size:"40",stock:null},
+  {id:8,name:"Zapatillas LR — Grises",sub:"Zapatillas · Gris",category:"shoes",image:"lorena8.png",color:"grey",price:50,size:"40",stock:null},
+  {id:9,name:"Zapatillas LR — Blancas",sub:"Zapatillas · Blanco",category:"shoes",image:"lorena9.png",color:"white",price:50,size:"40",stock:null}
 ];
 
 let cart = [];
 
 function euro(number) {
-  return number.toLocaleString("es-ES", {
+  return Number(number).toLocaleString("es-ES", {
     style:"currency",
     currency:"EUR"
   });
 }
 
-/* CONSULTAR STOCK EN SUPABASE */
-async function loadStock() {
+/* CONSULTAR STOCK */
+async function loadStock(options={}) {
+  const silent = options.silent === true;
+
   if (!isSupabaseConfigured()) {
     stockLoaded = false;
     stockError = true;
@@ -1623,13 +1212,8 @@ async function loadStock() {
     const inventory = await response.json();
 
     products.forEach(product => {
-      const row = inventory.find(
-        item => Number(item.id) === product.id
-      );
-
-      product.stock = row
-        ? Math.max(0,Number(row.stock)||0)
-        : 0;
+      const row = inventory.find(item => Number(item.id) === product.id);
+      product.stock = row ? Math.max(0,Number(row.stock)||0) : 0;
     });
 
     stockLoaded = true;
@@ -1657,15 +1241,17 @@ async function loadStock() {
   } catch (error) {
     stockLoaded = false;
     stockError = true;
-
     renderProducts(currentFilter);
-    showToast("No se pudo consultar el stock. Comprueba la conexión.");
+
+    if (!silent) {
+      showToast("No se pudo consultar el stock. Comprueba la conexión.");
+    }
 
     return false;
   }
 }
 
-/* MOSTRAR PRODUCTOS */
+/* PRODUCTOS */
 function renderProducts(filter=currentFilter) {
   currentFilter = filter;
 
@@ -1682,18 +1268,14 @@ function renderProducts(filter=currentFilter) {
           loading="lazy"
           onerror="this.style.opacity='0.15'"
         >
-
         <span class="badge">LORENA</span>
-
         <button
           class="quick"
           type="button"
           onclick="addToCart(${product.id})"
           ${stockLoaded && product.stock < 1 ? "disabled" : ""}
         >
-          ${stockLoaded && product.stock < 1
-            ? "Agotado"
-            : "Añadir al carrito ↗"}
+          ${stockLoaded && product.stock < 1 ? "Agotado" : "Añadir al carrito ↗"}
         </button>
       </div>
 
@@ -1710,7 +1292,7 @@ function renderProducts(filter=currentFilter) {
             ? `Unidades disponibles: ${product.stock}`
             : stockError
               ? "Stock no disponible"
-              : "Stock pendiente de conectar"
+              : "Comprobando stock…"
         }
       </p>
 
@@ -1723,13 +1305,10 @@ function renderProducts(filter=currentFilter) {
   `).join("");
 }
 
-/* FILTROS DE LA COLECCIÓN */
+/* FILTROS */
 document.querySelectorAll(".filter").forEach(button => {
   button.addEventListener("click",() => {
-    document.querySelectorAll(".filter").forEach(item => {
-      item.classList.remove("active");
-    });
-
+    document.querySelectorAll(".filter").forEach(item => item.classList.remove("active"));
     button.classList.add("active");
     renderProducts(button.dataset.filter);
   });
@@ -1769,7 +1348,7 @@ function addToCart(id) {
   showToast(product.name + " añadido al carrito.");
 }
 
-/* ELIMINAR PRODUCTOS DEL CARRITO */
+/* ELIMINAR PRODUCTOS */
 function removeFromCart(id) {
   const product = cart.find(item => item.id === id);
 
@@ -1777,9 +1356,7 @@ function removeFromCart(id) {
 
   cart = cart.filter(item => item.id !== id);
 
-  if (cart.length === 0) {
-    checkoutOpen = false;
-  }
+  if (cart.length === 0) checkoutOpen = false;
 
   renderCart();
   showToast(product.name + " eliminado del carrito.");
@@ -1791,11 +1368,7 @@ function changeQuantity(id,change) {
 
   if (!product) return;
 
-  if (
-    change > 0 &&
-    stockLoaded &&
-    product.qty >= product.stock
-  ) {
+  if (change > 0 && stockLoaded && product.qty >= product.stock) {
     showToast("Has alcanzado las unidades disponibles.");
     return;
   }
@@ -1810,7 +1383,7 @@ function changeQuantity(id,change) {
   renderCart();
 }
 
-/* MOSTRAR FORMULARIO DE COMPRA */
+/* FORMULARIO DE COMPRA */
 function showCheckout() {
   if (!cart.length) {
     showToast("Añade algún producto antes de comprar.");
@@ -1818,7 +1391,7 @@ function showCheckout() {
   }
 
   if (!stockLoaded || stockError) {
-    showToast("No se puede verificar el stock. Inténtalo de nuevo.");
+    showToast("No se puede verificar el stock. Espera mientras se comprueba.");
     loadStock();
     return;
   }
@@ -1832,14 +1405,11 @@ function showCheckout() {
   });
 }
 
-/* DIBUJAR EL CARRITO */
+/* DIBUJAR CARRITO */
 function renderCart() {
   const box = document.getElementById("cart-items");
 
-  const count = cart.reduce(
-    (total,item) => total + item.qty,
-    0
-  );
+  const count = cart.reduce((sum,item) => sum + item.qty,0);
 
   document.getElementById("count").textContent = count;
 
@@ -1856,13 +1426,11 @@ function renderCart() {
     document.getElementById("total").textContent = euro(0);
     document.getElementById("checkout-start").hidden = true;
     document.getElementById("checkout-form-area").hidden = true;
-
     return;
   }
 
   box.innerHTML = cart.map(item => `
     <div class="cart-row">
-
       <img
         class="cart-product-image"
         src="${item.image}"
@@ -1871,66 +1439,38 @@ function renderCart() {
       >
 
       <div class="cart-row-info">
-
         <strong>${item.name}</strong>
-
         <small>${item.sub}</small>
         <small>Talla: ${item.size}</small>
+        ${stockLoaded ? `<small>Unidades disponibles: ${item.stock}</small>` : ""}
 
-        ${
-          stockLoaded
-            ? `<small>Unidades disponibles: ${item.stock}</small>`
-            : ""
-        }
-
-        <div class="cart-item-price">
-          ${euro(item.price)} / unidad
-        </div>
-
-        <div class="cart-subtotal">
-          Subtotal: ${euro(item.price * item.qty)}
-        </div>
+        <div class="cart-item-price">${euro(item.price)} / unidad</div>
+        <div class="cart-subtotal">Subtotal: ${euro(item.price * item.qty)}</div>
 
         <div class="quantity-controls">
-
-          <button
-            type="button"
-            onclick="changeQuantity(${item.id},-1)"
-            aria-label="Reducir cantidad de ${item.name}"
-          >−</button>
-
+          <button type="button" onclick="changeQuantity(${item.id},-1)" aria-label="Reducir cantidad de ${item.name}">−</button>
           <span class="quantity-number">${item.qty}</span>
-
           <button
             type="button"
             onclick="changeQuantity(${item.id},1)"
             aria-label="Aumentar cantidad de ${item.name}"
             ${stockLoaded && item.qty >= item.stock ? "disabled" : ""}
           >+</button>
-
         </div>
 
-        <button
-          class="remove"
-          type="button"
-          onclick="removeFromCart(${item.id})"
-        >Eliminar producto</button>
-
+        <button class="remove" type="button" onclick="removeFromCart(${item.id})">Eliminar producto</button>
       </div>
     </div>
   `).join("");
 
-  const total = cart.reduce(
-    (sum,item) => sum + item.price * item.qty,
-    0
-  );
+  const total = cart.reduce((sum,item) => sum + item.price * item.qty,0);
 
   document.getElementById("total").textContent = euro(total);
   document.getElementById("checkout-start").hidden = checkoutOpen;
   document.getElementById("checkout-form-area").hidden = !checkoutOpen;
 }
 
-/* DESCONTAR STOCK: SE CONSERVA LA FUNCIÓN RPC EXISTENTE */
+/* DESCONTAR STOCK: SE MANTIENE LA FUNCIÓN RPC EXISTENTE */
 async function deductStock(items) {
   const response = await fetch(
     `${SUPABASE_URL}/rest/v1/rpc/descontar_stock_lorena`,
@@ -1960,13 +1500,12 @@ async function deductStock(items) {
 
   if (result && result.success === false) {
     throw new Error(
-      result.message ||
-      "No hay stock suficiente para completar el pedido."
+      result.message || "No hay stock suficiente para completar el pedido."
     );
   }
 }
 
-/* ABRIR LA VENTANA PREMIUM */
+/* VENTANA PREMIUM */
 function openSuccessModal(orderId) {
   const modal = document.getElementById("success-modal");
 
@@ -1982,7 +1521,6 @@ function openSuccessModal(orderId) {
   document.getElementById("success-continue").focus();
 }
 
-/* CERRAR LA VENTANA PREMIUM */
 function closeSuccessModal() {
   const modal = document.getElementById("success-modal");
 
@@ -1992,122 +1530,154 @@ function closeSuccessModal() {
   modal.setAttribute("aria-hidden","true");
 
   closeCart();
-
   document.body.classList.remove("cart-open");
 
   document.getElementById("coleccion").scrollIntoView({
     behavior:"smooth"
   });
 
-  if (
-    previousFocusedElement &&
-    typeof previousFocusedElement.focus === "function"
-  ) {
+  if (previousFocusedElement && typeof previousFocusedElement.focus === "function") {
     previousFocusedElement = null;
   }
 }
 
-/* PROCESAR EL PEDIDO */
-document.getElementById("order-form").addEventListener(
-  "submit",
-  async function(event) {
-    event.preventDefault();
+/*
+  ENVÍO DEL PEDIDO
 
-    if (orderInProgress) return;
+  1. Comprueba el stock.
+  2. Descuenta las unidades mediante la función RPC existente.
+  3. Envía los datos detallados a FormSubmit.
+  4. Si FormSubmit confirma la aceptación, vacía el carrito y abre
+     inmediatamente la ventana de confirmación.
+  5. La actualización visual del stock se hace en segundo plano.
+*/
+document.getElementById("order-form").addEventListener("submit",async function(event) {
+  event.preventDefault();
 
-    if (!cart.length) {
-      showToast("Tu carrito está vacío.");
-      return;
+  if (orderInProgress) return;
+
+  if (!cart.length) {
+    showToast("Tu carrito está vacío.");
+    return;
+  }
+
+  const form = this;
+  const submitButton = document.getElementById("order-submit");
+
+  if (!form.reportValidity()) return;
+
+  const name = document.getElementById("customer-name").value.trim();
+  const phone = document.getElementById("customer-phone").value.trim();
+  const deliveryMethod = document.getElementById("delivery-method").value;
+  const place = document.getElementById("delivery-place").value.trim();
+  const notes = document.getElementById("customer-notes").value.trim() || "Sin observaciones";
+
+  if (!name || !phone || !place) {
+    showToast("Completa tu nombre, teléfono y lugar de entrega.");
+    return;
+  }
+
+  orderInProgress = true;
+  submitButton.disabled = true;
+  submitButton.textContent = "Comprobando stock…";
+
+  let stockWasDeducted = false;
+
+  try {
+    /*
+      Se vuelve a consultar el stock antes de descontarlo para reducir
+      el riesgo de vender unidades que ya no están disponibles.
+    */
+    const stockOk = await loadStock({silent:true});
+
+    if (!stockOk) {
+      throw new Error("No se ha podido comprobar el stock. Inténtalo de nuevo.");
     }
 
-    const form = this;
-    const submitButton = document.getElementById("order-submit");
+    const invalidItem = cart.find(item => {
+      const product = products.find(p => p.id === item.id);
 
-    const name = document.getElementById("customer-name").value.trim();
-    const phone = document.getElementById("customer-phone").value.trim();
-    const deliveryMethod = document.getElementById("delivery-method").value;
-    const place = document.getElementById("delivery-place").value.trim();
-    const notes =
-      document.getElementById("customer-notes").value.trim() ||
-      "Sin observaciones";
+      return !product || product.stock < item.qty || product.stock < 1;
+    });
 
-    if (!name || !phone || !place) {
-      showToast("Completa tu nombre, teléfono y lugar de entrega.");
-      return;
+    if (invalidItem) {
+      renderCart();
+      throw new Error("Ha cambiado el stock. Revisa tu carrito antes de continuar.");
     }
 
-    orderInProgress = true;
-    submitButton.disabled = true;
-    submitButton.textContent = "Procesando pedido…";
+    const orderItems = cart.map(item => ({...item}));
+
+    const total = orderItems.reduce(
+      (sum,item) => sum + item.price * item.qty,
+      0
+    );
+
+    const orderId = "LOR-" + Date.now();
+
+    const productLines = orderItems.map((item,index) => {
+      return [
+        `Producto ${index + 1}: ${item.name}`,
+        `Talla: ${item.size}`,
+        `Precio unitario: ${euro(item.price)}`,
+        `Cantidad: ${item.qty}`,
+        `Subtotal: ${euro(item.price * item.qty)}`
+      ].join("\n");
+    });
+
+    const details = productLines.join("\n\n");
+
+    submitButton.textContent = "Reservando unidades…";
+
+    /*
+      No se cambia el nombre ni el formato de la RPC de Supabase:
+      se conserva descontar_stock_lorena y su parámetro p_items.
+    */
+    await deductStock(orderItems);
+    stockWasDeducted = true;
+
+    submitButton.textContent = "Enviando pedido…";
+
+    /*
+      Se envían campos separados y un resumen legible para que el correo
+      incluya los datos del cliente y el desglose de los productos.
+    */
+    const emailData = {
+      _subject:`Nuevo pedido LORENA — ${orderId}`,
+      _template:"table",
+      _captcha:"false",
+
+      Referencia_del_pedido:orderId,
+      Nombre_completo: name,
+      Telefono: phone,
+      Forma_de_entrega: deliveryMethod,
+      Lugar_de_entrega: place,
+      Observaciones: notes,
+
+      Numero_de_productos: orderItems.reduce((sum,item) => sum + item.qty,0),
+      Detalle_de_productos: details,
+      Total_del_pedido: euro(total),
+
+      Productos_JSON: JSON.stringify(
+        orderItems.map(item => ({
+          id:item.id,
+          producto:item.name,
+          talla:item.size,
+          cantidad:item.qty,
+          precio_unitario:item.price,
+          subtotal:item.price * item.qty
+        }))
+      )
+    };
+
+    let emailResponse;
 
     try {
-      const stockOk = await loadStock();
-
-      if (!stockOk) {
-        throw new Error(
-          "No se ha podido comprobar el stock. Inténtalo de nuevo."
-        );
-      }
-
-      const invalidItem = cart.find(item => {
-        const product = products.find(p => p.id === item.id);
-
-        return (
-          !product ||
-          product.stock < item.qty ||
-          product.stock < 1
-        );
-      });
-
-      if (invalidItem) {
-        renderCart();
-
-        throw new Error(
-          "Ha cambiado el stock. Revisa tu carrito antes de continuar."
-        );
-      }
-
-      const orderItems = cart.map(item => ({...item}));
-
-      const total = orderItems.reduce(
-        (sum,item) => sum + item.price * item.qty,
-        0
-      );
-
-      const orderId = "LOR-" + Date.now();
-
-      const details = orderItems.map(item =>
-        `${item.name}
-Talla: ${item.size}
-Precio unitario: ${euro(item.price)}
-Cantidad: ${item.qty}
-Subtotal: ${euro(item.price * item.qty)}`
-      ).join("\n\n");
-
       /*
-        IMPORTANTE:
-        Se conserva el sistema actual de descuento de stock.
-        Si el envío del correo falla después del descuento,
-        el cliente debe comprobar el pedido antes de volver a intentarlo.
+        Se añade un límite de espera para que la página no se quede
+        esperando indefinidamente. Si se agota, no se muestra éxito.
       */
-
-      await deductStock(orderItems);
-
-      const emailData = {
-        _subject:`Nuevo pedido LORENA — ${orderId}`,
-        _template:"table",
-        _captcha:"false",
-        Pedido:orderId,
-        Cliente:name,
-        Telefono:phone,
-        Forma_de_entrega:deliveryMethod,
-        Lugar_de_entrega:place,
-        Observaciones:notes,
-        Productos:details,
-        Total:euro(total)
-      };
-
-      let emailResponse;
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(),15000);
 
       try {
         emailResponse = await fetch(FORM_SUBMIT_URL,{
@@ -2116,72 +1686,88 @@ Subtotal: ${euro(item.price * item.qty)}`
             "Content-Type":"application/json",
             "Accept":"application/json"
           },
-          body:JSON.stringify(emailData)
+          body:JSON.stringify(emailData),
+          signal:controller.signal
         });
-      } catch (error) {
-        throw new Error(
-          "El stock se ha descontado, pero no se pudo conectar con FormSubmit. Comprueba el correo antes de repetir el pedido."
-        );
+      } finally {
+        clearTimeout(timeoutId);
       }
-
-      if (!emailResponse.ok) {
-        throw new Error(
-          "El stock se ha descontado, pero FormSubmit no aceptó el pedido. Comprueba la configuración del correo antes de repetirlo."
-        );
-      }
-
-      let emailResult;
-
-      try {
-        emailResult = await emailResponse.json();
-      } catch (error) {
-        throw new Error(
-          "El stock se ha descontado, pero no se pudo confirmar la respuesta de FormSubmit. Comprueba el correo antes de repetir el pedido."
-        );
-      }
-
-      if (
-        emailResult.success !== true &&
-        emailResult.success !== "true"
-      ) {
-        throw new Error(
-          "FormSubmit no ha confirmado el envío. Comprueba si debes activar tu correo antes de repetir el pedido."
-        );
-      }
-
-      /*
-        SOLO CUANDO FORMSubmit confirma la aceptación:
-        - Se vacía el carrito.
-        - Se restablece el formulario.
-        - Se actualiza el stock.
-        - Se muestra la ventana premium.
-      */
-
-      cart = [];
-      checkoutOpen = false;
-      form.reset();
-
-      await loadStock();
-
-      renderCart();
-      closeCart();
-      openSuccessModal(orderId);
 
     } catch (error) {
-      showToast(
-        error.message ||
-        "No se pudo completar el pedido."
+      if (error.name === "AbortError") {
+        throw new Error(
+          "El correo está tardando demasiado. El stock ya se ha descontado. Comprueba tu Gmail antes de volver a intentarlo."
+        );
+      }
+
+      throw new Error(
+        "No se pudo conectar con el servicio de correo. El stock ya se ha descontado. Comprueba tu Gmail antes de volver a intentarlo."
       );
-
-      await loadStock();
-
-    } finally {
-      orderInProgress = false;
-      submitButton.disabled = false;
-      submitButton.textContent = "Finalizar pedido ↗";
     }
+
+    if (!emailResponse.ok) {
+      throw new Error(
+        "El servicio de correo no aceptó el pedido. El stock ya se ha descontado. Comprueba tu Gmail antes de volver a intentarlo."
+      );
+    }
+
+    let emailResult;
+
+    try {
+      emailResult = await emailResponse.json();
+    } catch (error) {
+      throw new Error(
+        "No se pudo confirmar la respuesta del servicio de correo. El stock ya se ha descontado. Comprueba tu Gmail antes de repetir el pedido."
+      );
+    }
+
+    if (emailResult.success !== true && emailResult.success !== "true") {
+      throw new Error(
+        "El servicio de correo no confirmó el envío. El stock ya se ha descontado. Comprueba la activación de FormSubmit y tu Gmail antes de repetir el pedido."
+      );
+    }
+
+    /*
+      ÉXITO:
+      No se espera otra consulta de stock antes de mostrar la confirmación.
+      Esto elimina una espera innecesaria del proceso de compra.
+    */
+    cart = [];
+    checkoutOpen = false;
+    form.reset();
+
+    renderCart();
+    closeCart();
+    openSuccessModal(orderId);
+
+    /*
+      El stock se actualiza después, en segundo plano.
+      No bloquea la aparición de la ventana de confirmación.
+    */
+    loadStock({silent:true});
+
+  } catch (error) {
+    showToast(
+      error.message || "No se pudo completar el pedido."
+    );
+
+    /*
+      Si el stock ya se descontó, no se repite automáticamente la compra:
+      podría provocar un segundo descuento. Se actualiza la información
+      en segundo plano y se informa al cliente del problema.
+    */
+    if (stockWasDeducted) {
+      loadStock({silent:true});
+    } else {
+      loadStock({silent:true});
+    }
+
+  } finally {
+    orderInProgress = false;
+    submitButton.disabled = false;
+    submitButton.textContent = "Finalizar pedido ↗";
   }
-);
+});
 
 /* ABRIR CARRITO */
 function openCart() {
@@ -2210,9 +1796,7 @@ function closeCart() {
 /* TECLA ESCAPE */
 document.addEventListener("keydown",function(event) {
   if (event.key === "Escape") {
-    if (
-      document.getElementById("success-modal").classList.contains("show")
-    ) {
+    if (document.getElementById("success-modal").classList.contains("show")) {
       closeSuccessModal();
     } else {
       closeCart();
@@ -2220,7 +1804,7 @@ document.addEventListener("keydown",function(event) {
   }
 });
 
-/* MENSAJES PEQUEÑOS DE LA TIENDA */
+/* MENSAJES */
 function showToast(message) {
   const element = document.getElementById("toast");
 
