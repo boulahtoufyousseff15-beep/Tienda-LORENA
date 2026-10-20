@@ -142,295 +142,49 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
 .toast{position:fixed;z-index:120;bottom:24px;left:50%;transform:translateX(-50%);background:var(--dorado);color:#111;padding:14px 22px;font-size:10px;letter-spacing:1px;display:none;max-width:90%;text-align:center;line-height:1.7}
 .toast.show{display:block}
 /* VENTANA PREMIUM DE PEDIDO REALIZADO */
-.success-modal-wrap{
-  position:fixed;
-  inset:0;
-  z-index:200;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:22px;
-  background:rgba(0,0,0,.88);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  overflow-y:auto;
-}
-.success-modal-wrap.show{
-  display:flex;
-  animation:successBackdrop .3s ease both;
-}
-.success-modal{
-  position:relative;
-  isolation:isolate;
-  width:100%;
-  max-width:510px;
-  max-height:calc(100dvh - 44px);
-  overflow-y:auto;
-  padding:0;
-  text-align:center;
-  background:
-    radial-gradient(ellipse at 50% 0%,rgba(197,164,109,.15),transparent 48%),
-    linear-gradient(145deg,#151411 0%,#0b0b0a 52%,#12110e 100%);
-  border:1px solid rgba(197,164,109,.75);
-  box-shadow:
-    0 30px 100px rgba(0,0,0,.85),
-    0 0 45px rgba(197,164,109,.08),
-    inset 0 0 35px rgba(197,164,109,.025);
-  animation:successCardIn .4s cubic-bezier(.2,.8,.2,1) both;
-}
-.success-modal:before,.success-modal:after{
-  content:"";
-  position:absolute;
-  z-index:-1;
-  width:65px;
-  height:65px;
-  border-color:var(--dorado);
-  border-style:solid;
-  opacity:.75;
-  pointer-events:none;
-}
-.success-modal:before{
-  top:12px;
-  left:12px;
-  border-width:1px 0 0 1px;
-}
-.success-modal:after{
-  right:12px;
-  bottom:12px;
-  border-width:0 1px 1px 0;
-}
+.success-modal-wrap{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(0,0,0,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);overflow-y:auto}
+.success-modal-wrap.show{display:flex;animation:successBackdrop .3s ease both}
+.success-modal{position:relative;isolation:isolate;width:100%;max-width:510px;max-height:calc(100dvh - 44px);overflow-y:auto;padding:0;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(197,164,109,.15),transparent 48%),linear-gradient(145deg,#151411 0%,#0b0b0a 52%,#12110e 100%);border:1px solid rgba(197,164,109,.75);box-shadow:0 30px 100px rgba(0,0,0,.85),0 0 45px rgba(197,164,109,.08),inset 0 0 35px rgba(197,164,109,.025);animation:successCardIn .4s cubic-bezier(.2,.8,.2,1) both}
+.success-modal:before,.success-modal:after{content:"";position:absolute;z-index:-1;width:65px;height:65px;border-color:var(--dorado);border-style:solid;opacity:.75;pointer-events:none}
+.success-modal:before{top:12px;left:12px;border-width:1px 0 0 1px}
+.success-modal:after{right:12px;bottom:12px;border-width:0 1px 1px 0}
 .success-inner{position:relative;padding:42px 38px 36px}
-.success-topline{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:12px;
-  color:var(--dorado);
-  font-size:8px;
-  letter-spacing:4px;
-  text-transform:uppercase;
-  margin-bottom:30px;
-}
-.success-topline:before,.success-topline:after{
-  content:"";
-  width:30px;
-  height:1px;
-  background:linear-gradient(90deg,transparent,var(--dorado));
-}
+.success-topline{display:flex;justify-content:center;align-items:center;gap:12px;color:var(--dorado);font-size:8px;letter-spacing:4px;text-transform:uppercase;margin-bottom:30px}
+.success-topline:before,.success-topline:after{content:"";width:30px;height:1px;background:linear-gradient(90deg,transparent,var(--dorado))}
 .success-topline:after{background:linear-gradient(90deg,var(--dorado),transparent)}
-.success-brand{
-  font-family:'Cormorant Garamond',serif;
-  font-weight:400;
-  font-size:39px;
-  letter-spacing:11px;
-  padding-left:11px;
-  color:var(--blanco);
-  line-height:1;
-  margin-bottom:10px;
-}
-.success-brand-caption{
-  color:#8d887e;
-  font-size:7px;
-  letter-spacing:3px;
-  text-transform:uppercase;
-}
-.success-divider{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  margin:24px auto;
-}
-.success-divider span{
-  display:block;
-  height:1px;
-  width:65px;
-  background:linear-gradient(90deg,transparent,rgba(197,164,109,.75));
-}
-.success-divider span:last-child{
-  background:linear-gradient(90deg,rgba(197,164,109,.75),transparent);
-}
+.success-brand{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:39px;letter-spacing:11px;padding-left:11px;color:var(--blanco);line-height:1;margin-bottom:10px}
+.success-brand-caption{color:#8d887e;font-size:7px;letter-spacing:3px;text-transform:uppercase}
+.success-divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:24px auto}
+.success-divider span{display:block;height:1px;width:65px;background:linear-gradient(90deg,transparent,rgba(197,164,109,.75))}
+.success-divider span:last-child{background:linear-gradient(90deg,rgba(197,164,109,.75),transparent)}
 .success-diamond{color:var(--dorado);font-size:13px;line-height:1}
-.success-symbol{
-  width:68px;
-  height:68px;
-  border:1px solid var(--dorado);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--dorado);
-  font-size:31px;
-  font-weight:300;
-  margin:0 auto 22px;
-  position:relative;
-  box-shadow:0 0 0 7px rgba(197,164,109,.035),0 0 35px rgba(197,164,109,.09);
-  animation:successSymbolIn .5s .1s ease both;
-}
-.success-symbol:before{
-  content:"";
-  position:absolute;
-  inset:-7px;
-  border:1px solid rgba(197,164,109,.2);
-  border-radius:50%;
-}
-.success-eyebrow{
-  color:var(--dorado);
-  font-size:8px;
-  letter-spacing:4px;
-  text-transform:uppercase;
-  margin-bottom:13px;
-}
-.success-modal h2{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(38px,7vw,54px);
-  line-height:1;
-  font-weight:400;
-  letter-spacing:.5px;
-  margin-bottom:18px;
-  color:var(--blanco);
-}
+.success-symbol{width:68px;height:68px;border:1px solid var(--dorado);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--dorado);font-size:31px;font-weight:300;margin:0 auto 22px;position:relative;box-shadow:0 0 0 7px rgba(197,164,109,.035),0 0 35px rgba(197,164,109,.09);animation:successSymbolIn .5s .1s ease both}
+.success-symbol:before{content:"";position:absolute;inset:-7px;border:1px solid rgba(197,164,109,.2);border-radius:50%}
+.success-eyebrow{color:var(--dorado);font-size:8px;letter-spacing:4px;text-transform:uppercase;margin-bottom:13px}
+.success-modal h2{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,7vw,54px);line-height:1;font-weight:400;letter-spacing:.5px;margin-bottom:18px;color:var(--blanco)}
 .success-modal h2 em{font-style:normal;color:var(--dorado)}
-.success-description{
-  max-width:365px;
-  margin:0 auto;
-  color:#c0bbb1;
-  font-size:11px;
-  line-height:2;
-}
-.success-customer{
-  display:block;
-  color:var(--dorado);
-  font-size:14px;
-  font-weight:600;
-  overflow-wrap:anywhere;
-  margin-top:9px;
-}
-.success-order-panel{
-  margin:25px 0 22px;
-  padding:17px 16px;
-  background:linear-gradient(110deg,rgba(197,164,109,.055),rgba(255,255,255,.015),rgba(197,164,109,.055));
-  border-top:1px solid rgba(197,164,109,.32);
-  border-bottom:1px solid rgba(197,164,109,.32);
-}
-.success-order-label{
-  display:block;
-  color:#928a7b;
-  font-size:7px;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  margin-bottom:8px;
-}
-.success-reference{
-  display:block;
-  color:var(--dorado);
-  font-size:14px;
-  font-weight:600;
-  letter-spacing:2px;
-  overflow-wrap:anywhere;
-}
-.success-total{
-  margin-top:15px;
-  padding-top:13px;
-  border-top:1px solid rgba(197,164,109,.16);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  color:#c0bbb1;
-  font-size:10px;
-  letter-spacing:1px;
-  text-transform:uppercase;
-}
+.success-description{max-width:365px;margin:0 auto;color:#c0bbb1;font-size:11px;line-height:2}
+.success-customer{display:block;color:var(--dorado);font-size:14px;font-weight:600;overflow-wrap:anywhere;margin-top:9px}
+.success-order-panel{margin:25px 0 22px;padding:17px 16px;background:linear-gradient(110deg,rgba(197,164,109,.055),rgba(255,255,255,.015),rgba(197,164,109,.055));border-top:1px solid rgba(197,164,109,.32);border-bottom:1px solid rgba(197,164,109,.32)}
+.success-order-label{display:block;color:#928a7b;font-size:7px;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px}
+.success-reference{display:block;color:var(--dorado);font-size:14px;font-weight:600;letter-spacing:2px;overflow-wrap:anywhere}
+.success-total{margin-top:15px;padding-top:13px;border-top:1px solid rgba(197,164,109,.16);display:flex;justify-content:space-between;align-items:center;gap:10px;color:#c0bbb1;font-size:10px;letter-spacing:1px;text-transform:uppercase}
 .success-total strong{font-size:21px;color:var(--dorado);letter-spacing:0}
 .success-order-note{color:#8e897f;font-size:9px;line-height:1.8;margin-top:10px}
-.success-thanks{
-  font-family:'Cormorant Garamond',serif;
-  font-size:19px;
-  color:var(--blanco);
-  letter-spacing:.5px;
-  margin-bottom:25px;
-}
+.success-thanks{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--blanco);letter-spacing:.5px;margin-bottom:25px}
 .success-thanks span{color:var(--dorado)}
-.success-continue{
-  width:100%;
-  min-height:52px;
-  gap:15px;
-  position:relative;
-  overflow:hidden;
-  font-size:9px;
-  letter-spacing:2.5px;
-  box-shadow:0 8px 25px rgba(197,164,109,.08);
-}
-.success-close-button{
-  width:100%;
-  margin-top:10px;
-  min-height:45px;
-  background:transparent;
-  border:1px solid #39352d;
-  color:#c0bbb1;
-  font-size:9px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  transition:.25s;
-}
+.success-continue{width:100%;min-height:52px;gap:15px;position:relative;overflow:hidden;font-size:9px;letter-spacing:2.5px;box-shadow:0 8px 25px rgba(197,164,109,.08)}
+.success-close-button{width:100%;margin-top:10px;min-height:45px;background:transparent;border:1px solid #39352d;color:#c0bbb1;font-size:9px;letter-spacing:2px;text-transform:uppercase;transition:.25s}
 .success-close-button:hover{border-color:var(--dorado);color:var(--dorado)}
-.success-continue:after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-120%;
-  width:70%;
-  height:100%;
-  background:linear-gradient(100deg,transparent,rgba(255,255,255,.25),transparent);
-  transform:skewX(-20deg);
-  transition:left .7s ease;
-}
+.success-continue:after{content:"";position:absolute;top:0;left:-120%;width:70%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.25),transparent);transform:skewX(-20deg);transition:left .7s ease}
 .success-continue:hover:after{left:140%}
-.success-footer{
-  margin-top:22px;
-  padding-top:16px;
-  border-top:1px solid rgba(197,164,109,.13);
-  color:#706b62;
-  font-size:7px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  line-height:1.9;
-}
-.success-close{
-  position:absolute;
-  top:18px;
-  right:18px;
-  z-index:3;
-  width:30px;
-  height:30px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid rgba(197,164,109,.25);
-  color:#aaa49a;
-  background:rgba(0,0,0,.2);
-  font-size:19px;
-  transition:.25s;
-}
+.success-footer{margin-top:22px;padding-top:16px;border-top:1px solid rgba(197,164,109,.13);color:#706b62;font-size:7px;letter-spacing:2px;text-transform:uppercase;line-height:1.9}
+.success-close{position:absolute;top:18px;right:18px;z-index:3;width:30px;height:30px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(197,164,109,.25);color:#aaa49a;background:rgba(0,0,0,.2);font-size:19px;transition:.25s}
 .success-close:hover{border-color:var(--dorado);color:var(--dorado)}
 @keyframes successBackdrop{from{opacity:0}to{opacity:1}}
-@keyframes successCardIn{
-  from{opacity:0;transform:translateY(18px) scale(.97)}
-  to{opacity:1;transform:translateY(0) scale(1)}
-}
-@keyframes successSymbolIn{
-  from{opacity:0;transform:scale(.7) rotate(-10deg)}
-  to{opacity:1;transform:scale(1) rotate(0)}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*:before,*:after{
-    scroll-behavior:auto!important;
-    animation-duration:.01ms!important;
-    animation-iteration-count:1!important;
-    transition-duration:.01ms!important;
-  }
-}
+@keyframes successCardIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes successSymbolIn{from{opacity:0;transform:scale(.7) rotate(-10deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 @media(max-width:900px){
   .nav{grid-template-columns:1fr auto}
   .wordmark{grid-column:1;grid-row:1;text-align:left;font-size:32px}
@@ -612,33 +366,18 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
   </div>
 </aside>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<!-- VENTANA EMERGENTE PREMIUM DE CONFIRMACIÓN -->
-<div
-  class="success-modal-wrap"
-  id="success-modal"
-  role="dialog"
-  aria-modal="true"
-  aria-labelledby="success-title"
-  aria-describedby="success-description"
-  aria-hidden="true"
-  tabindex="-1"
->
+<div class="success-modal-wrap" id="success-modal" role="dialog" aria-modal="true" aria-labelledby="success-title" aria-describedby="success-description" aria-hidden="true" tabindex="-1">
   <section class="success-modal">
     <button class="success-close" type="button" onclick="closeSuccessModal()" aria-label="Cerrar ventana">×</button>
     <div class="success-inner">
       <div class="success-topline">Confirmación de compra</div>
       <div class="success-brand">LORENA</div>
       <div class="success-brand-caption">Diseñado para destacar</div>
-      <div class="success-divider" aria-hidden="true">
-        <span></span><div class="success-diamond">✦</div><span></span>
-      </div>
+      <div class="success-divider" aria-hidden="true"><span></span><div class="success-diamond">✦</div><span></span></div>
       <div class="success-symbol" aria-hidden="true">✓</div>
       <div class="success-eyebrow">Compra completada correctamente</div>
       <h2 id="success-title">¡PEDIDO<br><em>REALIZADO!</em></h2>
-      <p class="success-description" id="success-description">
-        Gracias por tu compra y por confiar en nuestra marca.
-        Hemos enviado los datos de tu pedido para su gestión.
-      </p>
+      <p class="success-description" id="success-description">Gracias por tu compra y por confiar en nuestra marca. Hemos enviado los datos de tu pedido para su gestión.</p>
       <span class="success-customer" id="success-customer-name"></span>
       <div class="success-order-panel">
         <span class="success-order-label">Referencia de tu pedido</span>
@@ -647,21 +386,12 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
           <span>Total de tu compra</span>
           <strong id="success-total">0,00 €</strong>
         </div>
-        <p class="success-order-note">
-          Guarda la referencia por si necesitas consultar tu pedido.
-        </p>
+        <p class="success-order-note">Guarda la referencia por si necesitas consultar tu pedido.</p>
       </div>
       <div class="success-thanks">Gracias por elegir <span>LORENA.</span></div>
-      <button class="cta success-continue" type="button" onclick="closeSuccessModal()">
-        Continuar comprando <span>↗</span>
-      </button>
-      <button class="success-close-button" type="button" onclick="closeSuccessModal()">
-        Cerrar ventana
-      </button>
-      <div class="success-footer">
-        LORENA · Diseñado con intención<br>
-        Gracias por confiar en nuestra marca
-      </div>
+      <button class="cta success-continue" type="button" onclick="closeSuccessModal()">Continuar comprando <span>↗</span></button>
+      <button class="success-close-button" type="button" onclick="closeSuccessModal()">Cerrar ventana</button>
+      <div class="success-footer">LORENA · Diseñado con intención<br>Gracias por confiar en nuestra marca</div>
     </div>
   </section>
 </div>
@@ -669,7 +399,7 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
 "use strict";
 /* CONFIGURACIÓN */
 const ORDER_EMAIL = "boulahtoufyousseff15@gmail.com";
-const FORM_SUBMIT_URL = "https://formsubmit.co/ajax/" + ORDER_EMAIL;
+const FORM_SUBMIT_URL = "https://formsubmit.co/ajax/" + encodeURIComponent(ORDER_EMAIL);
 const SUPABASE_URL = "https://jmcjqlqkzsahlogtdmyk.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_W3B3n9v20W_y7VXb2JPOYQ_nwsr3gUa";
 let stockLoaded = false;
@@ -716,7 +446,9 @@ async function loadStock(options={}){
         }
       }
     );
-    if(!response.ok) throw new Error("No se pudo consultar el inventario.");
+    if(!response.ok){
+      throw new Error("No se pudo consultar el inventario.");
+    }
     const inventory = await response.json();
     products.forEach(product=>{
       const row = inventory.find(item=>Number(item.id)===product.id);
@@ -830,7 +562,7 @@ function showCheckout(){
     return;
   }
   if(!stockLoaded || stockError){
-    showToast("No se puede verificar el stock. Espera mientras se comprueba.");
+    showToast("No se puede verificar el stock. Se está intentando comprobar de nuevo.");
     loadStock();
     return;
   }
@@ -897,11 +629,82 @@ async function deductStock(items){
     })
   });
   if(!response.ok){
-    throw new Error("No se ha podido descontar el stock. Comprueba la configuración de Supabase.");
+    const message = await response.text().catch(()=>"");
+    throw new Error(
+      "El correo del pedido se ha enviado, pero Supabase no ha confirmado el descuento del stock. " +
+      "Revisa el inventario antes de aceptar el pedido. " + message
+    );
   }
   const result = await response.json().catch(()=>null);
   if(result && result.success===false){
-    throw new Error(result.message||"No hay stock suficiente para completar el pedido.");
+    throw new Error(
+      "El correo del pedido se ha enviado, pero el stock no se ha podido reservar. " +
+      (result.message||"Revisa el inventario antes de aceptar el pedido.")
+    );
+  }
+}
+/* ENVIAR PEDIDO A FORMSUBMIT */
+async function sendOrderEmail(emailData){
+  const controller = new AbortController();
+  const timeoutId = setTimeout(()=>controller.abort(),25000);
+  try{
+    const response = await fetch(FORM_SUBMIT_URL,{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json",
+        "Accept":"application/json"
+      },
+      body:JSON.stringify(emailData),
+      signal:controller.signal
+    });
+    const responseText = await response.text();
+    let result = null;
+    try{
+      result = JSON.parse(responseText);
+    }catch(error){
+      result = null;
+    }
+    if(!response.ok){
+      const message = result && (result.message||result.error)
+        ? (result.message||result.error)
+        : "FormSubmit ha rechazado la petición (HTTP "+response.status+").";
+      throw new Error(message);
+    }
+    if(!result){
+      throw new Error("FormSubmit no ha devuelto una confirmación válida. Comprueba el correo antes de volver a enviar el pedido.");
+    }
+    const successValue = String(result.success ?? "").toLowerCase();
+    if(
+      result.success===false ||
+      successValue==="false" ||
+      successValue==="0" ||
+      result.error
+    ){
+      throw new Error(result.message||result.error||"FormSubmit no ha confirmado el envío.");
+    }
+    /*
+      FormSubmit suele responder con success: "true".
+      Si responde HTTP correcto con JSON válido y no indica fallo,
+      consideramos aceptada la solicitud.
+    */
+    if(
+      result.success===true ||
+      successValue==="true" ||
+      result.message
+    ){
+      return result;
+    }
+    throw new Error("No se ha podido verificar que FormSubmit aceptara el pedido. Revisa tu correo antes de intentarlo de nuevo.");
+  }catch(error){
+    if(error.name==="AbortError"){
+      throw new Error("FormSubmit ha tardado demasiado en responder. No repitas el pedido todavía: comprueba primero si el correo ha llegado.");
+    }
+    if(error instanceof TypeError){
+      throw new Error("No se pudo conectar con FormSubmit. Comprueba tu conexión y revisa el correo antes de repetir el pedido.");
+    }
+    throw error;
+  }finally{
+    clearTimeout(timeoutId);
   }
 }
 /* ABRIR VENTANA DE PEDIDO REALIZADO */
@@ -953,6 +756,7 @@ document.getElementById("order-form").addEventListener("submit",async function(e
   }
   orderInProgress = true;
   submitButton.disabled = true;
+  let emailAccepted = false;
   try{
     submitButton.textContent = "Comprobando stock…";
     const stockOk = await loadStock({silent:true});
@@ -977,13 +781,11 @@ document.getElementById("order-form").addEventListener("submit",async function(e
       `Cantidad: ${item.qty}`,
       `Subtotal: ${euro(item.price*item.qty)}`
     ].join("\n")).join("\n\n");
-    submitButton.textContent = "Reservando unidades…";
-    await deductStock(orderItems);
-    submitButton.textContent = "Enviando pedido…";
     const emailData = {
       _subject:`Nuevo pedido LORENA — ${orderId}`,
       _template:"table",
       _captcha:"false",
+      _replyto:"",
       Referencia_del_pedido:orderId,
       Nombre_completo:name,
       Telefono:phone,
@@ -1000,63 +802,26 @@ document.getElementById("order-form").addEventListener("submit",async function(e
         cantidad:item.qty,
         precio_unitario:item.price,
         subtotal:item.price*item.qty
-      })))
+      }))),
+      Pagina_de_origen:window.location.href
     };
-    const controller = new AbortController();
-    const timeoutId = setTimeout(()=>controller.abort(),20000);
-    let emailResponse;
-    try{
-      emailResponse = await fetch(FORM_SUBMIT_URL,{
-        method:"POST",
-        headers:{
-          "Content-Type":"application/json",
-          "Accept":"application/json"
-        },
-        body:JSON.stringify(emailData),
-        signal:controller.signal
-      });
-    }catch(error){
-      if(error.name==="AbortError"){
-        throw new Error("FormSubmit ha tardado demasiado en responder. El stock se ha descontado. Comprueba tu correo antes de repetir el pedido.");
-      }
-      throw new Error("No se pudo conectar con FormSubmit. El stock se ha descontado. Comprueba tu conexión y el correo antes de repetir el pedido.");
-    }finally{
-      clearTimeout(timeoutId);
-    }
     /*
-      Procesamos la respuesta del servicio.
-      Si el servidor devuelve un error HTTP o indica explícitamente
-      que el envío ha fallado, no mostramos una confirmación falsa.
+      Primero se envía el pedido a FormSubmit.
+      Así no se descuentan unidades si el correo es rechazado.
     */
-    const responseText = await emailResponse.text();
-    let emailResult = null;
-    try{
-      emailResult = JSON.parse(responseText);
-    }catch(error){
-      emailResult = null;
-    }
-    if(!emailResponse.ok){
-      const serverMessage = emailResult
-        ? (emailResult.message || emailResult.error || "FormSubmit no ha aceptado el pedido.")
-        : "FormSubmit no ha aceptado el pedido.";
-      throw new Error(serverMessage+" El stock se ha descontado. Comprueba el correo antes de repetir el pedido.");
-    }
-    if(!emailResult){
-      throw new Error("El servidor aceptó la conexión, pero no devolvió una confirmación legible. Comprueba tu correo antes de repetir el pedido.");
-    }
-    const successValue = String(emailResult.success ?? "").toLowerCase();
-    const explicitFailure =
-      emailResult.success === false ||
-      successValue === "false" ||
-      successValue === "0" ||
-      Boolean(emailResult.error);
-    if(explicitFailure){
-      const serverMessage = emailResult.message || emailResult.error || "FormSubmit no ha confirmado el envío.";
-      throw new Error(serverMessage+" El stock se ha descontado. Comprueba el correo antes de repetir el pedido.");
-    }
+    submitButton.textContent = "Enviando pedido…";
+    await sendOrderEmail(emailData);
+    emailAccepted = true;
     /*
-      La respuesta HTTP fue correcta y no hay un fallo explícito.
-      Limpiamos el carrito y mostramos la ventana premium.
+      Después se intenta descontar el stock.
+      Si Supabase falla, se informa del problema y no se muestra
+      la ventana de pedido completado.
+    */
+    submitButton.textContent = "Confirmando stock…";
+    await deductStock(orderItems);
+    /*
+      Solo después de recibir respuesta satisfactoria de FormSubmit
+      y Supabase se confirma el pedido al cliente.
     */
     cart = [];
     checkoutOpen = false;
@@ -1064,14 +829,20 @@ document.getElementById("order-form").addEventListener("submit",async function(e
     renderCart();
     closeCart();
     openSuccessModal(orderId,name,total);
-    /*
-      Actualizamos el stock en segundo plano sin retrasar
-      la aparición de la ventana de confirmación.
-    */
     loadStock({silent:true}).catch(()=>{});
   }catch(error){
     console.error("Error al procesar el pedido LORENA:",error);
-    showToast(error.message||"No se pudo completar el pedido.");
+    if(emailAccepted){
+      showToast(
+        "El correo del pedido se ha enviado, pero ha fallado la confirmación del stock. " +
+        "No repitas la compra; revisa el inventario."
+      );
+    }else{
+      showToast(
+        (error.message||"No se pudo enviar el pedido.")+
+        " No repitas el pedido hasta comprobar si el correo ha llegado."
+      );
+    }
     loadStock({silent:true}).catch(()=>{});
   }finally{
     orderInProgress = false;
