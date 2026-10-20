@@ -22,340 +22,67 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-
 html{scroll-behavior:smooth;scroll-padding-top:100px}
-
-body{
-  background:var(--negro);
-  color:var(--blanco);
-  font-family:'Manrope',Arial,sans-serif;
-  font-weight:300;
-}
-
+body{background:var(--negro);color:var(--blanco);font-family:'Manrope',Arial,sans-serif;font-weight:300}
 body.cart-open{overflow:hidden}
-
 a{color:inherit;text-decoration:none}
 button,input,select{font:inherit}
 button{cursor:pointer}
 img{max-width:100%}
 
-.topline{
-  background:var(--dorado);
-  color:#080808;
-  text-align:center;
-  padding:10px;
-  font-size:9px;
-  letter-spacing:3px;
-  text-transform:uppercase;
-}
-
-header{
-  position:sticky;
-  top:0;
-  z-index:20;
-  background:rgba(9,9,9,.96);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid #292722;
-}
-
-.nav{
-  max-width:1440px;
-  margin:auto;
-  padding:18px 5%;
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;
-  gap:24px;
-}
-
+.topline{background:var(--dorado);color:#080808;text-align:center;padding:10px;font-size:9px;letter-spacing:3px;text-transform:uppercase}
+header{position:sticky;top:0;z-index:20;background:rgba(9,9,9,.96);backdrop-filter:blur(15px);border-bottom:1px solid #292722}
+.nav{max-width:1440px;margin:auto;padding:18px 5%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px}
 .navlinks{display:flex;gap:25px;align-items:center}
-
-.navlinks a,.nav-right button{
-  font-size:9px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:#d6d1c7;
-  transition:.25s;
-}
-
+.navlinks a,.nav-right button{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#d6d1c7;transition:.25s}
 .navlinks a:hover{color:var(--dorado)}
-
-.wordmark{
-  font-family:'Cormorant Garamond',serif;
-  font-weight:400;
-  letter-spacing:10px;
-  padding-left:10px;
-  font-size:38px;
-  text-align:center;
-  white-space:nowrap;
-}
-
+.wordmark{font-family:'Cormorant Garamond',serif;font-weight:400;letter-spacing:10px;padding-left:10px;font-size:38px;text-align:center;white-space:nowrap}
 .nav-right{display:flex;justify-content:flex-end;align-items:center}
-
-.nav-right button{
-  border:1px solid var(--borde);
-  background:transparent;
-  padding:12px 15px;
-}
-
+.nav-right button{border:1px solid var(--borde);background:transparent;padding:12px 15px}
 .nav-right button:hover{color:var(--dorado);border-color:var(--dorado)}
 
-.hero{
-  min-height:650px;
-  position:relative;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  overflow:hidden;
-  background:radial-gradient(ellipse at 70% 45%,#29251e 0%,#11100e 38%,#090909 75%);
-}
-
-.hero-copy{
-  padding:90px 8% 90px 12%;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  justify-content:center;
-  position:relative;
-  z-index:2;
-}
-
-.kicker{
-  color:var(--dorado);
-  font-size:9px;
-  letter-spacing:4px;
-  text-transform:uppercase;
-}
-
-.hero h1{
-  font-family:'Cormorant Garamond',serif;
-  font-weight:300;
-  font-size:clamp(65px,9vw,140px);
-  line-height:.85;
-  letter-spacing:.08em;
-  margin:28px 0;
-}
-
-.hero h1 span{
-  display:block;
-  font-size:12px;
-  letter-spacing:5px;
-  margin-top:25px;
-  color:var(--dorado);
-}
-
-.hero-copy p{
-  max-width:400px;
-  color:#b7b2a8;
-  line-height:2;
-  font-size:12px;
-  margin-bottom:32px;
-}
-
-.cta{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:22px;
-  background:var(--dorado);
-  color:#111;
-  padding:16px 23px;
-  font-size:9px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  border:1px solid var(--dorado);
-  transition:.3s;
-}
-
+.hero{min-height:650px;position:relative;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;background:radial-gradient(ellipse at 70% 45%,#29251e 0%,#11100e 38%,#090909 75%)}
+.hero-copy{padding:90px 8% 90px 12%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;position:relative;z-index:2}
+.kicker{color:var(--dorado);font-size:9px;letter-spacing:4px;text-transform:uppercase}
+.hero h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(65px,9vw,140px);line-height:.85;letter-spacing:.08em;margin:28px 0}
+.hero h1 span{display:block;font-size:12px;letter-spacing:5px;margin-top:25px;color:var(--dorado)}
+.hero-copy p{max-width:400px;color:#b7b2a8;line-height:2;font-size:12px;margin-bottom:32px}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:22px;background:var(--dorado);color:#111;padding:16px 23px;font-size:9px;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--dorado);transition:.3s}
 .cta:hover{background:transparent;color:var(--dorado)}
-
 .cta.dark{background:transparent;color:var(--blanco);border-color:#514a3d}
 .cta.dark:hover{color:var(--dorado);border-color:var(--dorado)}
+.hero-visual{position:relative;min-height:500px;display:flex;align-items:center;justify-content:center;padding:35px 8% 35px 0}
+.hero-visual:before{content:"";position:absolute;inset:8% 12% 8% 0;border:1px solid rgba(197,164,109,.2);transform:rotate(3deg)}
+.hero-visual img{position:relative;z-index:1;width:100%;max-height:600px;object-fit:contain;filter:drop-shadow(0 25px 50px #000)}
+.hero-stamp{position:absolute;right:7%;bottom:9%;z-index:2;border:1px solid var(--borde);padding:16px;color:var(--dorado);font-family:'Cormorant Garamond',serif;font-size:17px;letter-spacing:2px;background:#090909d9}
+.hero-index{position:absolute;left:5%;bottom:25px;color:#777168;font-size:9px;letter-spacing:3px}
 
-.hero-visual{
-  position:relative;
-  min-height:500px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:35px 8% 35px 0;
-}
-
-.hero-visual:before{
-  content:"";
-  position:absolute;
-  inset:8% 12% 8% 0;
-  border:1px solid rgba(197,164,109,.2);
-  transform:rotate(3deg);
-}
-
-.hero-visual img{
-  position:relative;
-  z-index:1;
-  width:100%;
-  max-height:600px;
-  object-fit:contain;
-  filter:drop-shadow(0 25px 50px #000);
-}
-
-.hero-stamp{
-  position:absolute;
-  right:7%;
-  bottom:9%;
-  z-index:2;
-  border:1px solid var(--borde);
-  padding:16px;
-  color:var(--dorado);
-  font-family:'Cormorant Garamond',serif;
-  font-size:17px;
-  letter-spacing:2px;
-  background:#090909d9;
-}
-
-.hero-index{
-  position:absolute;
-  left:5%;
-  bottom:25px;
-  color:#777168;
-  font-size:9px;
-  letter-spacing:3px;
-}
-
-.marquee{
-  border-top:1px solid #27251f;
-  border-bottom:1px solid #27251f;
-  overflow:hidden;
-  white-space:nowrap;
-  padding:18px 0;
-  color:var(--dorado);
-  font-family:'Cormorant Garamond',serif;
-  font-size:20px;
-  letter-spacing:5px;
-  text-align:center;
-}
-
+.marquee{border-top:1px solid #27251f;border-bottom:1px solid #27251f;overflow:hidden;white-space:nowrap;padding:18px 0;color:var(--dorado);font-family:'Cormorant Garamond',serif;font-size:20px;letter-spacing:5px;text-align:center}
 .marquee span{margin:0 25px}
-
 .section{max-width:1440px;margin:auto;padding:100px 6%}
-
-.section-head{
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-  gap:25px;
-  margin-bottom:42px;
-}
-
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:42px}
 .section-head .kicker{margin-bottom:14px}
-
-h2{
-  font-family:'Cormorant Garamond',serif;
-  font-weight:300;
-  font-size:clamp(42px,5vw,66px);
-  line-height:1.02;
-}
-
-.section-head p{
-  max-width:360px;
-  color:var(--gris);
-  font-size:11px;
-  line-height:1.9;
-}
-
+h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(42px,5vw,66px);line-height:1.02}
+.section-head p{max-width:360px;color:var(--gris);font-size:11px;line-height:1.9}
 .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px}
-
-.filter{
-  background:transparent;
-  color:#aaa49a;
-  border:1px solid #34312b;
-  padding:11px 16px;
-  font-size:9px;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-}
-
+.filter{background:transparent;color:#aaa49a;border:1px solid #34312b;padding:11px 16px;font-size:9px;letter-spacing:1.5px;text-transform:uppercase}
 .filter.active,.filter:hover{border-color:var(--dorado);color:var(--dorado)}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:35px 18px;
-}
-
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:35px 18px}
 .card{min-width:0}
-
-.card-photo{
-  position:relative;
-  overflow:hidden;
-  background:#151412;
-  aspect-ratio:3/4;
-  border:1px solid #26231e;
-}
-
-.card-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transition:transform .6s;
-}
-
+.card-photo{position:relative;overflow:hidden;background:#151412;aspect-ratio:3/4;border:1px solid #26231e}
+.card-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
 .card:hover .card-photo img{transform:scale(1.04)}
-
-.badge{
-  position:absolute;
-  top:13px;
-  left:13px;
-  background:#090909e8;
-  border:1px solid var(--borde);
-  color:var(--dorado);
-  font-size:8px;
-  letter-spacing:2px;
-  padding:8px 10px;
-}
-
-.quick{
-  position:absolute;
-  left:12px;
-  bottom:12px;
-  width:calc(100% - 24px);
-  padding:13px;
-  background:#090909ed;
-  border:1px solid var(--borde);
-  color:var(--blanco);
-  font-size:9px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  transition:.25s;
-}
-
+.badge{position:absolute;top:13px;left:13px;background:#090909e8;border:1px solid var(--borde);color:var(--dorado);font-size:8px;letter-spacing:2px;padding:8px 10px}
+.quick{position:absolute;left:12px;bottom:12px;width:calc(100% - 24px);padding:13px;background:#090909ed;border:1px solid var(--borde);color:var(--blanco);font-size:9px;letter-spacing:2px;text-transform:uppercase;transition:.25s}
 .quick:hover{color:var(--dorado);border-color:var(--dorado)}
-
 .quick:disabled,.quantity-controls button:disabled{opacity:.4;cursor:not-allowed}
-
 .card-meta{padding:17px 2px 0;display:flex;justify-content:space-between;gap:12px}
-
-.card-meta h3{
-  font-family:'Cormorant Garamond',serif;
-  font-size:24px;
-  font-weight:400;
-}
-
+.card-meta h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400}
 .price{color:var(--dorado);font-size:12px;white-space:nowrap;padding-top:7px}
-
 .card-desc{font-size:10px;color:var(--gris);margin-top:7px;line-height:1.8}
-
 .stock-status{color:var(--dorado);min-height:18px}
 .stock-status.stock-error{color:#d9b8a8}
-
-.product-size{
-  display:inline-block;
-  margin-top:12px;
-  padding:7px 10px;
-  border:1px solid #39352d;
-  color:var(--gris);
-  font-size:10px;
-}
-
+.product-size{display:inline-block;margin-top:12px;padding:7px 10px;border:1px solid #39352d;color:var(--gris);font-size:10px}
 .swatches{display:flex;gap:8px;margin-top:13px}
 .swatch{width:14px;height:14px;border-radius:50%;border:1px solid #888}
 .black{background:#111}
@@ -363,505 +90,114 @@ h2{
 .grey{background:#777}
 .beige{background:#c8bba7}
 
-.story-band{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  min-height:480px;
-  background:#11100e;
-  border-top:1px solid #27251f;
-  border-bottom:1px solid #27251f;
-}
-
+.story-band{display:grid;grid-template-columns:1fr 1fr;min-height:480px;background:#11100e;border-top:1px solid #27251f;border-bottom:1px solid #27251f}
 .story-image{min-height:420px;position:relative;overflow:hidden;background:#171614}
-
-.story-image img{
-  width:100%;
-  height:100%;
-  position:absolute;
-  inset:0;
-  object-fit:cover;
-  filter:brightness(.8);
-}
-
-.story-copy{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:flex-start;
-  padding:75px 12%;
-}
-
+.story-image img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:brightness(.8)}
+.story-copy{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:75px 12%}
 .story-copy h2{margin:22px 0}
-
-.story-copy p{
-  font-size:12px;
-  color:#b7b2a8;
-  line-height:2.1;
-  max-width:440px;
-  margin-bottom:28px;
-}
-
+.story-copy p{font-size:12px;color:#b7b2a8;line-height:2.1;max-width:440px;margin-bottom:28px}
 .values{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #292722}
-
 .value{padding:35px 20px;text-align:center;border-right:1px solid #292722}
 .value:last-child{border-right:0}
-
-.value b{
-  display:block;
-  font-family:'Cormorant Garamond',serif;
-  font-size:27px;
-  font-weight:400;
-  margin-bottom:8px;
-}
-
-.value span{
-  font-size:8px;
-  letter-spacing:2px;
-  color:var(--dorado);
-  text-transform:uppercase;
-}
-
-.news{
-  padding:90px 20px;
-  text-align:center;
-  background:radial-gradient(ellipse at center,#1b1915,#090909 70%);
-}
-
+.value b{display:block;font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:400;margin-bottom:8px}
+.value span{font-size:8px;letter-spacing:2px;color:var(--dorado);text-transform:uppercase}
+.news{padding:90px 20px;text-align:center;background:radial-gradient(ellipse at center,#1b1915,#090909 70%)}
 .news h2{margin:20px 0}
-
 .news p{font-size:11px;line-height:2;color:var(--gris);margin-bottom:25px}
-
-footer{
-  border-top:1px solid #292722;
-  padding:45px 6%;
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  gap:20px;
-  align-items:center;
-  color:#8d887e;
-  font-size:9px;
-  letter-spacing:1.5px;
-}
-
+footer{border-top:1px solid #292722;padding:45px 6%;display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;color:#8d887e;font-size:9px;letter-spacing:1.5px}
 footer .wordmark{font-size:29px;color:var(--blanco)}
 .foot-right{text-align:right}
 
 /* CARRITO */
 
-.cart-drawer{
-  position:fixed;
-  z-index:50;
-  inset:0 0 0 auto;
-  width:min(480px,100%);
-  background:#10100f;
-  border-left:1px solid var(--borde);
-  padding:26px;
-  transform:translateX(105%);
-  visibility:hidden;
-  transition:transform .35s,visibility .35s;
-  overflow-y:auto;
-  overscroll-behavior:contain;
-}
-
+.cart-drawer{position:fixed;z-index:50;inset:0 0 0 auto;width:min(480px,100%);background:#10100f;border-left:1px solid var(--borde);padding:26px;transform:translateX(105%);visibility:hidden;transition:transform .35s,visibility .35s;overflow-y:auto;overscroll-behavior:contain}
 .cart-drawer.open{transform:translateX(0);visibility:visible}
-
-.drawer-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border-bottom:1px solid #333;
-  padding-bottom:20px;
-}
-
+.drawer-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #333;padding-bottom:20px}
 .drawer-top h2{font-size:35px}
-
 .icon-btn{background:none;border:0;color:var(--dorado);font-size:28px}
-
-.cart-row{
-  padding:18px 0;
-  border-bottom:1px solid #302e28;
-  display:grid;
-  grid-template-columns:95px minmax(0,1fr);
-  gap:15px;
-  align-items:start;
-}
-
-.cart-product-image{
-  width:95px;
-  height:115px;
-  object-fit:cover;
-  background:#191816;
-  border:1px solid #39352d;
-  display:block;
-}
-
+.cart-row{padding:18px 0;border-bottom:1px solid #302e28;display:grid;grid-template-columns:95px minmax(0,1fr);gap:15px;align-items:start}
+.cart-product-image{width:95px;height:115px;object-fit:cover;background:#191816;border:1px solid #39352d;display:block}
 .cart-row-info{min-width:0}
-
-.cart-row-info strong{
-  font-family:'Cormorant Garamond',serif;
-  font-size:20px;
-  font-weight:500;
-  line-height:1.3;
-  display:block;
-  overflow-wrap:anywhere;
-}
-
+.cart-row-info strong{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;line-height:1.3;display:block;overflow-wrap:anywhere}
 .cart-row small{display:block;color:var(--gris);margin-top:6px;font-size:10px;line-height:1.7}
-
 .cart-item-price{color:var(--dorado);font-size:14px;font-weight:600;margin-top:10px}
-
 .cart-subtotal{font-size:10px;color:var(--gris);margin-top:5px}
-
 .quantity-controls{display:flex;align-items:center;gap:12px;margin-top:12px}
-
-.quantity-controls button{
-  width:29px;
-  height:29px;
-  border:1px solid var(--borde);
-  background:transparent;
-  color:var(--dorado);
-  font-size:17px;
-}
-
+.quantity-controls button{width:29px;height:29px;border:1px solid var(--borde);background:transparent;color:var(--dorado);font-size:17px}
 .quantity-controls button:hover{background:var(--dorado);color:#111}
-
 .quantity-number{font-size:12px;min-width:12px;text-align:center}
-
-.remove{
-  display:inline-block;
-  margin-top:12px;
-  color:#d9b8a8;
-  background:transparent;
-  border:1px solid #60443b;
-  padding:7px 10px;
-  font-size:10px;
-  transition:.2s;
-}
-
+.remove{display:inline-block;margin-top:12px;color:#d9b8a8;background:transparent;border:1px solid #60443b;padding:7px 10px;font-size:10px;transition:.2s}
 .remove:hover{background:#60443b;color:white}
-
-.cart-total{
-  padding:25px 0;
-  color:var(--dorado);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-  border-bottom:1px solid #302e28;
-}
-
+.cart-total{padding:25px 0;color:var(--dorado);display:flex;justify-content:space-between;align-items:center;gap:15px;border-bottom:1px solid #302e28}
 .cart-total span{color:var(--blanco);font-size:13px}
 .cart-total strong{font-size:23px}
-
 .drawer-note{font-size:10px;color:var(--gris);line-height:1.8;margin:20px 0}
-
 .order-form{display:grid;gap:9px;margin-top:18px}
-
-.order-form label{
-  font-size:9px;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  color:var(--dorado);
-  margin-top:6px;
-}
-
-.order-form input,.order-form select{
-  width:100%;
-  background:#090909;
-  color:var(--blanco);
-  border:1px solid #39352d;
-  padding:13px;
-  font-size:12px;
-  outline:none;
-  border-radius:0;
-}
-
+.order-form label{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dorado);margin-top:6px}
+.order-form input,.order-form select{width:100%;background:#090909;color:var(--blanco);border:1px solid #39352d;padding:13px;font-size:12px;outline:none;border-radius:0}
 .order-form input:focus,.order-form select:focus{border-color:var(--dorado)}
-
 .order-form select option{background:#090909;color:var(--blanco)}
-
 .order-submit{width:100%;margin-top:12px;font-weight:600}
-
 .order-submit:disabled{opacity:.55;cursor:wait}
-
 .checkout-start{margin-top:20px}
 .checkout-start .cta{width:100%}
-
 #checkout-start[hidden],#checkout-form-area[hidden]{display:none!important}
-
 #checkout-form-area{margin-top:24px;padding-top:20px;border-top:1px solid #302e28}
-
-.overlay{
-  visibility:hidden;
-  opacity:0;
-  pointer-events:none;
-  position:fixed;
-  z-index:40;
-  inset:0;
-  background:#000a;
-  transition:opacity .35s,visibility .35s;
-}
-
+.overlay{visibility:hidden;opacity:0;pointer-events:none;position:fixed;z-index:40;inset:0;background:#000a;transition:opacity .35s,visibility .35s}
 .overlay.show{visibility:visible;opacity:1;pointer-events:auto}
-
 .empty-cart{padding:25px 0}
 .empty-cart p{font-size:12px;color:var(--gris);line-height:1.8;margin-bottom:20px}
 .empty-cart .cta{width:100%}
-
-.toast{
-  position:fixed;
-  z-index:120;
-  bottom:24px;
-  left:50%;
-  transform:translateX(-50%);
-  background:var(--dorado);
-  color:#111;
-  padding:14px 22px;
-  font-size:10px;
-  letter-spacing:1px;
-  display:none;
-  max-width:90%;
-  text-align:center;
-  line-height:1.7;
-}
-
+.toast{position:fixed;z-index:120;bottom:24px;left:50%;transform:translateX(-50%);background:var(--dorado);color:#111;padding:14px 22px;font-size:10px;letter-spacing:1px;display:none;max-width:90%;text-align:center;line-height:1.7}
 .toast.show{display:block}
 
-/* VENTANA PREMIUM DE CONFIRMACIÓN */
+/* VENTANA DE PEDIDO REALIZADO */
 
-.success-modal-wrap{
-  position:fixed;
-  inset:0;
-  z-index:100;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:22px;
-  background:rgba(0,0,0,.88);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  overflow-y:auto;
-}
-
-.success-modal-wrap.show{
-  display:flex;
-  animation:successBackdrop .35s ease both;
-}
-
-.success-modal{
-  position:relative;
-  isolation:isolate;
-  width:100%;
-  max-width:510px;
-  max-height:calc(100dvh - 44px);
-  overflow-y:auto;
-  padding:0;
-  text-align:center;
-  background:
-    radial-gradient(ellipse at 50% 0%,rgba(197,164,109,.13),transparent 48%),
-    linear-gradient(145deg,#151411 0%,#0b0b0a 52%,#12110e 100%);
-  border:1px solid rgba(197,164,109,.75);
-  box-shadow:0 30px 100px rgba(0,0,0,.85),0 0 45px rgba(197,164,109,.08),inset 0 0 35px rgba(197,164,109,.025);
-  animation:successCardIn .45s cubic-bezier(.2,.8,.2,1) both;
-}
-
-.success-modal:before,.success-modal:after{
-  content:"";
-  position:absolute;
-  z-index:-1;
-  width:65px;
-  height:65px;
-  border-color:var(--dorado);
-  border-style:solid;
-  opacity:.75;
-  pointer-events:none;
-}
-
+.success-modal-wrap{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(0,0,0,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);overflow-y:auto}
+.success-modal-wrap.show{display:flex;animation:successBackdrop .3s ease both}
+.success-modal{position:relative;isolation:isolate;width:100%;max-width:510px;max-height:calc(100dvh - 44px);overflow-y:auto;padding:0;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(197,164,109,.13),transparent 48%),linear-gradient(145deg,#151411 0%,#0b0b0a 52%,#12110e 100%);border:1px solid rgba(197,164,109,.75);box-shadow:0 30px 100px rgba(0,0,0,.85),0 0 45px rgba(197,164,109,.08),inset 0 0 35px rgba(197,164,109,.025);animation:successCardIn .4s cubic-bezier(.2,.8,.2,1) both}
+.success-modal:before,.success-modal:after{content:"";position:absolute;z-index:-1;width:65px;height:65px;border-color:var(--dorado);border-style:solid;opacity:.75;pointer-events:none}
 .success-modal:before{top:12px;left:12px;border-width:1px 0 0 1px}
 .success-modal:after{right:12px;bottom:12px;border-width:0 1px 1px 0}
-
 .success-inner{position:relative;padding:42px 38px 36px}
-
-.success-topline{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:12px;
-  color:var(--dorado);
-  font-size:8px;
-  letter-spacing:4px;
-  text-transform:uppercase;
-  margin-bottom:30px;
-}
-
-.success-topline:before,.success-topline:after{
-  content:"";
-  width:30px;
-  height:1px;
-  background:linear-gradient(90deg,transparent,var(--dorado));
-}
-
+.success-topline{display:flex;justify-content:center;align-items:center;gap:12px;color:var(--dorado);font-size:8px;letter-spacing:4px;text-transform:uppercase;margin-bottom:30px}
+.success-topline:before,.success-topline:after{content:"";width:30px;height:1px;background:linear-gradient(90deg,transparent,var(--dorado))}
 .success-topline:after{background:linear-gradient(90deg,var(--dorado),transparent)}
-
-.success-brand{
-  font-family:'Cormorant Garamond',serif;
-  font-weight:400;
-  font-size:39px;
-  letter-spacing:11px;
-  padding-left:11px;
-  color:var(--blanco);
-  line-height:1;
-  margin-bottom:10px;
-}
-
+.success-brand{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:39px;letter-spacing:11px;padding-left:11px;color:var(--blanco);line-height:1;margin-bottom:10px}
 .success-brand-caption{color:#8d887e;font-size:7px;letter-spacing:3px;text-transform:uppercase}
-
-.success-divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:27px auto}
-
-.success-divider span{
-  display:block;
-  height:1px;
-  width:65px;
-  background:linear-gradient(90deg,transparent,rgba(197,164,109,.75));
-}
-
+.success-divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:24px auto}
+.success-divider span{display:block;height:1px;width:65px;background:linear-gradient(90deg,transparent,rgba(197,164,109,.75))}
 .success-divider span:last-child{background:linear-gradient(90deg,rgba(197,164,109,.75),transparent)}
-
 .success-diamond{color:var(--dorado);font-size:13px;line-height:1}
-
-.success-symbol{
-  width:72px;
-  height:72px;
-  border:1px solid var(--dorado);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--dorado);
-  font-size:31px;
-  font-weight:300;
-  margin:0 auto 24px;
-  position:relative;
-  box-shadow:0 0 0 7px rgba(197,164,109,.035),0 0 35px rgba(197,164,109,.09);
-  animation:successSymbolIn .5s .1s ease both;
-}
-
-.success-symbol:before{
-  content:"";
-  position:absolute;
-  inset:-7px;
-  border:1px solid rgba(197,164,109,.2);
-  border-radius:50%;
-}
-
+.success-symbol{width:68px;height:68px;border:1px solid var(--dorado);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--dorado);font-size:31px;font-weight:300;margin:0 auto 22px;position:relative;box-shadow:0 0 0 7px rgba(197,164,109,.035),0 0 35px rgba(197,164,109,.09);animation:successSymbolIn .5s .1s ease both}
+.success-symbol:before{content:"";position:absolute;inset:-7px;border:1px solid rgba(197,164,109,.2);border-radius:50%}
 .success-eyebrow{color:var(--dorado);font-size:8px;letter-spacing:4px;text-transform:uppercase;margin-bottom:13px}
-
-.success-modal h2{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(38px,7vw,54px);
-  line-height:1;
-  font-weight:400;
-  letter-spacing:.5px;
-  margin-bottom:18px;
-  color:var(--blanco);
-}
-
+.success-modal h2{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,7vw,54px);line-height:1;font-weight:400;letter-spacing:.5px;margin-bottom:18px;color:var(--blanco)}
 .success-modal h2 em{font-style:normal;color:var(--dorado)}
-
 .success-description{max-width:365px;margin:0 auto;color:#c0bbb1;font-size:11px;line-height:2}
-
-.success-order-panel{
-  margin:27px 0 24px;
-  padding:17px 16px;
-  background:linear-gradient(110deg,rgba(197,164,109,.055),rgba(255,255,255,.015),rgba(197,164,109,.055));
-  border-top:1px solid rgba(197,164,109,.32);
-  border-bottom:1px solid rgba(197,164,109,.32);
-}
-
+.success-customer{display:block;color:var(--dorado);font-size:14px;font-weight:600;overflow-wrap:anywhere;margin-top:9px}
+.success-order-panel{margin:25px 0 22px;padding:17px 16px;background:linear-gradient(110deg,rgba(197,164,109,.055),rgba(255,255,255,.015),rgba(197,164,109,.055));border-top:1px solid rgba(197,164,109,.32);border-bottom:1px solid rgba(197,164,109,.32)}
 .success-order-label{display:block;color:#928a7b;font-size:7px;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px}
-
-.success-reference{display:block;color:var(--dorado);font-size:15px;font-weight:600;letter-spacing:2px;overflow-wrap:anywhere}
-
-.success-order-note{color:#8e897f;font-size:9px;line-height:1.8;margin-top:8px}
-
+.success-reference{display:block;color:var(--dorado);font-size:14px;font-weight:600;letter-spacing:2px;overflow-wrap:anywhere}
+.success-total{margin-top:15px;padding-top:13px;border-top:1px solid rgba(197,164,109,.16);display:flex;justify-content:space-between;align-items:center;gap:10px;color:#c0bbb1;font-size:10px;letter-spacing:1px;text-transform:uppercase}
+.success-total strong{font-size:21px;color:var(--dorado);letter-spacing:0}
+.success-order-note{color:#8e897f;font-size:9px;line-height:1.8;margin-top:10px}
 .success-thanks{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--blanco);letter-spacing:.5px;margin-bottom:25px}
 .success-thanks span{color:var(--dorado)}
-
-.success-continue{
-  width:100%;
-  min-height:52px;
-  gap:15px;
-  position:relative;
-  overflow:hidden;
-  font-size:9px;
-  letter-spacing:2.5px;
-  box-shadow:0 8px 25px rgba(197,164,109,.08);
-}
-
-.success-continue:after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-120%;
-  width:70%;
-  height:100%;
-  background:linear-gradient(100deg,transparent,rgba(255,255,255,.25),transparent);
-  transform:skewX(-20deg);
-  transition:left .7s ease;
-}
-
+.success-continue{width:100%;min-height:52px;gap:15px;position:relative;overflow:hidden;font-size:9px;letter-spacing:2.5px;box-shadow:0 8px 25px rgba(197,164,109,.08)}
+.success-close-button{width:100%;margin-top:10px;min-height:45px;background:transparent;border:1px solid #39352d;color:#c0bbb1;font-size:9px;letter-spacing:2px;text-transform:uppercase;transition:.25s}
+.success-close-button:hover{border-color:var(--dorado);color:var(--dorado)}
+.success-continue:after{content:"";position:absolute;top:0;left:-120%;width:70%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.25),transparent);transform:skewX(-20deg);transition:left .7s ease}
 .success-continue:hover:after{left:140%}
-
-.success-footer{
-  margin-top:25px;
-  padding-top:16px;
-  border-top:1px solid rgba(197,164,109,.13);
-  color:#706b62;
-  font-size:7px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  line-height:1.9;
-}
-
-.success-close{
-  position:absolute;
-  top:18px;
-  right:18px;
-  z-index:3;
-  width:30px;
-  height:30px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid rgba(197,164,109,.25);
-  color:#aaa49a;
-  background:rgba(0,0,0,.2);
-  font-size:19px;
-  transition:.25s;
-}
-
+.success-footer{margin-top:22px;padding-top:16px;border-top:1px solid rgba(197,164,109,.13);color:#706b62;font-size:7px;letter-spacing:2px;text-transform:uppercase;line-height:1.9}
+.success-close{position:absolute;top:18px;right:18px;z-index:3;width:30px;height:30px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(197,164,109,.25);color:#aaa49a;background:rgba(0,0,0,.2);font-size:19px;transition:.25s}
 .success-close:hover{border-color:var(--dorado);color:var(--dorado)}
 
 @keyframes successBackdrop{from{opacity:0}to{opacity:1}}
+@keyframes successCardIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes successSymbolIn{from{opacity:0;transform:scale(.7) rotate(-10deg)}to{opacity:1;transform:scale(1) rotate(0)}}
 
-@keyframes successCardIn{
-  from{opacity:0;transform:translateY(18px) scale(.98)}
-  to{opacity:1;transform:translateY(0) scale(1)}
-}
-
-@keyframes successSymbolIn{
-  from{opacity:0;transform:scale(.7) rotate(-10deg)}
-  to{opacity:1;transform:scale(1) rotate(0)}
-}
-
-@media(prefers-reduced-motion:reduce){
-  *,*:before,*:after{
-    scroll-behavior:auto!important;
-    animation-duration:.01ms!important;
-    animation-iteration-count:1!important;
-    transition-duration:.01ms!important;
-  }
-}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
 @media(max-width:900px){
   .nav{grid-template-columns:1fr auto}
@@ -921,11 +257,11 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
   .success-brand{font-size:34px;letter-spacing:8px;padding-left:8px}
   .success-topline{font-size:7px;letter-spacing:2px;margin-bottom:25px}
   .success-topline:before,.success-topline:after{width:20px}
-  .success-divider{margin:22px auto}
-  .success-symbol{width:64px;height:64px;font-size:28px;margin-bottom:21px}
-  .success-modal h2{font-size:42px}
+  .success-divider{margin:20px auto}
+  .success-symbol{width:60px;height:60px;font-size:27px;margin-bottom:20px}
+  .success-modal h2{font-size:40px}
   .success-description{font-size:10px}
-  .success-order-panel{margin:22px 0}
+  .success-order-panel{margin:21px 0}
   .success-thanks{font-size:17px}
   .success-close{top:12px;right:12px}
 }
@@ -943,9 +279,7 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
       <a href="#coleccion">Colección</a>
       <a href="#historia">La marca</a>
     </nav>
-
     <a class="wordmark" href="#inicio" aria-label="LORENA, inicio">LORENA</a>
-
     <div class="nav-right">
       <button type="button" onclick="openCart()" aria-label="Abrir carrito">
         Carrito · <span id="count">0</span>
@@ -955,28 +289,23 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
 </header>
 
 <main>
-
 <section class="hero" id="inicio">
   <div class="hero-copy">
     <span class="kicker">La primera colección</span>
     <h1>LORENA<span>EL ESTILO HABLA POR SÍ SOLO</span></h1>
     <p>Siluetas urbanas. Líneas que fluyen. Detalles que hablan por sí solos. Una nueva identidad construida alrededor de la ropa que llevas y la actitud con la que la llevas.</p>
-    <a class="cta" href="#coleccion">Explorar colección <span>↘</span></a>
+    <a class="cta" href="#coleccion">Explorar colección <span>↘️</span></a>
   </div>
-
   <div class="hero-visual">
     <img src="lorena11.png" alt="Conjunto negro de verano LORENA">
     <div class="hero-stamp">EDICIÓN LORENA · N.º 01</div>
   </div>
-
   <div class="hero-index">DESDE 2025 / MARCA INDEPENDIENTE</div>
 </section>
 
 <div class="marquee">
-  <span>LORENA</span> ✳
-  <span>ESTILO CON PERSONALIDAD</span> ✳
-  <span>EL VALOR ESTÁ EN LOS DETALLES</span> ✳
-  <span>LORENA</span> ✳
+  <span>LORENA</span> ✳ <span>ESTILO CON PERSONALIDAD</span> ✳
+  <span>EL VALOR ESTÁ EN LOS DETALLES</span> ✳ <span>LORENA</span> ✳
   <span>ESTILO CON PERSONALIDAD</span>
 </div>
 
@@ -995,7 +324,6 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
     <button class="filter" type="button" data-filter="shoes">Zapatillas</button>
     <button class="filter" type="button" data-filter="winter">Conjuntos de invierno</button>
   </div>
-
   <div class="grid" id="product-grid"></div>
 </section>
 
@@ -1003,12 +331,11 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
   <div class="story-image">
     <img src="lorena12.png" alt="Colección de invierno LORENA" loading="lazy">
   </div>
-
   <div class="story-copy">
     <div class="kicker">02 / Nuestra identidad</div>
     <h2>La diferencia<br>está en el detalle.</h2>
     <p>Costuras curvas, contrastes limpios, logotipos discretos y una paleta que combina negro, blanco, gris y tonos neutros. LORENA nace para construir un estilo reconocible sin necesidad de exagerar.</p>
-    <a class="cta dark" href="#coleccion">Ver las piezas <span>↗</span></a>
+    <a class="cta dark" href="#coleccion">Ver las piezas <span>↗️</span></a>
   </div>
 </section>
 
@@ -1022,9 +349,8 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
   <div class="kicker">LORENA</div>
   <h2>El comienzo de LORENA.</h2>
   <p>Descubre nuestra selección y elige las prendas que más te gusten.</p>
-  <a class="cta" href="#coleccion">Descubrir diseños <span>↗</span></a>
+  <a class="cta" href="#coleccion">Descubrir diseños <span>↗️</span></a>
 </section>
-
 </main>
 
 <footer>
@@ -1036,7 +362,6 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
 <div class="overlay" id="overlay" onclick="closeCart()" aria-hidden="true"></div>
 
 <aside class="cart-drawer" id="cart" aria-label="Carrito de compra" aria-hidden="true">
-
   <div class="drawer-top">
     <h2>Tu carrito</h2>
     <button class="icon-btn" type="button" onclick="closeCart()" aria-label="Cerrar carrito">×</button>
@@ -1050,12 +375,11 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
   </div>
 
   <div id="checkout-start" class="checkout-start" hidden>
-    <button class="cta" type="button" onclick="showCheckout()">Comprar ↗</button>
+    <button class="cta" type="button" onclick="showCheckout()">Comprar ↗️</button>
   </div>
 
   <div id="checkout-form-area" hidden>
     <p class="drawer-note">Completa tus datos para enviar el pedido directamente a la tienda.</p>
-
     <form id="order-form" class="order-form">
       <label for="customer-name">Nombre completo</label>
       <input id="customer-name" name="name" autocomplete="name" required maxlength="100" placeholder="Tu nombre">
@@ -1074,14 +398,14 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
       <label for="customer-notes">Observaciones</label>
       <input id="customer-notes" name="notes" maxlength="500" placeholder="Detalles adicionales (opcional)">
 
-      <button class="cta order-submit" id="order-submit" type="submit">Finalizar pedido ↗</button>
+      <button class="cta order-submit" id="order-submit" type="submit">Finalizar pedido ↗️</button>
     </form>
   </div>
-
 </aside>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<!-- VENTANA EMERGENTE DE CONFIRMACIÓN -->
 <div
   class="success-modal-wrap"
   id="success-modal"
@@ -1093,40 +417,51 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
   tabindex="-1"
 >
   <section class="success-modal">
-
-    <button class="success-close" type="button" onclick="closeSuccessModal()" aria-label="Cerrar ventana de confirmación">×</button>
+    <button class="success-close" type="button" onclick="closeSuccessModal()" aria-label="Cerrar ventana">×</button>
 
     <div class="success-inner">
-      <div class="success-topline">Una experiencia LORENA</div>
+      <div class="success-topline">Confirmación de compra</div>
       <div class="success-brand">LORENA</div>
       <div class="success-brand-caption">Diseñado para destacar</div>
 
       <div class="success-divider" aria-hidden="true">
-        <span></span>
-        <div class="success-diamond">✦</div>
-        <span></span>
+        <span></span><div class="success-diamond">✦</div><span></span>
       </div>
 
       <div class="success-symbol" aria-hidden="true">✓</div>
-      <div class="success-eyebrow">Pedido confirmado</div>
+      <div class="success-eyebrow">Compra completada correctamente</div>
 
-      <h2 id="success-title">¡Gracias por<br><em>elegirnos!</em></h2>
+      <h2 id="success-title">¡PEDIDO<br><em>REALIZADO!</em></h2>
 
       <p class="success-description" id="success-description">
-        Tu pedido ha sido aceptado correctamente. Gracias por confiar en LORENA y formar parte de nuestra historia.
-        En breve nos pondremos en contacto contigo para confirmar los detalles de la entrega.
+        Gracias por tu compra y por confiar en nuestra marca.
+        Hemos recibido correctamente los datos de tu pedido.
       </p>
+
+      <span class="success-customer" id="success-customer-name"></span>
 
       <div class="success-order-panel">
         <span class="success-order-label">Referencia de tu pedido</span>
         <strong class="success-reference" id="success-order-id"></strong>
-        <p class="success-order-note">Guarda esta referencia para cualquier consulta relacionada con tu pedido.</p>
+
+        <div class="success-total">
+          <span>Total de tu compra</span>
+          <strong id="success-total">0,00 €</strong>
+        </div>
+
+        <p class="success-order-note">
+          Guarda la referencia por si necesitas consultar tu pedido.
+        </p>
       </div>
 
-      <div class="success-thanks">Tu estilo. Tu identidad. <span>LORENA.</span></div>
+      <div class="success-thanks">Gracias por elegir <span>LORENA.</span></div>
 
-      <button class="cta success-continue" id="success-continue" type="button" onclick="closeSuccessModal()">
-        Continuar explorando <span>↗</span>
+      <button class="cta success-continue" type="button" onclick="closeSuccessModal()">
+        Continuar comprando <span>↗</span>
+      </button>
+
+      <button class="success-close-button" type="button" onclick="closeSuccessModal()">
+        Cerrar ventana
       </button>
 
       <div class="success-footer">
@@ -1142,12 +477,9 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
 
 /* CONFIGURACIÓN */
 const ORDER_EMAIL = "boulahtoufyousseff15@gmail.com";
-
 const SUPABASE_URL = "https://jmcjqlqkzsahlogtdmyk.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_W3B3n9v20W_y7VXb2JPOYQ_nwsr3gUa";
-
-const FORM_SUBMIT_URL =
-  "https://formsubmit.co/ajax/" + encodeURIComponent(ORDER_EMAIL);
+const FORM_SUBMIT_URL = "https://formsubmit.co/ajax/" + encodeURIComponent(ORDER_EMAIL);
 
 let stockLoaded = false;
 let stockError = false;
@@ -1156,9 +488,8 @@ let checkoutOpen = false;
 let orderInProgress = false;
 let previousFocusedElement = null;
 
-function isSupabaseConfigured() {
-  return SUPABASE_URL.startsWith("https://") &&
-         SUPABASE_ANON_KEY.length > 20;
+function isSupabaseConfigured(){
+  return SUPABASE_URL.startsWith("https://") && SUPABASE_ANON_KEY.length > 20;
 }
 
 const products = [
@@ -1175,25 +506,22 @@ const products = [
 
 let cart = [];
 
-function euro(number) {
-  return Number(number).toLocaleString("es-ES", {
-    style:"currency",
-    currency:"EUR"
-  });
+function euro(number){
+  return Number(number).toLocaleString("es-ES",{style:"currency",currency:"EUR"});
 }
 
 /* CONSULTAR STOCK */
-async function loadStock(options={}) {
+async function loadStock(options={}){
   const silent = options.silent === true;
 
-  if (!isSupabaseConfigured()) {
+  if(!isSupabaseConfigured()){
     stockLoaded = false;
     stockError = true;
     renderProducts(currentFilter);
     return false;
   }
 
-  try {
+  try{
     const response = await fetch(
       `${SUPABASE_URL}/rest/v1/lorena_inventory?select=id,stock`,
       {
@@ -1205,177 +533,131 @@ async function loadStock(options={}) {
       }
     );
 
-    if (!response.ok) {
-      throw new Error("No se pudo consultar el inventario.");
-    }
+    if(!response.ok) throw new Error("No se pudo consultar el inventario.");
 
     const inventory = await response.json();
 
-    products.forEach(product => {
-      const row = inventory.find(item => Number(item.id) === product.id);
+    products.forEach(product=>{
+      const row = inventory.find(item=>Number(item.id)===product.id);
       product.stock = row ? Math.max(0,Number(row.stock)||0) : 0;
     });
 
     stockLoaded = true;
     stockError = false;
 
-    cart = cart.filter(item => {
-      const product = products.find(p => p.id === item.id);
-
-      if (!product || product.stock < 1) return false;
-
+    cart = cart.filter(item=>{
+      const product = products.find(p=>p.id===item.id);
+      if(!product || product.stock<1) return false;
       item.stock = product.stock;
-
-      if (item.qty > product.stock) {
-        item.qty = product.stock;
-      }
-
-      return item.qty > 0;
+      if(item.qty>product.stock) item.qty = product.stock;
+      return item.qty>0;
     });
 
     renderProducts(currentFilter);
     renderCart();
-
     return true;
 
-  } catch (error) {
+  }catch(error){
     stockLoaded = false;
     stockError = true;
     renderProducts(currentFilter);
-
-    if (!silent) {
-      showToast("No se pudo consultar el stock. Comprueba la conexión.");
-    }
-
+    if(!silent) showToast("No se pudo consultar el stock. Comprueba la conexión.");
     return false;
   }
 }
 
 /* PRODUCTOS */
-function renderProducts(filter=currentFilter) {
+function renderProducts(filter=currentFilter){
   currentFilter = filter;
+  const list = products.filter(product=>filter==="all" || product.category===filter);
 
-  const list = products.filter(
-    product => filter === "all" || product.category === filter
-  );
-
-  document.getElementById("product-grid").innerHTML = list.map(product => `
+  document.getElementById("product-grid").innerHTML = list.map(product=>`
     <article class="card">
       <div class="card-photo">
-        <img
-          src="${product.image}"
-          alt="${product.name}"
-          loading="lazy"
-          onerror="this.style.opacity='0.15'"
-        >
+        <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.style.opacity='0.15'">
         <span class="badge">LORENA</span>
-        <button
-          class="quick"
-          type="button"
-          onclick="addToCart(${product.id})"
-          ${stockLoaded && product.stock < 1 ? "disabled" : ""}
-        >
-          ${stockLoaded && product.stock < 1 ? "Agotado" : "Añadir al carrito ↗"}
+        <button class="quick" type="button" onclick="addToCart(${product.id})" ${stockLoaded&&product.stock<1?"disabled":""}>
+          ${stockLoaded&&product.stock<1?"Agotado":"Añadir al carrito ↗"}
         </button>
       </div>
-
       <div class="card-meta">
         <h3>${product.name}</h3>
         <span class="price">${euro(product.price)}</span>
       </div>
-
       <p class="card-desc">${product.sub}</p>
-
-      <p class="card-desc stock-status ${stockError ? "stock-error" : ""}">
-        ${
-          stockLoaded
-            ? `Unidades disponibles: ${product.stock}`
-            : stockError
-              ? "Stock no disponible"
-              : "Comprobando stock…"
-        }
+      <p class="card-desc stock-status ${stockError?"stock-error":""}">
+        ${stockLoaded?`Unidades disponibles: ${product.stock}`:stockError?"Stock no disponible":"Comprobando stock…"}
       </p>
-
       <div class="product-size">Talla disponible: ${product.size}</div>
-
-      <div class="swatches" aria-label="Color del producto">
-        <i class="swatch ${product.color}"></i>
-      </div>
+      <div class="swatches" aria-label="Color del producto"><i class="swatch ${product.color}"></i></div>
     </article>
   `).join("");
 }
 
 /* FILTROS */
-document.querySelectorAll(".filter").forEach(button => {
-  button.addEventListener("click",() => {
-    document.querySelectorAll(".filter").forEach(item => item.classList.remove("active"));
+document.querySelectorAll(".filter").forEach(button=>{
+  button.addEventListener("click",()=>{
+    document.querySelectorAll(".filter").forEach(item=>item.classList.remove("active"));
     button.classList.add("active");
     renderProducts(button.dataset.filter);
   });
 });
 
-/* AÑADIR PRODUCTOS */
-function addToCart(id) {
-  const product = products.find(item => item.id === id);
+/* AÑADIR AL CARRITO */
+function addToCart(id){
+  const product = products.find(item=>item.id===id);
+  if(!product) return;
 
-  if (!product) return;
-
-  if (!stockLoaded) {
+  if(!stockLoaded){
     showToast("Espera a que se compruebe el stock antes de añadir productos.");
     return;
   }
 
-  if (product.stock < 1) {
+  if(product.stock<1){
     showToast("Este producto está agotado.");
     return;
   }
 
-  const existing = cart.find(item => item.id === id);
+  const existing = cart.find(item=>item.id===id);
 
-  if (existing && existing.qty >= product.stock) {
+  if(existing && existing.qty>=product.stock){
     showToast("No quedan más unidades disponibles de este producto.");
     return;
   }
 
-  if (existing) {
-    existing.qty++;
-  } else {
-    cart.push({...product,qty:1});
-  }
+  if(existing) existing.qty++;
+  else cart.push({...product,qty:1});
 
   renderCart();
   openCart();
-  showToast(product.name + " añadido al carrito.");
+  showToast(product.name+" añadido al carrito.");
 }
 
 /* ELIMINAR PRODUCTOS */
-function removeFromCart(id) {
-  const product = cart.find(item => item.id === id);
+function removeFromCart(id){
+  const product = cart.find(item=>item.id===id);
+  if(!product) return;
 
-  if (!product) return;
-
-  cart = cart.filter(item => item.id !== id);
-
-  if (cart.length === 0) checkoutOpen = false;
+  cart = cart.filter(item=>item.id!==id);
+  if(cart.length===0) checkoutOpen = false;
 
   renderCart();
-  showToast(product.name + " eliminado del carrito.");
+  showToast(product.name+" eliminado del carrito.");
 }
 
 /* CAMBIAR CANTIDADES */
-function changeQuantity(id,change) {
-  const product = cart.find(item => item.id === id);
+function changeQuantity(id,change){
+  const product = cart.find(item=>item.id===id);
+  if(!product) return;
 
-  if (!product) return;
-
-  if (change > 0 && stockLoaded && product.qty >= product.stock) {
+  if(change>0 && stockLoaded && product.qty>=product.stock){
     showToast("Has alcanzado las unidades disponibles.");
     return;
   }
 
   product.qty += change;
 
-  if (product.qty <= 0) {
+  if(product.qty<=0){
     removeFromCart(id);
     return;
   }
@@ -1383,14 +665,14 @@ function changeQuantity(id,change) {
   renderCart();
 }
 
-/* FORMULARIO DE COMPRA */
-function showCheckout() {
-  if (!cart.length) {
+/* MOSTRAR FORMULARIO */
+function showCheckout(){
+  if(!cart.length){
     showToast("Añade algún producto antes de comprar.");
     return;
   }
 
-  if (!stockLoaded || stockError) {
+  if(!stockLoaded || stockError){
     showToast("No se puede verificar el stock. Espera mientras se comprueba.");
     loadStock();
     return;
@@ -1406,125 +688,98 @@ function showCheckout() {
 }
 
 /* DIBUJAR CARRITO */
-function renderCart() {
+function renderCart(){
   const box = document.getElementById("cart-items");
-
-  const count = cart.reduce((sum,item) => sum + item.qty,0);
-
+  const count = cart.reduce((sum,item)=>sum+item.qty,0);
   document.getElementById("count").textContent = count;
 
-  if (cart.length === 0) {
+  if(cart.length===0){
     checkoutOpen = false;
-
     box.innerHTML = `
       <div class="empty-cart">
         <p>Tu carrito está vacío. Explora la colección y añade las prendas que te gusten.</p>
         <a class="cta" href="#coleccion" onclick="closeCart()">Explorar colección ↗</a>
       </div>
     `;
-
     document.getElementById("total").textContent = euro(0);
     document.getElementById("checkout-start").hidden = true;
     document.getElementById("checkout-form-area").hidden = true;
     return;
   }
 
-  box.innerHTML = cart.map(item => `
+  box.innerHTML = cart.map(item=>`
     <div class="cart-row">
-      <img
-        class="cart-product-image"
-        src="${item.image}"
-        alt="${item.name}"
-        onerror="this.style.opacity='0.2'"
-      >
-
+      <img class="cart-product-image" src="${item.image}" alt="${item.name}" onerror="this.style.opacity='0.2'">
       <div class="cart-row-info">
         <strong>${item.name}</strong>
         <small>${item.sub}</small>
         <small>Talla: ${item.size}</small>
-        ${stockLoaded ? `<small>Unidades disponibles: ${item.stock}</small>` : ""}
-
+        ${stockLoaded?`<small>Unidades disponibles: ${item.stock}</small>`:""}
         <div class="cart-item-price">${euro(item.price)} / unidad</div>
-        <div class="cart-subtotal">Subtotal: ${euro(item.price * item.qty)}</div>
-
+        <div class="cart-subtotal">Subtotal: ${euro(item.price*item.qty)}</div>
         <div class="quantity-controls">
           <button type="button" onclick="changeQuantity(${item.id},-1)" aria-label="Reducir cantidad de ${item.name}">−</button>
           <span class="quantity-number">${item.qty}</span>
-          <button
-            type="button"
-            onclick="changeQuantity(${item.id},1)"
-            aria-label="Aumentar cantidad de ${item.name}"
-            ${stockLoaded && item.qty >= item.stock ? "disabled" : ""}
-          >+</button>
+          <button type="button" onclick="changeQuantity(${item.id},1)" aria-label="Aumentar cantidad de ${item.name}" ${stockLoaded&&item.qty>=item.stock?"disabled":""}>+</button>
         </div>
-
         <button class="remove" type="button" onclick="removeFromCart(${item.id})">Eliminar producto</button>
       </div>
     </div>
   `).join("");
 
-  const total = cart.reduce((sum,item) => sum + item.price * item.qty,0);
-
+  const total = cart.reduce((sum,item)=>sum+item.price*item.qty,0);
   document.getElementById("total").textContent = euro(total);
   document.getElementById("checkout-start").hidden = checkoutOpen;
   document.getElementById("checkout-form-area").hidden = !checkoutOpen;
 }
 
-/* DESCONTAR STOCK: SE MANTIENE LA FUNCIÓN RPC EXISTENTE */
-async function deductStock(items) {
-  const response = await fetch(
-    `${SUPABASE_URL}/rest/v1/rpc/descontar_stock_lorena`,
-    {
-      method:"POST",
-      headers:{
-        "Content-Type":"application/json",
-        apikey:SUPABASE_ANON_KEY,
-        Authorization:`Bearer ${SUPABASE_ANON_KEY}`
-      },
-      body:JSON.stringify({
-        p_items:items.map(item => ({
-          id:item.id,
-          cantidad:item.qty
-        }))
-      })
-    }
-  );
+/* DESCONTAR STOCK MEDIANTE LA RPC EXISTENTE */
+async function deductStock(items){
+  const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/descontar_stock_lorena`,{
+    method:"POST",
+    headers:{
+      "Content-Type":"application/json",
+      apikey:SUPABASE_ANON_KEY,
+      Authorization:`Bearer ${SUPABASE_ANON_KEY}`
+    },
+    body:JSON.stringify({
+      p_items:items.map(item=>({id:item.id,cantidad:item.qty}))
+    })
+  });
 
-  if (!response.ok) {
-    throw new Error(
-      "No se ha podido descontar el stock. Comprueba la configuración de Supabase."
-    );
+  if(!response.ok){
+    throw new Error("No se ha podido descontar el stock. Comprueba la configuración de Supabase.");
   }
 
-  const result = await response.json().catch(() => null);
+  const result = await response.json().catch(()=>null);
 
-  if (result && result.success === false) {
-    throw new Error(
-      result.message || "No hay stock suficiente para completar el pedido."
-    );
+  if(result && result.success===false){
+    throw new Error(result.message||"No hay stock suficiente para completar el pedido.");
   }
 }
 
-/* VENTANA PREMIUM */
-function openSuccessModal(orderId) {
+/* ABRIR VENTANA DE PEDIDO REALIZADO */
+function openSuccessModal(orderId,customerName,total){
   const modal = document.getElementById("success-modal");
 
   previousFocusedElement = document.activeElement;
 
   document.getElementById("success-order-id").textContent = orderId;
+  document.getElementById("success-customer-name").textContent = "Gracias, "+customerName+".";
+  document.getElementById("success-total").textContent = euro(total);
 
   modal.classList.add("show");
   modal.setAttribute("aria-hidden","false");
-
   document.body.classList.add("cart-open");
 
-  document.getElementById("success-continue").focus();
+  const closeButton = modal.querySelector(".success-close");
+  if(closeButton) closeButton.focus();
 }
 
-function closeSuccessModal() {
+/* CERRAR VENTANA */
+function closeSuccessModal(){
   const modal = document.getElementById("success-modal");
-
-  if (!modal.classList.contains("show")) return;
+  if(!modal.classList.contains("show")) return;
 
   modal.classList.remove("show");
   modal.setAttribute("aria-hidden","true");
@@ -1532,31 +787,20 @@ function closeSuccessModal() {
   closeCart();
   document.body.classList.remove("cart-open");
 
-  document.getElementById("coleccion").scrollIntoView({
-    behavior:"smooth"
-  });
+  document.getElementById("coleccion").scrollIntoView({behavior:"smooth"});
 
-  if (previousFocusedElement && typeof previousFocusedElement.focus === "function") {
+  if(previousFocusedElement && typeof previousFocusedElement.focus==="function"){
     previousFocusedElement = null;
   }
 }
 
-/*
-  ENVÍO DEL PEDIDO
-
-  1. Comprueba el stock.
-  2. Descuenta las unidades mediante la función RPC existente.
-  3. Envía los datos detallados a FormSubmit.
-  4. Si FormSubmit confirma la aceptación, vacía el carrito y abre
-     inmediatamente la ventana de confirmación.
-  5. La actualización visual del stock se hace en segundo plano.
-*/
-document.getElementById("order-form").addEventListener("submit",async function(event) {
+/* PROCESAR PEDIDO */
+document.getElementById("order-form").addEventListener("submit",async function(event){
   event.preventDefault();
 
-  if (orderInProgress) return;
+  if(orderInProgress) return;
 
-  if (!cart.length) {
+  if(!cart.length){
     showToast("Tu carrito está vacío.");
     return;
   }
@@ -1564,15 +808,15 @@ document.getElementById("order-form").addEventListener("submit",async function(e
   const form = this;
   const submitButton = document.getElementById("order-submit");
 
-  if (!form.reportValidity()) return;
+  if(!form.reportValidity()) return;
 
   const name = document.getElementById("customer-name").value.trim();
   const phone = document.getElementById("customer-phone").value.trim();
   const deliveryMethod = document.getElementById("delivery-method").value;
   const place = document.getElementById("delivery-place").value.trim();
-  const notes = document.getElementById("customer-notes").value.trim() || "Sin observaciones";
+  const notes = document.getElementById("customer-notes").value.trim()||"Sin observaciones";
 
-  if (!name || !phone || !place) {
+  if(!name || !phone || !place){
     showToast("Completa tu nombre, teléfono y lugar de entrega.");
     return;
   }
@@ -1583,103 +827,72 @@ document.getElementById("order-form").addEventListener("submit",async function(e
 
   let stockWasDeducted = false;
 
-  try {
-    /*
-      Se vuelve a consultar el stock antes de descontarlo para reducir
-      el riesgo de vender unidades que ya no están disponibles.
-    */
+  try{
     const stockOk = await loadStock({silent:true});
 
-    if (!stockOk) {
+    if(!stockOk){
       throw new Error("No se ha podido comprobar el stock. Inténtalo de nuevo.");
     }
 
-    const invalidItem = cart.find(item => {
-      const product = products.find(p => p.id === item.id);
-
-      return !product || product.stock < item.qty || product.stock < 1;
+    const invalidItem = cart.find(item=>{
+      const product = products.find(p=>p.id===item.id);
+      return !product || product.stock<item.qty || product.stock<1;
     });
 
-    if (invalidItem) {
+    if(invalidItem){
       renderCart();
       throw new Error("Ha cambiado el stock. Revisa tu carrito antes de continuar.");
     }
 
-    const orderItems = cart.map(item => ({...item}));
+    const orderItems = cart.map(item=>({...item}));
+    const total = orderItems.reduce((sum,item)=>sum+item.price*item.qty,0);
+    const orderId = "LOR-"+Date.now();
 
-    const total = orderItems.reduce(
-      (sum,item) => sum + item.price * item.qty,
-      0
-    );
-
-    const orderId = "LOR-" + Date.now();
-
-    const productLines = orderItems.map((item,index) => {
-      return [
-        `Producto ${index + 1}: ${item.name}`,
-        `Talla: ${item.size}`,
-        `Precio unitario: ${euro(item.price)}`,
-        `Cantidad: ${item.qty}`,
-        `Subtotal: ${euro(item.price * item.qty)}`
-      ].join("\n");
-    });
-
-    const details = productLines.join("\n\n");
+    const details = orderItems.map((item,index)=>[
+      `Producto ${index+1}: ${item.name}`,
+      `Talla: ${item.size}`,
+      `Precio unitario: ${euro(item.price)}`,
+      `Cantidad: ${item.qty}`,
+      `Subtotal: ${euro(item.price*item.qty)}`
+    ].join("\n")).join("\n\n");
 
     submitButton.textContent = "Reservando unidades…";
 
-    /*
-      No se cambia el nombre ni el formato de la RPC de Supabase:
-      se conserva descontar_stock_lorena y su parámetro p_items.
-    */
     await deductStock(orderItems);
     stockWasDeducted = true;
 
     submitButton.textContent = "Enviando pedido…";
 
-    /*
-      Se envían campos separados y un resumen legible para que el correo
-      incluya los datos del cliente y el desglose de los productos.
-    */
     const emailData = {
       _subject:`Nuevo pedido LORENA — ${orderId}`,
       _template:"table",
       _captcha:"false",
-
       Referencia_del_pedido:orderId,
-      Nombre_completo: name,
-      Telefono: phone,
-      Forma_de_entrega: deliveryMethod,
-      Lugar_de_entrega: place,
-      Observaciones: notes,
-
-      Numero_de_productos: orderItems.reduce((sum,item) => sum + item.qty,0),
-      Detalle_de_productos: details,
-      Total_del_pedido: euro(total),
-
-      Productos_JSON: JSON.stringify(
-        orderItems.map(item => ({
-          id:item.id,
-          producto:item.name,
-          talla:item.size,
-          cantidad:item.qty,
-          precio_unitario:item.price,
-          subtotal:item.price * item.qty
-        }))
-      )
+      Nombre_completo:name,
+      Telefono:phone,
+      Forma_de_entrega:deliveryMethod,
+      Lugar_de_entrega:place,
+      Observaciones:notes,
+      Numero_de_productos:orderItems.reduce((sum,item)=>sum+item.qty,0),
+      Detalle_de_productos:details,
+      Total_del_pedido:euro(total),
+      Productos_JSON:JSON.stringify(orderItems.map(item=>({
+        id:item.id,
+        producto:item.name,
+        talla:item.size,
+        cantidad:item.qty,
+        precio_unitario:item.price,
+        subtotal:item.price*item.qty
+      })))
     };
 
     let emailResponse;
 
-    try {
-      /*
-        Se añade un límite de espera para que la página no se quede
-        esperando indefinidamente. Si se agota, no se muestra éxito.
-      */
+    try{
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(),15000);
+      const timeoutId = setTimeout(()=>controller.abort(),15000);
 
-      try {
+      try{
         emailResponse = await fetch(FORM_SUBMIT_URL,{
           method:"POST",
           headers:{
@@ -1689,48 +902,36 @@ document.getElementById("order-form").addEventListener("submit",async function(e
           body:JSON.stringify(emailData),
           signal:controller.signal
         });
-      } finally {
+      }finally{
         clearTimeout(timeoutId);
       }
-
-    } catch (error) {
-      if (error.name === "AbortError") {
-        throw new Error(
-          "El correo está tardando demasiado. El stock ya se ha descontado. Comprueba tu Gmail antes de volver a intentarlo."
-        );
+    }catch(error){
+      if(error.name==="AbortError"){
+        throw new Error("El correo está tardando demasiado. El stock ya se ha descontado. Comprueba tu Gmail antes de volver a intentarlo.");
       }
-
-      throw new Error(
-        "No se pudo conectar con el servicio de correo. El stock ya se ha descontado. Comprueba tu Gmail antes de volver a intentarlo."
-      );
+      throw new Error("No se pudo conectar con el servicio de correo. El stock ya se ha descontado. Comprueba tu Gmail antes de volver a intentarlo.");
     }
 
-    if (!emailResponse.ok) {
-      throw new Error(
-        "El servicio de correo no aceptó el pedido. El stock ya se ha descontado. Comprueba tu Gmail antes de volver a intentarlo."
-      );
+    if(!emailResponse.ok){
+      throw new Error("El servicio de correo no aceptó el pedido. El stock ya se ha descontado. Comprueba tu Gmail antes de volver a intentarlo.");
     }
 
     let emailResult;
 
-    try {
+    try{
       emailResult = await emailResponse.json();
-    } catch (error) {
-      throw new Error(
-        "No se pudo confirmar la respuesta del servicio de correo. El stock ya se ha descontado. Comprueba tu Gmail antes de repetir el pedido."
-      );
+    }catch(error){
+      throw new Error("No se pudo confirmar la respuesta del servicio de correo. El stock ya se ha descontado. Comprueba tu Gmail antes de repetir el pedido.");
     }
 
-    if (emailResult.success !== true && emailResult.success !== "true") {
-      throw new Error(
-        "El servicio de correo no confirmó el envío. El stock ya se ha descontado. Comprueba la activación de FormSubmit y tu Gmail antes de repetir el pedido."
-      );
+    if(emailResult.success!==true && emailResult.success!=="true"){
+      throw new Error("El servicio de correo no confirmó el envío. El stock ya se ha descontado. Comprueba la activación de FormSubmit y tu Gmail antes de repetir el pedido.");
     }
 
     /*
-      ÉXITO:
-      No se espera otra consulta de stock antes de mostrar la confirmación.
-      Esto elimina una espera innecesaria del proceso de compra.
+      PEDIDO CONFIRMADO:
+      Guardamos los datos necesarios para la ventana antes de vaciar
+      el carrito y mostramos la confirmación sin esperar a actualizar stock.
     */
     cart = [];
     checkoutOpen = false;
@@ -1738,31 +939,20 @@ document.getElementById("order-form").addEventListener("submit",async function(e
 
     renderCart();
     closeCart();
-    openSuccessModal(orderId);
 
-    /*
-      El stock se actualiza después, en segundo plano.
-      No bloquea la aparición de la ventana de confirmación.
-    */
-    loadStock({silent:true});
+    /* Aquí se muestran el nombre del cliente y el importe total. */
+    openSuccessModal(orderId,name,total);
 
-  } catch (error) {
-    showToast(
-      error.message || "No se pudo completar el pedido."
-    );
+    /* Actualizar el stock en segundo plano, sin retrasar la ventana. */
+    loadStock({silent:true}).catch(()=>{});
 
-    /*
-      Si el stock ya se descontó, no se repite automáticamente la compra:
-      podría provocar un segundo descuento. Se actualiza la información
-      en segundo plano y se informa al cliente del problema.
-    */
-    if (stockWasDeducted) {
-      loadStock({silent:true});
-    } else {
-      loadStock({silent:true});
-    }
+  }catch(error){
+    showToast(error.message||"No se pudo completar el pedido.");
 
-  } finally {
+    /* No se repite automáticamente el descuento de stock. */
+    loadStock({silent:true}).catch(()=>{});
+
+  }finally{
     orderInProgress = false;
     submitButton.disabled = false;
     submitButton.textContent = "Finalizar pedido ↗";
@@ -1770,50 +960,45 @@ document.getElementById("order-form").addEventListener("submit",async function(e
 });
 
 /* ABRIR CARRITO */
-function openCart() {
+function openCart(){
   document.getElementById("cart").classList.add("open");
   document.getElementById("cart").setAttribute("aria-hidden","false");
-
   document.getElementById("overlay").classList.add("show");
   document.getElementById("overlay").setAttribute("aria-hidden","false");
-
   document.body.classList.add("cart-open");
 }
 
 /* CERRAR CARRITO */
-function closeCart() {
+function closeCart(){
   document.getElementById("cart").classList.remove("open");
   document.getElementById("cart").setAttribute("aria-hidden","true");
-
   document.getElementById("overlay").classList.remove("show");
   document.getElementById("overlay").setAttribute("aria-hidden","true");
 
-  if (!document.getElementById("success-modal").classList.contains("show")) {
+  if(!document.getElementById("success-modal").classList.contains("show")){
     document.body.classList.remove("cart-open");
   }
 }
 
 /* TECLA ESCAPE */
-document.addEventListener("keydown",function(event) {
-  if (event.key === "Escape") {
-    if (document.getElementById("success-modal").classList.contains("show")) {
+document.addEventListener("keydown",function(event){
+  if(event.key==="Escape"){
+    if(document.getElementById("success-modal").classList.contains("show")){
       closeSuccessModal();
-    } else {
+    }else{
       closeCart();
     }
   }
 });
 
 /* MENSAJES */
-function showToast(message) {
+function showToast(message){
   const element = document.getElementById("toast");
-
   element.textContent = message;
   element.classList.add("show");
 
   clearTimeout(window.toastTimer);
-
-  window.toastTimer = setTimeout(() => {
+  window.toastTimer = setTimeout(()=>{
     element.classList.remove("show");
   },5000);
 }
