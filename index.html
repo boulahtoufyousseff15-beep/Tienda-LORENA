@@ -298,3 +298,603 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
   </div>
   <div class="filters">
     <button class="filter active" type="button" data-filter="all">Todo</button>
+    <button class="filter" type="button" data-filter="sets">Conjuntos de verano</button>
+    <button class="filter" type="button" data-filter="shoes">Zapatillas</button>
+    <button class="filter" type="button" data-filter="winter">Conjuntos de invierno</button>
+  </div>
+  <div class="grid" id="product-grid"></div>
+</section>
+<section class="story-band" id="historia">
+  <div class="story-image">
+    <img src="lorena12.png" alt="Colección de invierno LORENA" loading="lazy">
+  </div>
+  <div class="story-copy">
+    <div class="kicker">02 / Nuestra identidad</div>
+    <h2>La diferencia<br>está en el detalle.</h2>
+    <p>Costuras curvas, contrastes limpios, logotipos discretos y una paleta que combina negro, blanco, gris y tonos neutros. LORENA nace para construir un estilo reconocible sin necesidad de exagerar.</p>
+    <a class="cta dark" href="#coleccion">Ver las piezas <span>↗</span></a>
+  </div>
+</section>
+<div class="values">
+  <div class="value"><b>01</b><span>Líneas distintivas</span></div>
+  <div class="value"><b>02</b><span>Detalles cuidados</span></div>
+  <div class="value"><b>03</b><span>Identidad propia</span></div>
+</div>
+<section class="news">
+  <div class="kicker">LORENA</div>
+  <h2>El comienzo de LORENA.</h2>
+  <p>Descubre nuestra selección y elige las prendas que más te gusten.</p>
+  <a class="cta" href="#coleccion">Descubrir diseños <span>↗</span></a>
+</section>
+</main>
+<footer>
+  <div class="foot-left">MARCA DE ROPA INDEPENDIENTE<br>NEGRO · BLANCO · DORADO</div>
+  <a class="wordmark" href="#inicio">LORENA</a>
+  <div class="foot-right">© <span id="year"></span> LORENA<br>DISEÑADO CON INTENCIÓN</div>
+</footer>
+<div class="overlay" id="overlay" onclick="closeCart()" aria-hidden="true"></div>
+<aside class="cart-drawer" id="cart" aria-label="Carrito de compra" aria-hidden="true">
+  <div class="drawer-top">
+    <h2>Tu carrito</h2>
+    <button class="icon-btn" type="button" onclick="closeCart()" aria-label="Cerrar carrito">×</button>
+  </div>
+  <div id="cart-items" aria-live="polite"></div>
+  <div class="cart-total">
+    <span>Total del pedido</span>
+    <strong id="total">0,00 €</strong>
+  </div>
+  <div id="checkout-start" class="checkout-start" hidden>
+    <button class="cta" type="button" onclick="showCheckout()">Comprar ↗</button>
+  </div>
+  <div id="checkout-form-area" hidden>
+    <p class="drawer-note">Completa tus datos para enviar el pedido directamente a la tienda.</p>
+    <form id="order-form" class="order-form">
+      <label for="customer-name">Nombre completo</label>
+      <input id="customer-name" name="name" autocomplete="name" required maxlength="100" placeholder="Tu nombre">
+      <label for="customer-phone">Teléfono</label>
+      <input id="customer-phone" name="phone" autocomplete="tel" required type="tel" maxlength="30" placeholder="Tu teléfono">
+      <label for="delivery-method">Forma de entrega</label>
+      <select id="delivery-method" name="delivery-method" required>
+        <option value="Entrega en persona">Entrega en persona</option>
+      </select>
+      <label for="delivery-place">Lugar de entrega</label>
+      <input id="delivery-place" name="place" required maxlength="200" placeholder="Ciudad o lugar de entrega">
+      <label for="customer-notes">Observaciones</label>
+      <input id="customer-notes" name="notes" maxlength="500" placeholder="Detalles adicionales (opcional)">
+      <button class="cta order-submit" id="order-submit" type="submit">Finalizar pedido ↗</button>
+    </form>
+  </div>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="success-modal-wrap" id="success-modal" role="dialog" aria-modal="true" aria-labelledby="success-title" aria-describedby="success-description" aria-hidden="true" tabindex="-1">
+  <section class="success-modal">
+    <button class="success-close" type="button" onclick="closeSuccessModal()" aria-label="Cerrar ventana">×</button>
+    <div class="success-inner">
+      <div class="success-topline">Confirmación de compra</div>
+      <div class="success-brand">LORENA</div>
+      <div class="success-brand-caption">Diseñado para destacar</div>
+      <div class="success-divider" aria-hidden="true"><span></span><div class="success-diamond">✦</div><span></span></div>
+      <div class="success-symbol" aria-hidden="true">✓</div>
+      <div class="success-eyebrow">Compra completada correctamente</div>
+      <h2 id="success-title">¡PEDIDO<br><em>REALIZADO!</em></h2>
+      <p class="success-description" id="success-description">Gracias por tu compra y por confiar en nuestra marca. Hemos enviado los datos de tu pedido para su gestión.</p>
+      <span class="success-customer" id="success-customer-name"></span>
+      <div class="success-order-panel">
+        <span class="success-order-label">Referencia de tu pedido</span>
+        <strong class="success-reference" id="success-order-id"></strong>
+        <div class="success-total">
+          <span>Total de tu compra</span>
+          <strong id="success-total">0,00 €</strong>
+        </div>
+        <p class="success-order-note">Guarda la referencia por si necesitas consultar tu pedido.</p>
+      </div>
+      <div class="success-thanks">Gracias por elegir <span>LORENA.</span></div>
+      <button class="cta success-continue" type="button" onclick="closeSuccessModal()">Continuar comprando <span>↗</span></button>
+      <button class="success-close-button" type="button" onclick="closeSuccessModal()">Cerrar ventana</button>
+      <div class="success-footer">LORENA · Diseñado con intención<br>Gracias por confiar en nuestra marca</div>
+    </div>
+  </section>
+</div>
+<script>
+"use strict";
+/* CONFIGURACIÓN */
+const ORDER_EMAIL = "boulahtoufyousseff15@gmail.com";
+const FORM_SUBMIT_URL = "https://formsubmit.co/ajax/" + encodeURIComponent(ORDER_EMAIL);
+const SUPABASE_URL = "https://jmcjqlqkzsahlogtdmyk.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_W3B3n9v20W_y7VXb2JPOYQ_nwsr3gUa";
+let stockLoaded = false;
+let stockError = false;
+let currentFilter = "all";
+let checkoutOpen = false;
+let orderInProgress = false;
+let previousFocusedElement = null;
+function isSupabaseConfigured(){
+  return SUPABASE_URL.startsWith("https://") && SUPABASE_ANON_KEY.length > 20;
+}
+const products = [
+  {id:1,name:"Conjunto de invierno — Gris",sub:"Chaqueta y pantalón · Gris",category:"winter",image:"lorena1.png",color:"grey",price:45,size:"S",stock:null},
+  {id:2,name:"Conjunto de invierno — Blanco",sub:"Chaqueta y pantalón · Blanco",category:"winter",image:"lorena2.png",color:"white",price:45,size:"S",stock:null},
+  {id:3,name:"Conjunto de invierno — Negro",sub:"Chaqueta y pantalón · Negro",category:"winter",image:"lorena3.png",color:"black",price:45,size:"S",stock:null},
+  {id:4,name:"Conjunto de verano — Beige",sub:"Camiseta y pantalón corto · Beige",category:"sets",image:"lorena4.png",color:"beige",price:35,size:"S",stock:null},
+  {id:5,name:"Conjunto de verano — Blanco",sub:"Camiseta y pantalón corto · Blanco",category:"sets",image:"lorena5.png",color:"white",price:35,size:"S",stock:null},
+  {id:6,name:"Conjunto de verano — Negro",sub:"Camiseta y pantalón corto · Negro",category:"sets",image:"lorena6.jpeg",color:"black",price:35,size:"S",stock:null},
+  {id:7,name:"Zapatillas LR — Negras",sub:"Zapatillas · Negro",category:"shoes",image:"lorena7.png",color:"black",price:50,size:"40",stock:null},
+  {id:8,name:"Zapatillas LR — Grises",sub:"Zapatillas · Gris",category:"shoes",image:"lorena8.png",color:"grey",price:50,size:"40",stock:null},
+  {id:9,name:"Zapatillas LR — Blancas",sub:"Zapatillas · Blanco",category:"shoes",image:"lorena9.png",color:"white",price:50,size:"40",stock:null},
+  {id:10,name:"Chaqueta LR",sub:"Chaqueta puffer negra con capucha, detalles reflectantes y logo LR de LORENA.",category:"winter",image:"lorena13.png",color:"black",price:39.99,size:"S",stock:null}
+];
+let cart = [];
+function euro(number){
+  return Number(number).toLocaleString("es-ES",{style:"currency",currency:"EUR"});
+}
+/* CONSULTAR STOCK */
+async function loadStock(options={}){
+  const silent = options.silent === true;
+  if(!isSupabaseConfigured()){
+    stockLoaded = false;
+    stockError = true;
+    renderProducts(currentFilter);
+    return false;
+  }
+  try{
+    const response = await fetch(
+      `${SUPABASE_URL}/rest/v1/lorena_inventory?select=id,stock`,
+      {
+        method:"GET",
+        headers:{
+          apikey:SUPABASE_ANON_KEY,
+          Authorization:`Bearer ${SUPABASE_ANON_KEY}`
+        }
+      }
+    );
+    if(!response.ok){
+      throw new Error("No se pudo consultar el inventario.");
+    }
+    const inventory = await response.json();
+    products.forEach(product=>{
+      const row = inventory.find(item=>Number(item.id)===product.id);
+      product.stock = row ? Math.max(0,Number(row.stock)||0) : 0;
+    });
+    stockLoaded = true;
+    stockError = false;
+    cart = cart.filter(item=>{
+      const product = products.find(p=>p.id===item.id);
+      if(!product || product.stock<1) return false;
+      item.stock = product.stock;
+      if(item.qty>product.stock) item.qty = product.stock;
+      return item.qty>0;
+    });
+    renderProducts(currentFilter);
+    renderCart();
+    return true;
+  }catch(error){
+    stockLoaded = false;
+    stockError = true;
+    renderProducts(currentFilter);
+    if(!silent) showToast("No se pudo consultar el stock. Comprueba la conexión.");
+    return false;
+  }
+}
+/* PRODUCTOS */
+function renderProducts(filter=currentFilter){
+  currentFilter = filter;
+  const list = products.filter(product=>filter==="all" || product.category===filter);
+  document.getElementById("product-grid").innerHTML = list.map(product=>`
+    <article class="card">
+      <div class="card-photo">
+        <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.style.opacity='0.15'">
+        <span class="badge">LORENA</span>
+        <button class="quick" type="button" onclick="addToCart(${product.id})" ${stockLoaded&&product.stock<1?"disabled":""}>
+          ${stockLoaded&&product.stock<1?"Agotado":"Añadir al carrito ↗"}
+        </button>
+      </div>
+      <div class="card-meta">
+        <h3>${product.name}</h3>
+        <span class="price">${euro(product.price)}</span>
+      </div>
+      <p class="card-desc">${product.sub}</p>
+      <p class="card-desc stock-status ${stockError?"stock-error":""}">
+        ${stockLoaded?`Unidades disponibles: ${product.stock}`:stockError?"Stock no disponible":"Comprobando stock…"}
+      </p>
+      <div class="product-size">Talla disponible: ${product.size}</div>
+      <div class="swatches" aria-label="Color del producto"><i class="swatch ${product.color}"></i></div>
+    </article>
+  `).join("");
+}
+/* FILTROS */
+document.querySelectorAll(".filter").forEach(button=>{
+  button.addEventListener("click",()=>{
+    document.querySelectorAll(".filter").forEach(item=>item.classList.remove("active"));
+    button.classList.add("active");
+    renderProducts(button.dataset.filter);
+  });
+});
+/* AÑADIR AL CARRITO */
+function addToCart(id){
+  const product = products.find(item=>item.id===id);
+  if(!product) return;
+  if(!stockLoaded){
+    showToast("Espera a que se compruebe el stock antes de añadir productos.");
+    return;
+  }
+  if(product.stock<1){
+    showToast("Este producto está agotado.");
+    return;
+  }
+  const existing = cart.find(item=>item.id===id);
+  if(existing && existing.qty>=product.stock){
+    showToast("No quedan más unidades disponibles de este producto.");
+    return;
+  }
+  if(existing) existing.qty++;
+  else cart.push({...product,qty:1});
+  renderCart();
+  openCart();
+  showToast(product.name+" añadido al carrito.");
+}
+/* ELIMINAR PRODUCTOS */
+function removeFromCart(id){
+  const product = cart.find(item=>item.id===id);
+  if(!product) return;
+  cart = cart.filter(item=>item.id!==id);
+  if(cart.length===0) checkoutOpen = false;
+  renderCart();
+  showToast(product.name+" eliminado del carrito.");
+}
+/* CAMBIAR CANTIDADES */
+function changeQuantity(id,change){
+  const product = cart.find(item=>item.id===id);
+  if(!product) return;
+  if(change>0 && stockLoaded && product.qty>=product.stock){
+    showToast("Has alcanzado las unidades disponibles.");
+    return;
+  }
+  product.qty += change;
+  if(product.qty<=0){
+    removeFromCart(id);
+    return;
+  }
+  renderCart();
+}
+/* MOSTRAR FORMULARIO */
+function showCheckout(){
+  if(!cart.length){
+    showToast("Añade algún producto antes de comprar.");
+    return;
+  }
+  if(!stockLoaded || stockError){
+    showToast("No se puede verificar el stock. Se está intentando comprobar de nuevo.");
+    loadStock();
+    return;
+  }
+  checkoutOpen = true;
+  renderCart();
+  document.getElementById("checkout-form-area").scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+}
+/* DIBUJAR CARRITO */
+function renderCart(){
+  const box = document.getElementById("cart-items");
+  const count = cart.reduce((sum,item)=>sum+item.qty,0);
+  document.getElementById("count").textContent = count;
+  if(cart.length===0){
+    checkoutOpen = false;
+    box.innerHTML = `
+      <div class="empty-cart">
+        <p>Tu carrito está vacío. Explora la colección y añade las prendas que te gusten.</p>
+        <a class="cta" href="#coleccion" onclick="closeCart()">Explorar colección ↗</a>
+      </div>
+    `;
+    document.getElementById("total").textContent = euro(0);
+    document.getElementById("checkout-start").hidden = true;
+    document.getElementById("checkout-form-area").hidden = true;
+    return;
+  }
+  box.innerHTML = cart.map(item=>`
+    <div class="cart-row">
+      <img class="cart-product-image" src="${item.image}" alt="${item.name}" onerror="this.style.opacity='0.2'">
+      <div class="cart-row-info">
+        <strong>${item.name}</strong>
+        <small>${item.sub}</small>
+        <small>Talla: ${item.size}</small>
+        ${stockLoaded?`<small>Unidades disponibles: ${item.stock}</small>`:""}
+        <div class="cart-item-price">${euro(item.price)} / unidad</div>
+        <div class="cart-subtotal">Subtotal: ${euro(item.price*item.qty)}</div>
+        <div class="quantity-controls">
+          <button type="button" onclick="changeQuantity(${item.id},-1)" aria-label="Reducir cantidad de ${item.name}">−</button>
+          <span class="quantity-number">${item.qty}</span>
+          <button type="button" onclick="changeQuantity(${item.id},1)" aria-label="Aumentar cantidad de ${item.name}" ${stockLoaded&&item.qty>=item.stock?"disabled":""}>+</button>
+        </div>
+        <button class="remove" type="button" onclick="removeFromCart(${item.id})">Eliminar producto</button>
+      </div>
+    </div>
+  `).join("");
+  const total = cart.reduce((sum,item)=>sum+item.price*item.qty,0);
+  document.getElementById("total").textContent = euro(total);
+  document.getElementById("checkout-start").hidden = checkoutOpen;
+  document.getElementById("checkout-form-area").hidden = !checkoutOpen;
+}
+/* DESCONTAR STOCK MEDIANTE LA RPC EXISTENTE */
+async function deductStock(items){
+  const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/descontar_stock_lorena`,{
+    method:"POST",
+    headers:{
+      "Content-Type":"application/json",
+      apikey:SUPABASE_ANON_KEY,
+      Authorization:`Bearer ${SUPABASE_ANON_KEY}`
+    },
+    body:JSON.stringify({
+      p_items:items.map(item=>({id:item.id,cantidad:item.qty}))
+    })
+  });
+  if(!response.ok){
+    const message = await response.text().catch(()=>"");
+    throw new Error(
+      "El correo del pedido se ha enviado, pero Supabase no ha confirmado el descuento del stock. " +
+      "Revisa el inventario antes de aceptar el pedido. " + message
+    );
+  }
+  const result = await response.json().catch(()=>null);
+  if(result && result.success===false){
+    throw new Error(
+      "El correo del pedido se ha enviado, pero el stock no se ha podido reservar. " +
+      (result.message||"Revisa el inventario antes de aceptar el pedido.")
+    );
+  }
+}
+/* ENVIAR PEDIDO A FORMSUBMIT */
+async function sendOrderEmail(emailData){
+  const controller = new AbortController();
+  const timeoutId = setTimeout(()=>controller.abort(),25000);
+  try{
+    const response = await fetch(FORM_SUBMIT_URL,{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json",
+        "Accept":"application/json"
+      },
+      body:JSON.stringify(emailData),
+      signal:controller.signal
+    });
+    const responseText = await response.text();
+    let result = null;
+    try{
+      result = JSON.parse(responseText);
+    }catch(error){
+      result = null;
+    }
+    if(!response.ok){
+      const message = result && (result.message||result.error)
+        ? (result.message||result.error)
+        : "FormSubmit ha rechazado la petición (HTTP "+response.status+").";
+      throw new Error(message);
+    }
+    if(!result){
+      throw new Error("FormSubmit no ha devuelto una confirmación válida. Comprueba el correo antes de volver a enviar el pedido.");
+    }
+    const successValue = String(result.success ?? "").toLowerCase();
+    if(
+      result.success===false ||
+      successValue==="false" ||
+      successValue==="0" ||
+      result.error
+    ){
+      throw new Error(result.message||result.error||"FormSubmit no ha confirmado el envío.");
+    }
+    /*
+      FormSubmit suele responder con success: "true".
+      Si responde HTTP correcto con JSON válido y no indica fallo,
+      consideramos aceptada la solicitud.
+    */
+    if(
+      result.success===true ||
+      successValue==="true" ||
+      result.message
+    ){
+      return result;
+    }
+    throw new Error("No se ha podido verificar que FormSubmit aceptara el pedido. Revisa tu correo antes de intentarlo de nuevo.");
+  }catch(error){
+    if(error.name==="AbortError"){
+      throw new Error("FormSubmit ha tardado demasiado en responder. No repitas el pedido todavía: comprueba primero si el correo ha llegado.");
+    }
+    if(error instanceof TypeError){
+      throw new Error("No se pudo conectar con FormSubmit. Comprueba tu conexión y revisa el correo antes de repetir el pedido.");
+    }
+    throw error;
+  }finally{
+    clearTimeout(timeoutId);
+  }
+}
+/* ABRIR VENTANA DE PEDIDO REALIZADO */
+function openSuccessModal(orderId,customerName,total){
+  const modal = document.getElementById("success-modal");
+  previousFocusedElement = document.activeElement;
+  document.getElementById("success-order-id").textContent = orderId;
+  document.getElementById("success-customer-name").textContent = "Gracias, "+customerName+".";
+  document.getElementById("success-total").textContent = euro(total);
+  modal.classList.add("show");
+  modal.setAttribute("aria-hidden","false");
+  document.body.classList.add("cart-open");
+  const closeButton = modal.querySelector(".success-close");
+  if(closeButton) closeButton.focus();
+}
+/* CERRAR VENTANA */
+function closeSuccessModal(){
+  const modal = document.getElementById("success-modal");
+  if(!modal.classList.contains("show")) return;
+  modal.classList.remove("show");
+  modal.setAttribute("aria-hidden","true");
+  closeCart();
+  document.body.classList.remove("cart-open");
+  document.getElementById("coleccion").scrollIntoView({behavior:"smooth"});
+  if(previousFocusedElement && typeof previousFocusedElement.focus==="function"){
+    previousFocusedElement.focus();
+  }
+  previousFocusedElement = null;
+}
+/* PROCESAR PEDIDO */
+document.getElementById("order-form").addEventListener("submit",async function(event){
+  event.preventDefault();
+  if(orderInProgress) return;
+  if(!cart.length){
+    showToast("Tu carrito está vacío.");
+    return;
+  }
+  const form = this;
+  const submitButton = document.getElementById("order-submit");
+  if(!form.reportValidity()) return;
+  const name = document.getElementById("customer-name").value.trim();
+  const phone = document.getElementById("customer-phone").value.trim();
+  const deliveryMethod = document.getElementById("delivery-method").value;
+  const place = document.getElementById("delivery-place").value.trim();
+  const notes = document.getElementById("customer-notes").value.trim()||"Sin observaciones";
+  if(!name || !phone || !place){
+    showToast("Completa tu nombre, teléfono y lugar de entrega.");
+    return;
+  }
+  orderInProgress = true;
+  submitButton.disabled = true;
+  let emailAccepted = false;
+  try{
+    submitButton.textContent = "Comprobando stock…";
+    const stockOk = await loadStock({silent:true});
+    if(!stockOk){
+      throw new Error("No se ha podido comprobar el stock. Inténtalo de nuevo.");
+    }
+    const invalidItem = cart.find(item=>{
+      const product = products.find(p=>p.id===item.id);
+      return !product || product.stock<item.qty || product.stock<1;
+    });
+    if(invalidItem){
+      renderCart();
+      throw new Error("Ha cambiado el stock. Revisa tu carrito antes de continuar.");
+    }
+    const orderItems = cart.map(item=>({...item}));
+    const total = orderItems.reduce((sum,item)=>sum+item.price*item.qty,0);
+    const orderId = "LOR-"+Date.now();
+    const details = orderItems.map((item,index)=>[
+      `Producto ${index+1}: ${item.name}`,
+      `Talla: ${item.size}`,
+      `Precio unitario: ${euro(item.price)}`,
+      `Cantidad: ${item.qty}`,
+      `Subtotal: ${euro(item.price*item.qty)}`
+    ].join("\n")).join("\n\n");
+    const emailData = {
+      _subject:`Nuevo pedido LORENA — ${orderId}`,
+      _template:"table",
+      _captcha:"false",
+      _replyto:"",
+      Referencia_del_pedido:orderId,
+      Nombre_completo:name,
+      Telefono:phone,
+      Forma_de_entrega:deliveryMethod,
+      Lugar_de_entrega:place,
+      Observaciones:notes,
+      Numero_de_productos:orderItems.reduce((sum,item)=>sum+item.qty,0),
+      Detalle_de_productos:details,
+      Total_del_pedido:euro(total),
+      Productos_JSON:JSON.stringify(orderItems.map(item=>({
+        id:item.id,
+        producto:item.name,
+        talla:item.size,
+        cantidad:item.qty,
+        precio_unitario:item.price,
+        subtotal:item.price*item.qty
+      }))),
+      Pagina_de_origen:window.location.href
+    };
+    /*
+      Primero se envía el pedido a FormSubmit.
+      Así no se descuentan unidades si el correo es rechazado.
+    */
+    submitButton.textContent = "Enviando pedido…";
+    await sendOrderEmail(emailData);
+    emailAccepted = true;
+    /*
+      Después se intenta descontar el stock.
+      Si Supabase falla, se informa del problema y no se muestra
+      la ventana de pedido completado.
+    */
+    submitButton.textContent = "Confirmando stock…";
+    await deductStock(orderItems);
+    /*
+      Solo después de recibir respuesta satisfactoria de FormSubmit
+      y Supabase se confirma el pedido al cliente.
+    */
+    cart = [];
+    checkoutOpen = false;
+    form.reset();
+    renderCart();
+    closeCart();
+    openSuccessModal(orderId,name,total);
+    loadStock({silent:true}).catch(()=>{});
+  }catch(error){
+    console.error("Error al procesar el pedido LORENA:",error);
+    if(emailAccepted){
+      showToast(
+        "El correo del pedido se ha enviado, pero ha fallado la confirmación del stock. " +
+        "No repitas la compra; revisa el inventario."
+      );
+    }else{
+      showToast(
+        (error.message||"No se pudo enviar el pedido.")+
+        " No repitas el pedido hasta comprobar si el correo ha llegado."
+      );
+    }
+    loadStock({silent:true}).catch(()=>{});
+  }finally{
+    orderInProgress = false;
+    submitButton.disabled = false;
+    submitButton.textContent = "Finalizar pedido ↗";
+  }
+});
+/* ABRIR CARRITO */
+function openCart(){
+  document.getElementById("cart").classList.add("open");
+  document.getElementById("cart").setAttribute("aria-hidden","false");
+  document.getElementById("overlay").classList.add("show");
+  document.getElementById("overlay").setAttribute("aria-hidden","false");
+  document.body.classList.add("cart-open");
+}
+/* CERRAR CARRITO */
+function closeCart(){
+  document.getElementById("cart").classList.remove("open");
+  document.getElementById("cart").setAttribute("aria-hidden","true");
+  document.getElementById("overlay").classList.remove("show");
+  document.getElementById("overlay").setAttribute("aria-hidden","true");
+  if(!document.getElementById("success-modal").classList.contains("show")){
+    document.body.classList.remove("cart-open");
+  }
+}
+/* CERRAR CON ESCAPE */
+document.addEventListener("keydown",function(event){
+  if(event.key==="Escape"){
+    if(document.getElementById("success-modal").classList.contains("show")){
+      closeSuccessModal();
+    }else{
+      closeCart();
+    }
+  }
+});
+/* MENSAJES */
+function showToast(message){
+  const element = document.getElementById("toast");
+  element.textContent = message;
+  element.classList.add("show");
+  clearTimeout(window.toastTimer);
+  window.toastTimer = setTimeout(()=>{
+    element.classList.remove("show");
+  },7000);
+}
+/* AÑO AUTOMÁTICO */
+document.getElementById("year").textContent = new Date().getFullYear();
+/* INICIALIZACIÓN */
+renderProducts();
+renderCart();
+loadStock();
+</script>
+</body>
+</html>
