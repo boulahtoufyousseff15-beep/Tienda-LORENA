@@ -299,6 +299,7 @@ footer .wordmark{font-size:29px;color:var(--blanco)}
   <div class="filters">
     <button class="filter active" type="button" data-filter="all">Todo</button>
     <button class="filter" type="button" data-filter="sets">Conjuntos de verano</button>
+    <button class="filter" type="button" data-filter="jackets">Chaquetas</button>
     <button class="filter" type="button" data-filter="shoes">Zapatillas</button>
     <button class="filter" type="button" data-filter="winter">Conjuntos de invierno</button>
   </div>
@@ -420,7 +421,8 @@ const products = [
   {id:6,name:"Conjunto de verano — Negro",sub:"Camiseta y pantalón corto · Negro",category:"sets",image:"lorena6.jpeg",color:"black",price:35,size:"S",stock:null},
   {id:7,name:"Zapatillas LR — Negras",sub:"Zapatillas · Negro",category:"shoes",image:"lorena7.png",color:"black",price:50,size:"40",stock:null},
   {id:8,name:"Zapatillas LR — Grises",sub:"Zapatillas · Gris",category:"shoes",image:"lorena8.png",color:"grey",price:50,size:"40",stock:null},
-  {id:9,name:"Zapatillas LR — Blancas",sub:"Zapatillas · Blanco",category:"shoes",image:"lorena9.png",color:"white",price:50,size:"40",stock:null}
+  {id:9,name:"Zapatillas LR — Blancas",sub:"Zapatillas · Blanco",category:"shoes",image:"lorena9.png",color:"white",price:50,size:"40",stock:null},
+  {id:10,name:"chaqurta LR",sub:"Chaqueta puffer negra con capucha, detalles reflectantes y logo LR de LORENA.",category:"jackets",image:"lorena13.png",color:"black",price:39.99,size:"S",stock:1}
 ];
 let cart = [];
 function euro(number){
@@ -446,6 +448,8 @@ async function loadStock(options={}){
         }
       }
     );
+
+```html
     if(!response.ok){
       throw new Error("No se pudo consultar el inventario.");
     }
